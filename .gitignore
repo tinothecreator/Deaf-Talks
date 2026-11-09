@@ -7,3 +7,13 @@
 node_modules/
 .next/
 .vercel/
+
+# generated files and local tooling
+out/
+build/
+coverage/
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+*.pem
+npm-debug.log*

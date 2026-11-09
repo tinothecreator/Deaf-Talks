@@ -1,6 +1,6 @@
 # SignStories implementation plan
 
-Planning only: no application code or schema changes are part of this task. Based on `SPEC.md`, `AGENTS.md`, and the existing root `schema.sql`.
+Planning only: no application code or schema changes are part of this task. Based on `SPEC.md`, `AGENTS.md`, and the schema at `supabase/schema.sql`.
 
 ## Understanding and scope
 
@@ -43,7 +43,7 @@ Priority means **must** for the demo or its safety rules, **should** if the core
 
 | Area | Evidence or unresolved question | Proposed approach | priority | decide by milestone |
 | --- | --- | --- | --- | --- |
-| Schema location | The file is currently `schema.sql`; AGENTS.md names `supabase/schema.sql`. | Move to the canonical path during foundation work and retain one authoritative copy. No move during this planning task. | must | 1 |
+| Schema location | The canonical schema path is `supabase/schema.sql`. | Retain one authoritative copy at this path. Foundation moves the file without changing its contents. | must | 1 |
 | Role security | The profile update policy permits changing `role`, including self-promotion to teacher. | Lock role changes at database level. Self-service edits cover display name only; teacher assignment is administrative. Provision and test all three role accounts. | must | 2 |
 | Authentication | Session refresh and deployed callbacks are required for working accounts. | Use email/password and Supabase session cookies. Add `@supabase/ssr` session refresh in milestone 1; configure confirmation and deployed callback URLs. Test renewed sessions. Full recovery UX is Deferred. Never bypass required verification. | must | 1 |
 | Audience and roles | Browsing requires authentication; profiles have one role. | Keep signed-in browsing and one role per account; only learner accounts submit practice in MVP. Align server and database checks. | must | 2 |

@@ -54,7 +54,7 @@ Next.js (App Router, TypeScript) + Tailwind, Supabase (Postgres, Auth, Storage),
 ## Day-by-day plan
 **Day 1 (Mon 9 Nov): foundation**
 - Create the repo, Next.js app, Supabase project, and Vercel project; deploy a blank page.
-- Add `AGENTS.md`, run `schema.sql`, set env vars, test sign-up and role selection.
+- Add `AGENTS.md`, run `supabase/schema.sql`, set env vars, test sign-up and role selection.
 - Build story upload to Supabase Storage and a story list page.
 - Done when: a storyteller can upload a video and see it on a deployed link.
 
