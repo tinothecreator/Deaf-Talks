@@ -1,16 +1,31 @@
 -- SignStories schema (Supabase / Postgres)
 -- Run in the Supabase SQL editor. Review policies before going beyond a demo.
+-- Rerunnable for this schema; existing table definitions are not migrated.
+
+begin;
 
 create extension if not exists "pgcrypto";
 
 -- ---------- Enums ----------
-create type user_role as enum ('learner', 'storyteller', 'teacher');
-create type story_status as enum ('draft', 'published');
-create type usage_level as enum ('private', 'learning_only', 'share_with_credit');
-create type feedback_rating as enum ('keep_practising', 'good', 'excellent');
+do $$ begin
+  create type user_role as enum ('learner', 'storyteller', 'teacher');
+exception when duplicate_object then null;
+end $$;
+do $$ begin
+  create type story_status as enum ('draft', 'published');
+exception when duplicate_object then null;
+end $$;
+do $$ begin
+  create type usage_level as enum ('private', 'learning_only', 'share_with_credit');
+exception when duplicate_object then null;
+end $$;
+do $$ begin
+  create type feedback_rating as enum ('keep_practising', 'good', 'excellent');
+exception when duplicate_object then null;
+end $$;
 
 -- ---------- Tables ----------
-create table profiles (
+create table if not exists profiles (
   id uuid primary key references auth.users(id) on delete cascade,
   role user_role not null default 'learner',
   display_name text not null,
@@ -20,7 +35,7 @@ create table profiles (
   created_at timestamptz not null default now()
 );
 
-create table stories (
+create table if not exists stories (
   id uuid primary key default gen_random_uuid(),
   storyteller_id uuid not null references profiles(id) on delete cascade,
   title text not null,
@@ -35,7 +50,7 @@ create table stories (
   updated_at timestamptz not null default now()
 );
 
-create table story_translations (
+create table if not exists story_translations (
   id uuid primary key default gen_random_uuid(),
   story_id uuid not null references stories(id) on delete cascade,
   language text not null,       -- 'zu', 'af', 'xh', 'st', 'tn', ...
@@ -46,7 +61,7 @@ create table story_translations (
   unique (story_id, language)
 );
 
-create table signs (
+create table if not exists signs (
   id uuid primary key default gen_random_uuid(),
   story_id uuid not null references stories(id) on delete cascade,
   label text not null,          -- the word or phrase the sign means
@@ -57,7 +72,7 @@ create table signs (
   created_at timestamptz not null default now()
 );
 
-create table ownership_settings (
+create table if not exists ownership_settings (
   story_id uuid primary key references stories(id) on delete cascade,
   usage usage_level not null default 'learning_only',
   allow_download boolean not null default false,
@@ -67,7 +82,7 @@ create table ownership_settings (
   updated_at timestamptz not null default now()
 );
 
-create table consent_log (
+create table if not exists consent_log (
   id uuid primary key default gen_random_uuid(),
   story_id uuid not null references stories(id) on delete cascade,
   usage usage_level not null,
@@ -77,7 +92,7 @@ create table consent_log (
   changed_at timestamptz not null default now()
 );
 
-create table practice_attempts (
+create table if not exists practice_attempts (
   id uuid primary key default gen_random_uuid(),
   learner_id uuid not null references profiles(id) on delete cascade,
   story_id uuid not null references stories(id) on delete cascade,
@@ -87,7 +102,7 @@ create table practice_attempts (
   created_at timestamptz not null default now()
 );
 
-create table feedback (
+create table if not exists feedback (
   id uuid primary key default gen_random_uuid(),
   attempt_id uuid not null references practice_attempts(id) on delete cascade,
   reviewer_id uuid not null references profiles(id) on delete cascade,
@@ -97,14 +112,14 @@ create table feedback (
 );
 
 -- ---------- Indexes ----------
-create index on stories (storyteller_id);
-create index on stories (status);
-create index on story_translations (story_id);
-create index on signs (story_id);
-create index on practice_attempts (learner_id);
-create index on practice_attempts (story_id);
-create index on feedback (attempt_id);
-create index on consent_log (story_id);
+create index if not exists stories_storyteller_id_idx on stories (storyteller_id);
+create index if not exists stories_status_idx on stories (status);
+create index if not exists story_translations_story_id_idx on story_translations (story_id);
+create index if not exists signs_story_id_idx on signs (story_id);
+create index if not exists practice_attempts_learner_id_idx on practice_attempts (learner_id);
+create index if not exists practice_attempts_story_id_idx on practice_attempts (story_id);
+create index if not exists feedback_attempt_id_idx on feedback (attempt_id);
+create index if not exists consent_log_story_id_idx on consent_log (story_id);
 
 -- ---------- Helper functions ----------
 create or replace function public.is_story_owner(sid uuid)
@@ -158,6 +173,7 @@ begin
   return new;
 end $$;
 
+drop trigger if exists on_auth_user_created on auth.users;
 create trigger on_auth_user_created
   after insert on auth.users
   for each row execute function public.handle_new_user();
@@ -171,6 +187,7 @@ begin
   return new;
 end $$;
 
+drop trigger if exists ownership_change_log on public.ownership_settings;
 create trigger ownership_change_log
   after insert or update on ownership_settings
   for each row execute function public.log_ownership_change();
@@ -186,70 +203,95 @@ alter table practice_attempts enable row level security;
 alter table feedback enable row level security;
 
 -- profiles
+drop policy if exists "profiles readable by signed-in users" on profiles;
 create policy "profiles readable by signed-in users" on profiles
   for select to authenticated using (true);
+drop policy if exists "users update own profile" on profiles;
 create policy "users update own profile" on profiles
   for update to authenticated using (id = auth.uid()) with check (id = auth.uid());
--- note: role changes (e.g. promoting a teacher) are done by an admin with the service role
+-- Milestone 2: self-service updates may change display_name only.
+-- Remove table AND column grants: a table grant overrides column restrictions.
+-- RLS still limits the editable row to auth.uid(). SQL editor administration
+-- (postgres) retains access for manual teacher assignment.
+revoke update on table public.profiles from public, anon, authenticated;
+revoke update (id, role, display_name, bio, province, sasl_variety, created_at)
+  on table public.profiles from public, anon, authenticated;
+grant update (display_name) on table public.profiles to authenticated;
 
 -- stories
+drop policy if exists "view visible stories" on stories;
 create policy "view visible stories" on stories
   for select to authenticated using (public.is_story_visible(id));
+drop policy if exists "storytellers create own stories" on stories;
 create policy "storytellers create own stories" on stories
   for insert to authenticated with check (
     storyteller_id = auth.uid()
     and exists (select 1 from profiles where id = auth.uid() and role = 'storyteller')
   );
+drop policy if exists "owners update own stories" on stories;
 create policy "owners update own stories" on stories
   for update to authenticated using (storyteller_id = auth.uid());
+drop policy if exists "owners delete own stories" on stories;
 create policy "owners delete own stories" on stories
   for delete to authenticated using (storyteller_id = auth.uid());
 
 -- translations: learners see approved ones; owners see and manage all
+drop policy if exists "view approved translations" on story_translations;
 create policy "view approved translations" on story_translations
   for select to authenticated using (
     public.is_story_owner(story_id)
     or (approved_by_storyteller and public.is_story_visible(story_id))
   );
+drop policy if exists "owners manage translations" on story_translations;
 create policy "owners manage translations" on story_translations
   for all to authenticated using (public.is_story_owner(story_id))
   with check (public.is_story_owner(story_id));
 
 -- signs
+drop policy if exists "view signs of visible stories" on signs;
 create policy "view signs of visible stories" on signs
   for select to authenticated using (public.is_story_visible(story_id));
+drop policy if exists "owners manage signs" on signs;
 create policy "owners manage signs" on signs
   for all to authenticated using (public.is_story_owner(story_id))
   with check (public.is_story_owner(story_id));
 
 -- ownership settings
+drop policy if exists "view ownership of visible stories" on ownership_settings;
 create policy "view ownership of visible stories" on ownership_settings
   for select to authenticated using (public.is_story_visible(story_id));
+drop policy if exists "owners manage ownership" on ownership_settings;
 create policy "owners manage ownership" on ownership_settings
   for all to authenticated using (public.is_story_owner(story_id))
   with check (public.is_story_owner(story_id));
 
 -- consent log: owners can read their own history
+drop policy if exists "owners read consent log" on consent_log;
 create policy "owners read consent log" on consent_log
   for select to authenticated using (public.is_story_owner(story_id));
 
 -- practice attempts
+drop policy if exists "learners create own attempts" on practice_attempts;
 create policy "learners create own attempts" on practice_attempts
   for insert to authenticated with check (
     learner_id = auth.uid() and public.is_story_visible(story_id)
   );
+drop policy if exists "view own attempts or ones you can review" on practice_attempts;
 create policy "view own attempts or ones you can review" on practice_attempts
   for select to authenticated using (
     learner_id = auth.uid() or public.can_review_attempt(id)
   );
+drop policy if exists "learners delete own attempts" on practice_attempts;
 create policy "learners delete own attempts" on practice_attempts
   for delete to authenticated using (learner_id = auth.uid());
 
 -- feedback
+drop policy if exists "reviewers create feedback" on feedback;
 create policy "reviewers create feedback" on feedback
   for insert to authenticated with check (
     reviewer_id = auth.uid() and public.can_review_attempt(attempt_id)
   );
+drop policy if exists "view feedback you wrote or received" on feedback;
 create policy "view feedback you wrote or received" on feedback
   for select to authenticated using (
     reviewer_id = auth.uid()
@@ -266,16 +308,19 @@ values
 on conflict (id) do nothing;
 
 -- Users can upload and manage files only inside their own folder: {user_id}/...
+drop policy if exists "upload to own folder" on storage.objects;
 create policy "upload to own folder" on storage.objects
   for insert to authenticated with check (
     bucket_id in ('stories', 'practice')
     and (storage.foldername(name))[1] = auth.uid()::text
   );
+drop policy if exists "read own files" on storage.objects;
 create policy "read own files" on storage.objects
   for select to authenticated using (
     bucket_id in ('stories', 'practice')
     and (storage.foldername(name))[1] = auth.uid()::text
   );
+drop policy if exists "delete own files" on storage.objects;
 create policy "delete own files" on storage.objects
   for delete to authenticated using (
     bucket_id in ('stories', 'practice')
@@ -284,3 +329,5 @@ create policy "delete own files" on storage.objects
 -- Viewing other people's videos (stories, practice recordings) happens through
 -- server code that checks visibility, then creates a short-lived signed URL
 -- using the service role key.
+
+commit;

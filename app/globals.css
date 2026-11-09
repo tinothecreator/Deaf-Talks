@@ -11,6 +11,16 @@ body {
   overflow-wrap: anywhere;
 }
 
+.auth-input {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid #475569;
+  border-radius: 4px;
+  background: white;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
 :focus-visible {
   outline: 3px solid #0f766e;
   outline-offset: 4px;

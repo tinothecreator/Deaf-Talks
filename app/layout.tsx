@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getCurrentAccount } from "@/lib/auth/session";
+import { roleLabels } from "@/lib/auth/validation";
+import { signOut } from "@/app/actions/auth";
 import "./globals.css";
+
+// The header and protected pages depend on request cookies, never build-time auth.
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "SignStories",
@@ -8,9 +14,10 @@ export const metadata: Metadata = {
     "A home for Deaf storytellers and people learning South African Sign Language.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const account = await getCurrentAccount();
   return (
     <html lang="en">
       <body className="flex min-h-dvh flex-col">
@@ -22,10 +29,18 @@ export default function RootLayout({
             <Link className="tap-link text-xl font-bold" href="/">
               SignStories
             </Link>
-            <nav aria-label="Main navigation">
+            <nav aria-label="Main navigation" className="flex flex-wrap items-center gap-2">
               <Link className="tap-link underline underline-offset-4" href="/">
                 Home
               </Link>
+              {account.user ? <>
+                {account.profile ? <span className="px-3">{account.profile.display_name} · {roleLabels[account.profile.role]}</span> : <span role="status">Profile unavailable</span>}
+                <Link className="tap-link underline underline-offset-4" href="/account">Account</Link>
+                <form action={signOut}><button className="border border-slate-700 font-bold hover:bg-slate-100" type="submit">Sign out</button></form>
+              </> : <>
+                <Link className="tap-link underline underline-offset-4" href="/sign-in">Sign in</Link>
+                <Link className="tap-link underline underline-offset-4" href="/sign-up">Sign up</Link>
+              </>}
             </nav>
           </div>
         </header>
