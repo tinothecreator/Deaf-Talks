@@ -5,8 +5,8 @@ OpenAI x Andela hachathon : Deaf storytellers share SASL stories; learners learn
 
 The app uses **SignStories** as its working product name. This milestone adds
 Next.js App Router, strict TypeScript, Tailwind CSS, ESLint, and Supabase client
-helpers. Milestone 2 adds authentication and roles below. Uploads and story
-features are not implemented.
+helpers. Milestones 2 and 3 add authentication, roles, private story upload,
+and owner playback below.
 
 ### Local setup
 
@@ -195,3 +195,111 @@ console.assert(after?.role === before.role, 'Role must remain unchanged');
 
 Do not paste session tokens or passwords into reports. Database enforcement and
 real email delivery require your configured project and manual acceptance.
+
+## Milestone 3: private story upload and owner list
+
+Only storytellers can use `/studio/new`, `/studio`, and `/studio/[storyId]`.
+The upload page explains access requirements to signed-out users and learners.
+Learners still see “Browse coming soon”. No publishing, sign tagging, ownership
+editor, practice, or AI has been added. The app does not compress videos.
+
+### SQL to run, in order
+
+1. An existing project must already have the original schema and the Milestone 2
+   profile role lock above. Do not rerun earlier setup on a populated project.
+2. Copy **all** of `supabase/migrations/003_story_upload.sql` into the Supabase SQL
+   editor and run it as one block. This is the complete, idempotent Milestone 3
+   SQL, including the private bucket and `storage.objects` policies. It has not
+   been executed by the coding agent. For a brand-new project, instead run the
+   updated `supabase/schema.sql` once; it includes this migration's behavior.
+
+The only new column is `stories.video_size_bytes`: the existing schema has no
+place to store the required verified byte count. The existing duration check is
+replaced to reject zero/negative values. Pending drafts have null duration and
+size; completed drafts have both recorded. If existing rows contain invalid
+durations, the transaction fails rather than silently altering those records;
+review and correct them before retrying. No RLS is disabled.
+
+`stories` is private, limited to 52,428,800 bytes (50 MiB, shown as 50 MB in the
+UI) and MP4/WebM/QuickTime MIME types. The shared TypeScript limits match SQL.
+Storage insert requires a storyteller, their own folder, and the exact path of
+their pending draft. Updates/overwrites are denied. Direct reads, listing,
+signing and deletion of story objects are limited to the owner's own folder;
+restrictive guards prevent other permissive policies opening this bucket.
+Practice bucket behavior is preserved; no practice feature is implemented.
+
+### Upload and playback behavior
+
+All operations use the existing session-scoped client and RLS. The service role
+helper is not used. The server chooses `{user_id}/{story_id}/{random}.{ext}`;
+filenames and client-supplied paths never determine the object key. Uploads go
+directly to a server-issued Supabase signed upload URL, with progress, so the
+video does not pass through a Next.js action. The server checks the saved
+object's actual size and MIME metadata before finalizing. It stores integer
+seconds rounded up from the browser metadata. Credit is automatically saved as
+the storyteller's display name in existing `ownership_settings`, with private
+usage and consent false. Every story view shows the name and credit.
+
+Playback checks the verified role, row owner, and path before signing. URLs
+expire after 300 seconds; reload the owner detail page to renew. They are bearer
+links during that window, so do not share them. No permanent public URL is used.
+Captions appear as visible text beneath the video; timed subtitles are deferred.
+MOV acceptance does not guarantee its codec plays on every browser; use MP4 if
+metadata reading or playback is unsupported.
+
+Known limitation: duration is client-reported. Zod and SQL enforce the recorded
+value (>0 and <=60), but no server inspection proves the actual video duration.
+File MIME metadata is not independent inspection of the video contents either.
+Incomplete uploads are visibly marked and cannot play. Failed transfers attempt
+to discard the draft; confirmation failures offer retry/discard. Closing a tab
+or losing connectivity can leave an incomplete draft, discardable in My stories.
+Signed upload URLs have Supabase's two-hour lifetime; a late transfer after
+cancellation may leave a private orphan file. No scheduled cleanup is added.
+For demo cleanup, an administrator should compare Storage paths with
+`stories.video_path` in the Supabase dashboard and remove only unreferenced
+files older than two hours (after agreeing retention with the owner).
+
+### Manual Milestone 3 tests
+
+After applying SQL, configure the two public Supabase variables in Vercel and
+redeploy the reviewed code. No service key is needed for these features.
+No commit or deployment was performed by the coding agent.
+
+1. Signed out: open `/studio/new`. It must explain that a Storyteller account is
+   needed and offer Sign in. `/studio` must require authentication.
+2. Learner: account still says “Browse coming soon”; `/studio/new` denies upload.
+   Directly invoking upload actions must fail too. Repeat with Teacher.
+3. Storyteller A: upload a self-recorded/consented MP4 with a title and English
+   caption, at most 60 seconds and 50 MB. Watch progress and the success message.
+   Open My stories: title, Draft, date, duration, name, and credit must appear.
+   Open it: video controls, inline playback, and the visible caption must work
+   without sound. Reload after five minutes to renew playback access.
+4. Reject an empty caption/title, a non-video file, an empty file, a video over
+   52,428,800 bytes, and a video over 60 seconds with plain-English errors.
+   Test supported MOV/WebM recordings too, and a video whose metadata cannot be
+   read. A valid video exactly 60 seconds long must pass; 60.1 must fail.
+5. Turn off the network during upload and confirmation separately. Restore it:
+   retry confirmation or discard the incomplete draft. Reload My stories after
+   closing the upload tab mid-transfer; the incomplete draft must be clearly
+   marked and discardable. No incomplete draft should offer playback.
+6. Cross-user access: copy A's **story ID and object path**, not a signed URL.
+   Sign in as Storyteller B in a separate browser profile. B's list must exclude
+   A's story and `/studio/<A-story-id>` must be unavailable. Repeat as Learner
+   and Teacher. Using their ordinary session client, direct table reads for
+   A's draft must return no rows; direct Storage download, list of A's folder,
+   `info`, `createSignedUrl`, and `createSignedUploadUrl` at A's path must fail
+   or return no objects. Insert/delete/overwrite of A's path must fail too.
+   B must still be able to upload and play their own story. Test an anonymous
+   Storage request at A's path as well; a public object URL must not serve it.
+7. With an ordinary storyteller session, try uploading an arbitrary unregistered
+   path in your own folder: it must fail. Try an over-limit signed upload:
+   Storage must reject it. In the SQL editor, confirm the duration constraint
+   rejects 0, negative values and 61 (use a transaction and roll it back).
+8. On the deployed preview at a 360px viewport and on a real target phone, check
+   the file picker, wrapping filenames, readable captions, progress/error/success
+   states, and video controls. Use keyboard Tab to check visible focus and labels.
+   Confirm no horizontal scrolling and no information conveyed by sound alone.
+
+Do not paste credentials, session tokens or signed URLs into test reports.
+The authenticated upload, cross-user, phone, and deployed tests require your
+configured project and are not claimed as completed by local lint/build.
