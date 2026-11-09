@@ -54,6 +54,10 @@ signed-in session, once authentication is implemented in a later milestone.
 
 1. After reviewing the diff, commit/push it and import this Git repository into
    Vercel. Use the Next.js preset, repository root, and Node.js 22 or newer.
+   Keep the Output Directory override disabled. `vercel.json` explicitly selects
+   Next.js, uses `npm run build`, and resets the output directory to the framework
+   default. If deployment reports `STATIC_BUILD_NO_OUT_DIR` looking for `public`,
+   check these settings and deploy the commit containing `vercel.json`.
 2. Add environment variables in Vercel Project Settings for Preview and
    Production: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`,
    `SUPABASE_SERVICE_ROLE_KEY`, `OPENAI_API_KEY`, and `OPENAI_MODEL`. The blank
