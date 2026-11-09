@@ -3,7 +3,7 @@
 import { randomUUID } from "node:crypto";
 import { z } from "zod";
 import { revalidatePath } from "next/cache";
-import { ownedStory, storytellerContext } from "@/lib/media/stories";
+import { OwnedStoryError, ownedStory, storytellerContext } from "@/lib/media/stories";
 import { finishSchema, uploadSchema } from "@/lib/media/validation";
 import { MAX_VIDEO_BYTES, STORY_BUCKET, VIDEO_EXTENSIONS } from "@/lib/media/limits";
 
@@ -37,28 +37,55 @@ export async function startStoryUpload(input: unknown) {
   }
 }
 
-export async function finishStoryUpload(input: unknown) {
+export async function finishStoryUpload(input: unknown): Promise<{
+  success?: boolean; error?: string; reasonCode?: string;
+}> {
+  // Log only fixed reason codes and size/type values, never SDK errors or paths.
+  function fail(reasonCode: string, error: string, values?: Record<string, unknown>) {
+    console.error(reasonCode, values ?? {});
+    return { error, reasonCode };
+  }
+  const invalidVideo = "We could not confirm a valid uploaded video. Please retry or discard this upload.";
   const parsed = finishSchema.safeParse(input);
-  if (!parsed.success) return { error: "The video duration must be longer than 0 and no more than 60 seconds." };
+  if (!parsed.success) {
+    const reasonCode = parsed.error.issues.some((issue) => issue.path[0] === "storyId")
+      ? "CONFIRM_INVALID_STORY_ID" : "CONFIRM_INVALID_DURATION";
+    return fail(reasonCode, "The video duration must be longer than 0 and no more than 60 seconds.");
+  }
+  let failureStage = "CONFIRM_CONTEXT_FAILED";
   try {
     const { supabase, story, user } = await ownedStory(parsed.data.storyId);
     if (story.duration_seconds !== null) return { success: true };
+    failureStage = "CONFIRM_OBJECT_LOOKUP_FAILED";
     const { data: object, error } = await supabase.storage.from(STORY_BUCKET).info(story.video_path);
-    const size = object?.metadata?.size;
-    const type = object?.metadata?.mimetype;
-    if (error || !size || !Number.isSafeInteger(size) || size > MAX_VIDEO_BYTES ||
-        !type || !(type in VIDEO_EXTENSIONS)) {
-      return { error: "We could not confirm a valid uploaded video. Please retry or discard this upload." };
+    if (error) return fail("CONFIRM_OBJECT_LOOKUP_FAILED", invalidVideo);
+    if (!object) return fail("CONFIRM_OBJECT_NOT_FOUND", invalidVideo);
+    // Storage .info() returns these at the top level, unlike .list() metadata.
+    const size = object.size;
+    const type = object.contentType;
+    const sizeValues = { expected: { min: 1, max: MAX_VIDEO_BYTES }, actual: size ?? null };
+    if (size == null) return fail("CONFIRM_SIZE_MISSING", invalidVideo, sizeValues);
+    if (!Number.isSafeInteger(size) || size <= 0) {
+      return fail("CONFIRM_SIZE_INVALID", invalidVideo, sizeValues);
     }
+    if (size > MAX_VIDEO_BYTES) return fail("CONFIRM_SIZE_LIMIT_EXCEEDED", invalidVideo, sizeValues);
+    const typeValues = { expected: Object.keys(VIDEO_EXTENSIONS), actual: type ?? null };
+    if (!type) return fail("CONFIRM_TYPE_MISSING", invalidVideo, typeValues);
+    if (!Object.hasOwn(VIDEO_EXTENSIONS, type)) return fail("CONFIRM_TYPE_MISMATCH", invalidVideo, typeValues);
+    failureStage = "CONFIRM_ROW_UPDATE_FAILED";
     const { data, error: saveError } = await supabase.from("stories").update({
       video_path: story.video_path, video_size_bytes: size,
       duration_seconds: Math.ceil(parsed.data.duration), updated_at: new Date().toISOString(),
     }).eq("id", story.id).eq("storyteller_id", user.id).is("duration_seconds", null).select("id").single();
-    if (saveError || !data) return { error: "Your video uploaded, but we could not save its details. Please retry confirmation." };
+    const saveMessage = "Your video uploaded, but we could not save its details. Please retry confirmation.";
+    if (saveError) return fail("CONFIRM_ROW_UPDATE_FAILED", saveMessage);
+    if (!data) return fail("CONFIRM_ROW_NOT_UPDATED", saveMessage);
+    failureStage = "CONFIRM_REVALIDATE_FAILED";
     revalidatePath("/studio");
     return { success: true };
-  } catch {
-    return { error: "We could not confirm your upload. Check your connection and retry confirmation." };
+  } catch (cause) {
+    return fail(cause instanceof OwnedStoryError ? cause.reasonCode : failureStage,
+      "We could not confirm your upload. Check your connection and retry confirmation.");
   }
 }
 

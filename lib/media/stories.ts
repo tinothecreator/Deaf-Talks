@@ -2,6 +2,12 @@ import "server-only";
 import { getCurrentAccount } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 
+export class OwnedStoryError extends Error {
+  constructor(public readonly reasonCode: "CONFIRM_STORY_LOOKUP_FAILED" | "CONFIRM_PATH_MISMATCH") {
+    super("This story is unavailable.");
+  }
+}
+
 export async function storytellerContext() {
   const { user, profile, error } = await getCurrentAccount();
   if (!user || profile?.role !== "storyteller") {
@@ -16,8 +22,9 @@ export async function ownedStory(storyId: string) {
   const { data, error } = await context.supabase.from("stories")
     .select("id, video_path, duration_seconds, video_size_bytes")
     .eq("id", storyId).eq("storyteller_id", context.user.id).eq("status", "draft").single();
-  if (error || !data || !data.video_path.startsWith(`${context.user.id}/${storyId}/`)) {
-    throw new Error("This story is unavailable.");
+  if (error || !data) throw new OwnedStoryError("CONFIRM_STORY_LOOKUP_FAILED");
+  if (!data.video_path.startsWith(`${context.user.id}/${storyId}/`)) {
+    throw new OwnedStoryError("CONFIRM_PATH_MISMATCH");
   }
   return { ...context, story: data };
 }
