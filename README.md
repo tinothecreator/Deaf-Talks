@@ -303,3 +303,172 @@ No commit or deployment was performed by the coding agent.
 Do not paste credentials, session tokens or signed URLs into test reports.
 The authenticated upload, cross-user, phone, and deployed tests require your
 configured project and are not claimed as completed by local lint/build.
+
+## Milestone 4: tags, ownership, and publishing
+
+`/studio/[storyId]/edit` is restricted to the owning storyteller. It edits title,
+English caption, 0–5 draft sign tags (3–5 required to publish), consent, usage,
+and credit. Tags use stored video duration, with a button to capture the current
+playback time. Credit defaults to the storyteller's display name. The saved
+visibility status is always shown. **Saving any edits makes the story a draft**;
+review the saved content and publish again. Publish is disabled while there are
+unsaved edits. Withdrawal discards unsaved form edits and atomically sets Draft,
+Private usage, and unconfirmed consent. It does not delete tags or media.
+
+The database validates publication atomically, including direct API changes to
+published stories. Invalid direct changes are rejected; use the withdrawal RPC
+to make a published story private. Child edits lock the story row to serialize
+with publication. Sign IDs are retained on edits. Sign rows cannot move between
+stories, and a composite foreign key binds an existing practice sign reference
+to its story; no practice feature has been built.
+
+Existing SELECT policies already enforce owner access OR published + confirmed
+consent + nonprivate usage on stories, signs and ownership settings. They are
+not duplicated. Ownership credit/consent/usage changes are logged atomically;
+unchanged values do not add history. Old history rows have null `credit_line`
+because the original credit was not captured. Standalone ownership deletion is
+rejected; deleting a parent story can still cascade, including its history.
+History remains owner-only. Download settings stay false; no download action is
+provided. Playback cannot guarantee prevention of copying.
+
+### Exact SQL and run order
+
+No SQL was executed against your database. Review the diff first.
+
+1. **Existing Milestone 3 database:** copy the entire contents of
+   [`supabase/migrations/004_tags_ownership_publish.sql`](supabase/migrations/004_tags_ownership_publish.sql)
+   into the Supabase SQL editor and run it **once as a single block**, including
+   `begin;` and `commit;`. This file is the exact complete SQL for Milestone 4;
+   no additional SQL block or manual function creation is needed. It is
+   idempotent. Do not run the full schema afterwards.
+2. **Only if Milestone 3 has not been applied:** first apply the existing
+   Milestone 2 role lock and then the entire
+   `supabase/migrations/003_story_upload.sql`; then run `004` as above.
+3. **For an empty project instead:** run the entire current
+   `supabase/schema.sql` once. It includes Milestones 2–4, so do not separately
+   apply the migrations afterwards.
+4. Start/redeploy the reviewed app with its existing public environment
+   configuration. No service-role key is needed for these editor operations.
+
+The composite practice-sign foreign key validates existing rows. If old test
+records contain cross-story sign references, the migration fails and rolls
+back. Review those records with their owners before correcting them; this
+migration does not silently rewrite them.
+
+### Manual Milestone 4 acceptance tests
+
+Use your own or explicitly permitted video and two separate browser profiles:
+Storyteller A and another signed-in user B. Repeat B's checks as Learner,
+Storyteller and Teacher. No learner story page is included in this milestone.
+
+1. As A, upload a short story, open My stories, and use Edit story. Confirm name,
+   credit, Draft status, and “Who can see this story” appear. The owner detail
+   page must also show credit and usage terms. Opening A's edit/detail route as
+   B must not expose A's draft; B cannot edit it even when published.
+2. Save with fewer than 3 signs, nonprivate usage and confirmed consent. Publish
+   must report “Add 3 to 5 signs before publishing.” Add three labelled signs
+   with English meanings. Play/pause the video, capture current times, save,
+   reload, and check persisted values. Edit and remove tags; at five tags the
+   Add sign button must be disabled.
+3. With three valid signs, test each publication blocker separately, saving
+   between changes: empty caption; unconfirmed consent; Private usage. Each
+   must produce its specific visible publication error. Empty or whitespace-only
+   credit is rejected on save (also by the DB); it cannot become published.
+   Negative times and times beyond stored duration are rejected on save and
+   by the DB. Boundary times 0 and exactly the stored duration are accepted.
+4. Restore a caption, credit, consent, nonprivate usage and 3–5 valid signs.
+   Publish: status and visibility must change, and My stories must say Published.
+   B's console check below must see the story, all tags, and ownership settings.
+   Try publishing it as B; the RPC must reject it even though B can read it.
+5. Edit published credit and save. The story becomes a draft; confirm a history
+   row with the new credit. Republish, change consent and save, then change
+   usage and save; each actual change adds one history row. Saving unchanged
+   ownership values must not add history. The owner console query below can
+   read it, while B's history query must return no rows.
+6. Republish valid content. As B, verify shared rows are visible. As A, withdraw:
+   Draft, Private usage and unconfirmed consent must appear immediately. Repeat
+   B's hidden check for all three tables, not just the story. An already opened
+   video link can last up to five minutes; new raw Storage reads/signing by B
+   must still fail (Milestone 3 tests). Do not copy signed URLs into reports.
+7. Test network loss during save, publish and withdrawal. Check a visible error,
+   retry after restoring the network, and reload to establish the saved state
+   if the response was lost. Expired playback must show an error and recover on
+   reload. Incomplete uploads remain managed from My stories.
+8. At 360px and 320px widths, then on a real phone, check no horizontal overflow,
+   labelled fields, readable captions, video controls, tap targets, current-time
+   capture and keyboard focus. All states must be understandable without sound.
+   Repeat on the deployed preview; local build success is not phone validation.
+
+#### Browser console: ordinary client and cross-user RLS
+
+In A's browser, note only the story UUID. In B's separate signed-in browser,
+open the app console and run this setup. Use the app's public URL and anon key,
+**never a service-role key**. The SSR client uses the existing session cookies.
+Do not print the client, auth result, session tokens, or signed URLs.
+
+```js
+const { createBrowserClient } = await import('https://esm.sh/@supabase/ssr@0.12.7');
+const m4 = createBrowserClient('YOUR_PUBLIC_SUPABASE_URL', 'YOUR_PUBLIC_ANON_KEY');
+const m4Auth = await m4.auth.getUser();
+if (m4Auth.error || !m4Auth.data.user) throw new Error('Sign in first.');
+const storyId4 = 'REPLACE_WITH_A_STORY_UUID';
+async function checkStory4(expectVisible) {
+  for (const [table, key] of [
+    ['stories', 'id'], ['signs', 'story_id'], ['ownership_settings', 'story_id'],
+  ]) {
+    const { data, error } = await m4.from(table).select('*').eq(key, storyId4);
+    if (error) throw new Error(`Request failed for ${table}: ${error.message}`);
+    console.assert(expectVisible ? data.length > 0 : data.length === 0,
+      `${table}: expected ${expectVisible ? 'visible' : 'hidden'}`);
+  }
+  const history = await m4.from('consent_log').select('id').eq('story_id', storyId4);
+  console.assert(!history.error && history.data.length === 0, 'B must not read history');
+}
+// Run while A's story is a draft, private, or not consented:
+await checkStory4(false);
+// After A publishes valid content, run:
+await checkStory4(true);
+const forbiddenPublish4 = await m4.rpc('publish_story', { p_story_id: storyId4 });
+console.assert(!!forbiddenPublish4.error, 'B must not publish A’s story');
+// After A withdraws, run:
+await checkStory4(false);
+```
+
+Only run each stage when A has set the indicated state. Also attempt direct B
+updates of A's title, signs and credit with `.update(...).eq(...).select()`:
+requests must fail or return zero rows, and A's data must remain unchanged.
+
+In A's console, initialize the same client, then query history without printing
+credentials or URLs:
+
+```js
+const history4 = await m4.from('consent_log')
+  .select('usage,consent_confirmed,credit_line,changed_at,changed_by')
+  .eq('story_id', storyId4).order('changed_at', { ascending: false });
+console.table(history4.data); // Only your own ownership history.
+```
+
+For database validation beyond UI limits, use **a disposable draft owned by A**
+and the same ordinary client. Add six tags with `.from('signs').insert(...)`
+using valid label/meaning/start_seconds values, then invoke `publish_story`:
+it must reject with “Add 3 to 5 signs before publishing.” Remove excess tags
+before retrying. An out-of-range timestamp insert must itself fail. A direct
+empty credit update and ownership deletion must fail too. A direct update that
+would invalidate a published caption, tag count, duration, consent or usage must
+fail and leave its previous state intact; withdraw first to save incomplete work.
+
+Local validation completed: lint, production build, and 21 checks in an isolated
+PGlite Postgres engine using the actual schema policies and migration. The
+migration was applied twice to check idempotence. The checks cover validation,
+valid publication, direct invalid published edits, withdrawal, credit/consent/usage
+history, history privacy,
+cross-user reads/publication, atomic saves, retained sign IDs and cross-story
+practice references. This does not replace testing your hosted Supabase project,
+concurrency across real connections, phone playback, or deployed preview.
+Headless Chromium checks of the actual editor component with mocked server
+operations passed at 320px and 360px: no horizontal overflow, add/remove limits,
+labelled timestamps and visible keyboard focus. These fixture checks do not
+exercise authenticated server rendering, network mutations or actual media.
+
+No Milestone 5 browsing or learner detail page, practice recording, feedback,
+AI, download UI, database execution, commit, or deployment was added/performed.

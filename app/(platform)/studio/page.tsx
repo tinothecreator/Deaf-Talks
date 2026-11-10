@@ -21,6 +21,7 @@ export default async function MyStories() {
         <h2 className="text-xl font-bold">{story.duration_seconds ? <Link className="tap-link underline" href={`/studio/${story.id}`}>{story.title}</Link> : story.title}</h2>
         <p>Storyteller: {profile.display_name}</p><p>Credit: {ownership?.credit_line ?? profile.display_name}</p>
         <p>{story.status === "draft" ? "Draft" : "Published"} · <time dateTime={story.created_at}>{new Date(story.created_at).toLocaleDateString("en-ZA", { timeZone: "Africa/Johannesburg" })}</time> · {story.duration_seconds ? `${story.duration_seconds} seconds` : "Duration pending"}</p>
+        {!!story.duration_seconds && <Link className="tap-link underline" href={`/studio/${story.id}/edit`}>Edit story</Link>}
         {!story.duration_seconds && <IncompleteUpload storyId={story.id} />}
       </li>;
     })}</ul>}
