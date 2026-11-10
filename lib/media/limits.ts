@@ -9,3 +9,4 @@ export const VIDEO_EXTENSIONS = {
   "video/quicktime": "mov",
 } as const;
 export type VideoType = keyof typeof VIDEO_EXTENSIONS;
+export const PRACTICE_BUCKET = "practice";

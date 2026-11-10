@@ -5,7 +5,8 @@ import { z } from "zod";
 import { revalidatePath } from "next/cache";
 import { OwnedStoryError, ownedStory, storytellerContext } from "@/lib/media/stories";
 import { finishSchema, uploadSchema } from "@/lib/media/validation";
-import { MAX_VIDEO_BYTES, STORY_BUCKET, VIDEO_EXTENSIONS } from "@/lib/media/limits";
+import { STORY_BUCKET, VIDEO_EXTENSIONS } from "@/lib/media/limits";
+import { checkVideoObject } from "@/lib/media/object";
 
 export async function startStoryUpload(input: unknown) {
   const parsed = uploadSchema.safeParse(input);
@@ -62,16 +63,8 @@ export async function finishStoryUpload(input: unknown): Promise<{
     if (!object) return fail("CONFIRM_OBJECT_NOT_FOUND", invalidVideo);
     // Storage .info() returns these at the top level, unlike .list() metadata.
     const size = object.size;
-    const type = object.contentType;
-    const sizeValues = { expected: { min: 1, max: MAX_VIDEO_BYTES }, actual: size ?? null };
-    if (size == null) return fail("CONFIRM_SIZE_MISSING", invalidVideo, sizeValues);
-    if (!Number.isSafeInteger(size) || size <= 0) {
-      return fail("CONFIRM_SIZE_INVALID", invalidVideo, sizeValues);
-    }
-    if (size > MAX_VIDEO_BYTES) return fail("CONFIRM_SIZE_LIMIT_EXCEEDED", invalidVideo, sizeValues);
-    const typeValues = { expected: Object.keys(VIDEO_EXTENSIONS), actual: type ?? null };
-    if (!type) return fail("CONFIRM_TYPE_MISSING", invalidVideo, typeValues);
-    if (!Object.hasOwn(VIDEO_EXTENSIONS, type)) return fail("CONFIRM_TYPE_MISMATCH", invalidVideo, typeValues);
+    const invalid = checkVideoObject(object);
+    if (invalid) return fail(invalid, invalidVideo);
     failureStage = "CONFIRM_ROW_UPDATE_FAILED";
     const { data, error: saveError } = await supabase.from("stories").update({
       video_path: story.video_path, video_size_bytes: size,

@@ -9,10 +9,15 @@ export async function readVideoDuration(file: File): Promise<number> {
     const video = document.createElement("video");
     const url = URL.createObjectURL(file);
     const timer = window.setTimeout(() => finish(), 15000);
+    let settled = false;
     function finish(duration?: number) {
+      if (settled) return;
+      settled = true;
       window.clearTimeout(timer);
       video.onloadedmetadata = null;
       video.onerror = null;
+      video.ondurationchange = null;
+      video.ontimeupdate = null;
       video.removeAttribute("src");
       video.load();
       URL.revokeObjectURL(url);
@@ -23,7 +28,18 @@ export async function readVideoDuration(file: File): Promise<number> {
         : result.error.issues[0].message));
     }
     video.preload = "metadata";
-    video.onloadedmetadata = () => finish(video.duration);
+    video.muted = true;
+    video.onloadedmetadata = () => {
+      if (video.duration !== Infinity) { finish(video.duration); return; }
+      // Some MediaRecorder WebM files omit the duration header. Seeking to the
+      // end asks the browser to derive it from the actual media timestamps.
+      const checkEnd = () => {
+        if (Number.isFinite(video.duration) && video.duration > 0) finish(video.duration);
+      };
+      video.ondurationchange = checkEnd;
+      video.ontimeupdate = checkEnd;
+      try { video.currentTime = Number.MAX_SAFE_INTEGER; } catch { finish(); }
+    };
     video.onerror = () => finish();
     video.src = url;
   });

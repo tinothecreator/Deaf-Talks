@@ -1,12 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import { useRef, useState } from "react";
 import { formatTime } from "@/lib/media/time";
 
 type Sign = { id: string; label: string; meaning: string; start_seconds: number };
 
-export function StoryPlayer({ title, signedUrl, signs, children }: {
-  title: string; signedUrl: string | null; signs: Sign[]; children: React.ReactNode;
+export function StoryPlayer({ title, signedUrl, signs, children, practiceStoryId }: {
+  practiceStoryId?: string; title: string; signedUrl: string | null; signs: Sign[]; children: React.ReactNode;
 }) {
   const video = useRef<HTMLVideoElement>(null);
   const [error, setError] = useState<string | null>(null);
@@ -46,6 +47,7 @@ export function StoryPlayer({ title, signedUrl, signs, children }: {
             <span className="font-bold">Play sign: {sign.label} · {formatTime(sign.start_seconds)}</span>
             <span>{sign.meaning}</span>
           </button>
+          {practiceStoryId && <Link className="tap-link underline" href={`/stories/${practiceStoryId}/practice?sign=${sign.id}`}>Practise this sign: {sign.label}</Link>}
         </li>)}
       </ul>}
     </section>
