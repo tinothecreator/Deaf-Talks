@@ -1,6 +1,76 @@
 # Deaf-Talks
 OpenAI x Andela hachathon : Deaf storytellers share SASL stories; learners learn signs from them with teacher feedback and clear credit.
 
+## Milestone 5: watching stories
+
+All signed-in roles have a **Stories** header link to `/stories`. Learners also
+have **Browse stories** on their account page. The watching list requests only
+published stories through the ordinary session client; existing RLS decides
+consent and usage visibility. Cards show title, storyteller name, credit,
+duration and a caption preview. Owner management remains under `/studio`.
+
+`/stories/[storyId]` validates the UUID with Zod and first reads the story,
+storyteller, ownership and signs using the session client. A missing/RLS-hidden
+row returns the same generic not-found page without constructing an admin client.
+Only a successful read permits use of the existing server-only admin helper to
+sign the stored video path. It never reads story data with the service role.
+The existing `PLAYBACK_URL_SECONDS` constant limits playback access to five
+minutes. Reloading the page rechecks authorization before issuing another URL.
+Story links disable prefetch so browsing the list does not issue playback URLs.
+
+English captions and the existing credit/terms panel are always visible on a
+loaded story page, including when signing or playback fails. Sign buttons show
+label, meaning and m:ss start time and seek/play the video. No translations are
+queried. There is no download action; `controlsList="nodownload"` is a courtesy,
+and the terms panel explains that playback cannot prevent copying.
+
+**SQL:** none needed. Existing authenticated profile reads allow storyteller
+names; story, ownership and sign policies already enforce visibility. No SQL
+was run and no migration is added.
+
+### Playback checks
+
+Run `npm run lint`, `npm run build`, and
+`node --test tests/stories-playback.test.mjs`. The focused tests use doubles for
+Supabase to check read-before-sign ordering, no signing for missing/hidden rows
+or read failures, five-minute signing of the stored path, signing failure
+recovery, and minimal list filtering. They do not prove deployed RLS behavior.
+
+Manual checks with a learner and a separate owning storyteller browser:
+
+1. Signed out, visit `/stories` and a story detail URL: both redirect to sign-in.
+2. At 390 × 844 (and on a real phone), sign in as a learner. Open Stories from
+   the header/account. Check title, storyteller name, credit, m:ss duration and
+   caption preview. Check the empty list says “No stories to watch yet.” when
+   there are no published visible stories. Repeat browsing as teacher and
+   storyteller; the storyteller's My stories/editor pages must still work.
+3. Open a published, consented, nonprivate story. With sound off, watch inline,
+   read the English caption and credit/terms, and tap every sign. Each button
+   must seek to its displayed time and play. Use Tab/Enter as well: focus is
+   visible and buttons are large. Check no horizontal scrolling or download
+   action, and no playback URL is requested just by browsing the list.
+4. Open a draft, private/nonconsented draft, nonexistent UUID and malformed ID
+   as the learner. Each shows the same generic not-found page. Existing
+   publication constraints require private/nonconsented stories to be drafts.
+   Using an ordinary learner session client, confirm the stories select returns
+   no row. Do not use the service role for this check. The automated boundary
+   test checks that a no-row result never calls the signer; server breakpoints
+   can also verify that the signing branch is not reached for these requests.
+5. **Withdrawal:** keep a learner story tab open and note only its UUID. In the
+   storyteller's editor, withdraw it. Reload `/stories` as learner: the card
+   disappears. Reload the saved detail URL, and open it in a fresh learner tab:
+   both show generic not-found, with no new signing call. Repeat the ordinary
+   session row check. A URL already issued before withdrawal may keep working
+   for the remainder of its five-minute lifetime; test again after it expires.
+   Do not paste signed URLs, tokens or keys into logs or reports.
+6. Slow/block the network to check loading, list/detail error retry and visible
+   video failure messages. After playback access expires, reload to recover if
+   the story is still visible. Confirm caption, credit and terms remain visible
+   if media signing fails. Test on the deployed preview after review/deployment.
+
+This milestone adds no practice recording/upload, feedback, AI translations,
+practice prompts, database changes, commits or deployment.
+
 ## Foundation (Milestone 1)
 
 The app uses **SignStories** as its working product name. This milestone adds
@@ -200,7 +270,7 @@ real email delivery require your configured project and manual acceptance.
 
 Only storytellers can use `/studio/new`, `/studio`, and `/studio/[storyId]`.
 The upload page explains access requirements to signed-out users and learners.
-Learners still see “Browse coming soon”. No publishing, sign tagging, ownership
+At Milestone 3, learners still saw “Browse coming soon”. No publishing, sign tagging, ownership
 editor, practice, or AI has been added. The app does not compress videos.
 
 ### SQL to run, in order

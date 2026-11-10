@@ -14,9 +14,8 @@ export default async function Account() {
       {profile.role === "storyteller" ? <div className="flex flex-wrap gap-3">
         <Link href="/studio" className="tap-link border border-slate-700 font-bold underline">My stories</Link>
         <Link href="/studio/new" className="tap-link border border-slate-700 font-bold underline">Upload a story</Link>
-      </div> : <p className="rounded-lg border border-teal-800 bg-teal-50 p-5 text-lg font-bold">
-        {profile.role === "learner" ? "Browse coming soon" : "Reviews coming soon"}
-      </p>}
+      </div> : profile.role === "learner" ? <Link href="/stories" className="tap-link border border-teal-800 bg-teal-50 text-lg font-bold underline">Browse stories</Link>
+        : <p className="rounded-lg border border-teal-800 bg-teal-50 p-5 text-lg font-bold">Reviews coming soon</p>}
     </div>
   );
 }

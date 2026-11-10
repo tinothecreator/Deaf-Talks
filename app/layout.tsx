@@ -36,6 +36,7 @@ export default async function RootLayout({
               {account.user ? <>
                 {account.profile ? <span className="px-3">{account.profile.display_name} · {roleLabels[account.profile.role]}</span> : <span role="status">Profile unavailable</span>}
                 <Link className="tap-link underline underline-offset-4" href="/account">Account</Link>
+                <Link className="tap-link underline underline-offset-4" href="/stories">Stories</Link>
                 {account.profile?.role === "storyteller" && <Link className="tap-link underline" href="/studio">My stories</Link>}
                 <form action={signOut}><button className="border border-slate-700 font-bold hover:bg-slate-100" type="submit">Sign out</button></form>
               </> : <>
