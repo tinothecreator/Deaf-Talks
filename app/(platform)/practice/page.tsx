@@ -15,6 +15,7 @@ export default async function MyPractice() {
         <p className="whitespace-pre-wrap">{attempt.caption}</p>
         <p><time dateTime={attempt.created_at}>{new Date(attempt.created_at).toLocaleString("en-ZA", { timeZone: "Africa/Johannesburg" })}</time> (South Africa)</p>
         <p>Status: {statusLabels[attempt.status]}</p>
+        <p>{attempt.feedback.length ? "Feedback received" : "No feedback received yet"}</p>
       </li>)}
     </ul>}
   </section>;

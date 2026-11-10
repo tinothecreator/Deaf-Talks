@@ -39,6 +39,7 @@ export default async function RootLayout({
                 <Link className="tap-link underline underline-offset-4" href="/stories">Stories</Link>
                 {account.profile?.role === "learner" && <Link className="tap-link underline" href="/practice">My practice</Link>}
                 {account.profile?.role === "storyteller" && <Link className="tap-link underline" href="/studio">My stories</Link>}
+                {(account.profile?.role === "storyteller" || account.profile?.role === "teacher") && <Link className="tap-link underline" href="/reviews">Reviews</Link>}
                 <form action={signOut}><button className="border border-slate-700 font-bold hover:bg-slate-100" type="submit">Sign out</button></form>
               </> : <>
                 <Link className="tap-link underline underline-offset-4" href="/sign-in">Sign in</Link>

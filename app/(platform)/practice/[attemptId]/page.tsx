@@ -4,6 +4,8 @@ import { z } from "zod";
 import { requireAccount } from "@/lib/auth/session";
 import { loadAttemptPlayback, statusLabels } from "@/lib/practice/data";
 import { PracticePlayback } from "@/components/practice/playback";
+import { listFeedback } from "@/lib/feedback/data";
+import { FeedbackList } from "@/components/feedback/list";
 import { DiscardAttempt } from "@/components/practice/discard";
 
 export default async function AttemptDetail({ params }: { params: Promise<{ attemptId: string }> }) {
@@ -14,6 +16,7 @@ export default async function AttemptDetail({ params }: { params: Promise<{ atte
   const playback = await loadAttemptPlayback(parsed.data.attemptId);
   if (!playback) notFound();
   const { attempt, signedUrl } = playback;
+  const feedback = await listFeedback(attempt.id);
   return <article className="max-w-2xl space-y-5">
     <Link className="tap-link underline" href="/practice">Back to My practice</Link>
     <h1 className="text-3xl font-bold">{attempt.story?.title ?? "Story no longer available"} · {attempt.sign?.label ?? "Sign no longer available"}</h1>
@@ -24,5 +27,6 @@ export default async function AttemptDetail({ params }: { params: Promise<{ atte
       : <><p className="whitespace-pre-wrap">{attempt.caption}</p><p>This upload is incomplete. Discard it or return to the sign to upload again.</p>
         <DiscardAttempt attemptId={attempt.id} />
         {attempt.sign_id && attempt.story && <Link className="tap-link underline" href={`/stories/${attempt.story_id}/practice?sign=${attempt.sign_id}`}>Try this sign again</Link>}</>}
+    <FeedbackList feedback={feedback} />
   </article>;
 }
