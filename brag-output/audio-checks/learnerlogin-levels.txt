@@ -1,0 +1,53 @@
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'demo-assets/learnerlogin.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42isom
+  Duration: 00:01:37.06, start: 0.000000, bitrate: 664 kb/s
+  Stream #0:0[0x1](und): Video: h264 (Baseline) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 384x832, 641 kb/s, 40.12 fps, 59.94 tbr, 600 tbn (default)
+    Metadata:
+      vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 18 kb/s (default)
+    Metadata:
+      vendor_id       : [0][0][0][0]
+[Parsed_volumedetect_0 @ 0x5bef905c0080] n_samples: 0
+Stream mapping:
+  Stream #0:1 -> #0:0 (aac (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'pipe:':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42isom
+    encoder         : Lavf60.16.100
+  Stream #0:0(und): Audio: pcm_s16le, 44100 Hz, stereo, s16, 1411 kb/s (default)
+    Metadata:
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 pcm_s16le
+size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    [silencedetect @ 0x5bef90526940] silence_start: 0
+[silencedetect @ 0x5bef90526940] silence_end: 26.079 | silence_duration: 26.079
+[silencedetect @ 0x5bef90526940] silence_start: 47.1715
+[silencedetect @ 0x5bef90526940] silence_end: 55.191 | silence_duration: 8.01952
+[silencedetect @ 0x5bef90526940] silence_start: 57.2265
+size=N/A time=00:01:01.39 bitrate=N/A speed= 123x    [silencedetect @ 0x5bef90526940] silence_end: 85.5457 | silence_duration: 28.3192
+[silencedetect @ 0x5bef90526940] silence_start: 91.2528
+[out#0/null @ 0x5bef903fb480] video:0kB audio:16720kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+size=N/A time=00:01:37.03 bitrate=N/A speed= 125x    
+[Parsed_volumedetect_0 @ 0x5bef905c0080] n_samples: 8560512
+[Parsed_volumedetect_0 @ 0x5bef905c0080] mean_volume: -46.3 dB
+[Parsed_volumedetect_0 @ 0x5bef905c0080] max_volume: -12.2 dB
+[Parsed_volumedetect_0 @ 0x5bef905c0080] histogram_12db: 4
+[Parsed_volumedetect_0 @ 0x5bef905c0080] histogram_13db: 0
+[Parsed_volumedetect_0 @ 0x5bef905c0080] histogram_14db: 2
+[Parsed_volumedetect_0 @ 0x5bef905c0080] histogram_15db: 4
+[Parsed_volumedetect_0 @ 0x5bef905c0080] histogram_16db: 24
+[Parsed_volumedetect_0 @ 0x5bef905c0080] histogram_17db: 62
+[Parsed_volumedetect_0 @ 0x5bef905c0080] histogram_18db: 86
+[Parsed_volumedetect_0 @ 0x5bef905c0080] histogram_19db: 254
+[Parsed_volumedetect_0 @ 0x5bef905c0080] histogram_20db: 402
+[Parsed_volumedetect_0 @ 0x5bef905c0080] histogram_21db: 678
+[Parsed_volumedetect_0 @ 0x5bef905c0080] histogram_22db: 1062
+[Parsed_volumedetect_0 @ 0x5bef905c0080] histogram_23db: 1602
+[Parsed_volumedetect_0 @ 0x5bef905c0080] histogram_24db: 2458
+[Parsed_volumedetect_0 @ 0x5bef905c0080] histogram_25db: 3446
+[silencedetect @ 0x5bef90526940] silence_end: 97.058 | silence_duration: 5.80512

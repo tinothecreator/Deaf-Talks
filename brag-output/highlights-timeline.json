@@ -1,0 +1,74 @@
+[
+  {
+    "start": 0,
+    "end": 8,
+    "duration": 8,
+    "chapter": "DEAF-TALKS \u00b7 SIGNSTORIES",
+    "title": "Deaf storytellers\nshould lead.",
+    "body": "Learn South African Sign Language\nthrough stories, with credit and consent.",
+    "caption": "OpenAI \u00d7 Andela hackathon \u00b7 working product name: SignStories",
+    "clip": null,
+    "credit": "",
+    "extra": ""
+  },
+  {
+    "start": 8,
+    "end": 22,
+    "duration": 14,
+    "chapter": "STORYTELLER \u00b7 CAPTION",
+    "title": "Start with\nthe storyteller.",
+    "body": "Add a story title and English caption.\nUploads start as private drafts.",
+    "caption": "Real demo account footage \u00b7 upload limit: 60 seconds, 50 MiB",
+    "clip": "caption",
+    "credit": "Demo upload: Tino \u00b7 credit: Tino",
+    "extra": ""
+  },
+  {
+    "start": 22,
+    "end": 34,
+    "duration": 12,
+    "chapter": "STORYTELLER \u00b7 UPLOAD",
+    "title": "Private first.\nPublish with consent.",
+    "body": "Visible progress during upload.\nConsent, usage and credit control publication.",
+    "caption": "Publishing controls are verified in the repo; the recording shows upload.",
+    "clip": "upload-progress",
+    "credit": "Demo upload: Tino \u00b7 credit: Tino",
+    "extra": ""
+  },
+  {
+    "start": 34,
+    "end": 53,
+    "duration": 19,
+    "chapter": "LEARNER \u00b7 WATCH",
+    "title": "Stories to watch.\nSigns to learn.",
+    "body": "\u201cHello, my name is T I N O T E N D A, I am\nlearning sign language. It\u2019s nice to meet you.\u201d",
+    "caption": "English caption copied from the app \u00b7 five-minute playback links",
+    "clip": "watch",
+    "credit": "Storyteller: gohan \u00b7 credit: Tinothecreator",
+    "extra": ""
+  },
+  {
+    "start": 53,
+    "end": 60,
+    "duration": 7,
+    "chapter": "TRUST \u00b7 BY DESIGN",
+    "title": "Credit. Consent.\nControl.",
+    "body": "Private storage. Row-level security.\nNo download button. Withdraw at any time.",
+    "caption": "Already issued playback links may remain valid until their five-minute expiry.",
+    "clip": null,
+    "credit": "",
+    "extra": ""
+  },
+  {
+    "start": 60,
+    "end": 70,
+    "duration": 10,
+    "chapter": "DEAF-TALKS \u00b7 SIGNSTORIES",
+    "title": "Try SignStories.",
+    "body": "deaf-talks.vercel.app\ngithub.com/tinothecreator/Deaf-Talks",
+    "caption": "Next: practice, human feedback and approved text-only AI drafts.",
+    "clip": null,
+    "credit": "",
+    "extra": "Music: Sascha Ende, ende.app (CC BY 4.0) \u00b7 Vol. 12 \u00b7 excerpt and fade"
+  }
+]

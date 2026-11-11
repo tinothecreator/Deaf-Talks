@@ -1,0 +1,1 @@
+Deaf-Talks puts Deaf storytellers, captions, credit and consent at the centre of learning SASL. Built with Codex for the OpenAI × Andela hackathon. Try SignStories: https://deaf-talks.vercel.app

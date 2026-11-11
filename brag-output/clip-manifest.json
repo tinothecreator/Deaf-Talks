@@ -1,0 +1,101 @@
+[
+  {
+    "clip": "signup.mp4",
+    "source": "StorytellerSignup.mp4",
+    "start": 26,
+    "end": 34,
+    "audio": "omitted; silent UI or unverified source audio",
+    "credentials_redacted": true,
+    "hold_seconds": 0
+  },
+  {
+    "clip": "upload-form.mp4",
+    "source": "StorytellerSignup.mp4",
+    "start": 43,
+    "end": 61,
+    "audio": "omitted; silent UI or unverified source audio",
+    "credentials_redacted": false,
+    "hold_seconds": 0
+  },
+  {
+    "clip": "caption.mp4",
+    "source": "StorytellerSignup.mp4",
+    "start": 53,
+    "end": 70,
+    "audio": "omitted; silent UI or unverified source audio",
+    "credentials_redacted": false,
+    "hold_seconds": 0
+  },
+  {
+    "clip": "upload-progress.mp4",
+    "source": "StorytellerSignup.mp4",
+    "start": 85,
+    "end": 103,
+    "audio": "omitted; silent UI or unverified source audio",
+    "credentials_redacted": false,
+    "hold_seconds": 0
+  },
+  {
+    "clip": "private-draft.mp4",
+    "source": "StorytellerSignup.mp4",
+    "start": 103,
+    "end": 113,
+    "audio": "omitted; silent UI or unverified source audio",
+    "credentials_redacted": false,
+    "hold_seconds": 0
+  },
+  {
+    "clip": "learner-account.mp4",
+    "source": "learnerlogin.mp4",
+    "start": 10.5,
+    "end": 12.5,
+    "audio": "omitted; silent UI or unverified source audio",
+    "credentials_redacted": false,
+    "hold_seconds": 6
+  },
+  {
+    "clip": "browse.mp4",
+    "source": "learnerlogin.mp4",
+    "start": 13,
+    "end": 23,
+    "audio": "omitted; silent UI or unverified source audio",
+    "credentials_redacted": false,
+    "hold_seconds": 0
+  },
+  {
+    "clip": "watch.mp4",
+    "source": "learnerlogin.mp4",
+    "start": 26,
+    "end": 45,
+    "audio": "omitted; silent UI or unverified source audio",
+    "credentials_redacted": false,
+    "hold_seconds": 0
+  },
+  {
+    "clip": "key-signs.mp4",
+    "source": "learnerlogin.mp4",
+    "start": 46.5,
+    "end": 49.3,
+    "audio": "omitted; silent UI or unverified source audio",
+    "credentials_redacted": false,
+    "hold_seconds": 0
+  },
+  {
+    "clip": "teacher-account.mp4",
+    "source": "teacherbrowse.mp4",
+    "start": 17.4,
+    "end": 18.4,
+    "audio": "omitted; silent UI or unverified source audio",
+    "credentials_redacted": false,
+    "hold_seconds": 11
+  },
+  {
+    "clip": "teacher-home.mp4",
+    "source": "teacherbrowse.mp4",
+    "start": 98,
+    "end": 114,
+    "audio": "omitted; silent UI or unverified source audio",
+    "credentials_redacted": false,
+    "hold_seconds": 0
+  }
+]

@@ -1,0 +1,75 @@
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'demo-assets/teacherbrowse.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42isom
+  Duration: 00:01:54.80, start: 0.000000, bitrate: 649 kb/s
+  Stream #0:0[0x1](und): Video: h264 (Baseline) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 384x832, 637 kb/s, 34.98 fps, 59.94 tbr, 600 tbn (default)
+    Metadata:
+      vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 8 kb/s (default)
+    Metadata:
+      vendor_id       : [0][0][0][0]
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] n_samples: 0
+Stream mapping:
+  Stream #0:1 -> #0:0 (aac (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'pipe:':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42isom
+    encoder         : Lavf60.16.100
+  Stream #0:0(und): Audio: pcm_s16le, 44100 Hz, stereo, s16, 1411 kb/s (default)
+    Metadata:
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 pcm_s16le
+size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    [silencedetect @ 0x56d3aa321cc0] silence_start: 0
+[silencedetect @ 0x56d3aa321cc0] silence_end: 33.1779 | silence_duration: 33.1779
+[silencedetect @ 0x56d3aa321cc0] silence_start: 39.784
+[silencedetect @ 0x56d3aa321cc0] silence_end: 43.9857 | silence_duration: 4.2017
+[silencedetect @ 0x56d3aa321cc0] silence_start: 45.6042
+[silencedetect @ 0x56d3aa321cc0] silence_end: 46.9867 | silence_duration: 1.38243
+[silencedetect @ 0x56d3aa321cc0] silence_start: 46.9868
+[silencedetect @ 0x56d3aa321cc0] silence_end: 48.5364 | silence_duration: 1.54964
+[silencedetect @ 0x56d3aa321cc0] silence_start: 50.9003
+size=N/A time=00:01:00.30 bitrate=N/A speed= 120x    size=N/A time=00:01:54.49 bitrate=N/A speed= 114x    [out#0/null @ 0x56d3aa2f6000] video:0kB audio:19780kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+size=N/A time=00:01:54.79 bitrate=N/A speed= 114x    
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] n_samples: 10127232
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] mean_volume: -47.9 dB
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] max_volume: -0.8 dB
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_0db: 6
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_1db: 20
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_2db: 22
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_3db: 12
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_4db: 8
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_5db: 30
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_6db: 52
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_7db: 64
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_8db: 68
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_9db: 98
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_10db: 78
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_11db: 72
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_12db: 60
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_13db: 66
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_14db: 72
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_15db: 64
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_16db: 94
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_17db: 136
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_18db: 164
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_19db: 220
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_20db: 278
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_21db: 438
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_22db: 414
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_23db: 466
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_24db: 424
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_25db: 496
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_26db: 530
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_27db: 592
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_28db: 764
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_29db: 942
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_30db: 932
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_31db: 1020
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_32db: 1136
+[Parsed_volumedetect_0 @ 0x56d3aa4bc200] histogram_33db: 1514
+[silencedetect @ 0x56d3aa321cc0] silence_end: 114.821 | silence_duration: 63.9209

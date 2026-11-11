@@ -1,0 +1,28 @@
+1
+00:00:00,000 --> 00:00:08,000
+OpenAI × Andela hackathon · working product name: SignStories
+
+2
+00:00:08,000 --> 00:00:22,000
+Real demo account footage · upload limit: 60 seconds, 50 MiB
+Demo upload: Tino · credit: Tino
+
+3
+00:00:22,000 --> 00:00:34,000
+Publishing controls are verified in the repo; the recording shows upload.
+Demo upload: Tino · credit: Tino
+
+4
+00:00:34,000 --> 00:00:53,000
+“Hello, my name is T I N O T E N D A, I am
+learning sign language. It’s nice to meet you.”
+English caption copied from the app · five-minute playback links
+Storyteller: gohan · credit: Tinothecreator
+
+5
+00:00:53,000 --> 00:01:00,000
+Already issued playback links may remain valid until their five-minute expiry.
+
+6
+00:01:00,000 --> 00:01:10,000
+Next: practice, human feedback and approved text-only AI drafts.

@@ -1,0 +1,34 @@
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'demo-assets/StorytellerSignup.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42isom
+  Duration: 00:01:55.30, start: 0.000000, bitrate: 648 kb/s
+  Stream #0:0[0x1](und): Video: h264 (Baseline) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 384x832, 644 kb/s, 39.62 fps, 59.94 tbr, 600 tbn (default)
+    Metadata:
+      vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 2 kb/s (default)
+    Metadata:
+      vendor_id       : [0][0][0][0]
+[Parsed_volumedetect_0 @ 0x64e3a7a5c4c0] n_samples: 0
+Stream mapping:
+  Stream #0:1 -> #0:0 (aac (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'pipe:':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42isom
+    encoder         : Lavf60.16.100
+  Stream #0:0(und): Audio: pcm_s16le, 44100 Hz, stereo, s16, 1411 kb/s (default)
+    Metadata:
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 pcm_s16le
+size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    [silencedetect @ 0x64e3a79c0d40] silence_start: 0
+size=N/A time=00:00:57.39 bitrate=N/A speed= 115x    [out#0/null @ 0x64e3a7893000] video:0kB audio:19864kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+size=N/A time=00:01:55.28 bitrate=N/A speed= 119x    
+[Parsed_volumedetect_0 @ 0x64e3a7a5c4c0] n_samples: 10170240
+[Parsed_volumedetect_0 @ 0x64e3a7a5c4c0] mean_volume: -91.0 dB
+[Parsed_volumedetect_0 @ 0x64e3a7a5c4c0] max_volume: -91.0 dB
+[Parsed_volumedetect_0 @ 0x64e3a7a5c4c0] histogram_91db: 10170240
+[silencedetect @ 0x64e3a79c0d40] silence_end: 115.309 | silence_duration: 115.309

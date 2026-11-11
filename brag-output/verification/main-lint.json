@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "errorCount": 0,
+  "warningCount": 1,
+  "infoCount": 0,
+  "findings": [
+    {
+      "code": "timeline_track_too_dense",
+      "severity": "warning",
+      "message": "Track 4 has 23 timed elements in this HTML file. Smaller sub-compositions keep timelines easier to read, iterate on, and diff.",
+      "fixHint": "Move coherent scene groups into smaller .html files and mount them from the parent with data-composition-src so the timeline stays easier to inspect, revise, and validate.",
+      "file": "/home/ell/projects/Deaf-Talks/brag-output/main-composition/compositions/main-captions.html"
+    }
+  ],
+  "filesScanned": 25,
+  "unmountedCompositions": [
+    "compositions/highlights-00.html",
+    "compositions/highlights-01.html",
+    "compositions/highlights-02.html",
+    "compositions/highlights-03.html",
+    "compositions/highlights-04.html",
+    "compositions/highlights-05.html",
+    "compositions/highlights-captions.html"
+  ],
+  "_meta": {
+    "version": "0.9.34",
+    "latestVersion": "0.9.34",
+    "updateAvailable": false,
+    "checkedAt": "2026-11-11T18:24:19.302Z"
+  }
+}

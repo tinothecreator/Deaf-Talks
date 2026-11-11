@@ -1,0 +1,404 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 1,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "timeline_track_too_dense",
+        "severity": "warning",
+        "message": "Track 4 has 6 timed elements in this HTML file. Smaller sub-compositions keep timelines easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/home/ell/projects/Deaf-Talks/brag-output/composition/compositions/highlights-captions.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move coherent scene groups into smaller .html files and mount them from the parent with data-composition-src so the timeline stays easier to inspect, revise, and validate."
+      }
+    ],
+    "filesScanned": 8
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 3,
+    "findings": [
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 3.889,
+        "selector": "#highlights-00 > div:nth-of-type(1) > div:nth-of-type(4)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 0,
+          "top": 0,
+          "right": 51.39,
+          "bottom": 20,
+          "width": 51.39,
+          "height": 20
+        },
+        "containerSelector": "#highlights-00 > div:nth-of-type(1) > div:nth-of-type(1)",
+        "text": "01 / 06",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/highlights-00.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 51.39,
+          "height": 20
+        },
+        "firstSeen": 3.889,
+        "lastSeen": 3.889,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          3.889
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 58.333,
+        "selector": "#highlights-04 > div:nth-of-type(1) > div:nth-of-type(4)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 0,
+          "top": 0,
+          "right": 54.38,
+          "bottom": 20,
+          "width": 54.38,
+          "height": 20
+        },
+        "containerSelector": "#highlights-04 > div:nth-of-type(1) > div:nth-of-type(1)",
+        "text": "05 / 06",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/highlights-04.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 54.38,
+          "height": 20
+        },
+        "firstSeen": 58.333,
+        "lastSeen": 58.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          58.333
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 66.111,
+        "selector": "#highlights-05 > div:nth-of-type(1) > div:nth-of-type(4)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 0,
+          "top": 0,
+          "right": 54.8,
+          "bottom": 20,
+          "width": 54.8,
+          "height": 20
+        },
+        "containerSelector": "#highlights-05 > div:nth-of-type(1) > div:nth-of-type(1)",
+        "text": "06 / 06",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/highlights-05.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 54.8,
+          "height": 20
+        },
+        "firstSeen": 66.111,
+        "lastSeen": 66.111,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          66.111
+        ]
+      }
+    ],
+    "duration": 70,
+    "samples": [
+      3.889,
+      11.667,
+      19.444,
+      27.222,
+      35,
+      42.778,
+      50.556,
+      58.333,
+      66.111
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 3,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      3.889,
+      19.444,
+      35,
+      50.556,
+      66.111
+    ],
+    "checked": 37,
+    "passed": 37
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 6,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and \"01 / 06\" renders at 16 px for 8.00 s: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "01 / 06",
+        "selector": "#highlights-00 > div:nth-of-type(1) > div:nth-of-type(4)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/highlights-00.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 51.39,
+          "height": 20
+        },
+        "time": 0,
+        "times": [
+          0
+        ],
+        "fontPx": 16,
+        "floorPx": 28,
+        "seconds": 8,
+        "elements": [
+          {
+            "selector": "#highlights-00 > div:nth-of-type(1) > div:nth-of-type(4)",
+            "text": "01 / 06",
+            "fontPx": 16,
+            "time": 0,
+            "seconds": 8
+          }
+        ]
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and \"REAL DEMO FOOTAGE · 1×\" renders at 26 px for 14.00 s: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "REAL DEMO FOOTAGE · 1×",
+        "selector": "#highlights-01 > div:nth-of-type(1) > div:nth-of-type(8)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/highlights-01.html",
+        "bbox": {
+          "x": 1300,
+          "y": 126,
+          "width": 328.27,
+          "height": 31
+        },
+        "time": 8,
+        "times": [
+          8
+        ],
+        "fontPx": 26,
+        "floorPx": 28,
+        "seconds": 14,
+        "elements": [
+          {
+            "selector": "#highlights-01 > div:nth-of-type(1) > div:nth-of-type(8)",
+            "text": "REAL DEMO FOOTAGE · 1×",
+            "fontPx": 26,
+            "time": 8,
+            "seconds": 14
+          }
+        ]
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and \"REAL DEMO FOOTAGE · 1×\" renders at 26 px for 12.00 s: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "REAL DEMO FOOTAGE · 1×",
+        "selector": "#highlights-02 > div:nth-of-type(1) > div:nth-of-type(8)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/highlights-02.html",
+        "bbox": {
+          "x": 1300,
+          "y": 126,
+          "width": 328.27,
+          "height": 31
+        },
+        "time": 22,
+        "times": [
+          22
+        ],
+        "fontPx": 26,
+        "floorPx": 28,
+        "seconds": 12,
+        "elements": [
+          {
+            "selector": "#highlights-02 > div:nth-of-type(1) > div:nth-of-type(8)",
+            "text": "REAL DEMO FOOTAGE · 1×",
+            "fontPx": 26,
+            "time": 22,
+            "seconds": 12
+          }
+        ]
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and \"REAL DEMO FOOTAGE · 1×\" renders at 26 px for 19.00 s: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "REAL DEMO FOOTAGE · 1×",
+        "selector": "#highlights-03 > div:nth-of-type(1) > div:nth-of-type(8)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/highlights-03.html",
+        "bbox": {
+          "x": 1300,
+          "y": 126,
+          "width": 328.27,
+          "height": 31
+        },
+        "time": 34,
+        "times": [
+          34
+        ],
+        "fontPx": 26,
+        "floorPx": 28,
+        "seconds": 19,
+        "elements": [
+          {
+            "selector": "#highlights-03 > div:nth-of-type(1) > div:nth-of-type(8)",
+            "text": "REAL DEMO FOOTAGE · 1×",
+            "fontPx": 26,
+            "time": 34,
+            "seconds": 19
+          }
+        ]
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and \"05 / 06\" renders at 16 px for 7.00 s: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "05 / 06",
+        "selector": "#highlights-04 > div:nth-of-type(1) > div:nth-of-type(4)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/highlights-04.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 54.38,
+          "height": 20
+        },
+        "time": 53,
+        "times": [
+          53
+        ],
+        "fontPx": 16,
+        "floorPx": 28,
+        "seconds": 7,
+        "elements": [
+          {
+            "selector": "#highlights-04 > div:nth-of-type(1) > div:nth-of-type(4)",
+            "text": "05 / 06",
+            "fontPx": 16,
+            "time": 53,
+            "seconds": 7
+          }
+        ]
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and \"06 / 06\" renders at 16 px for 10.00 s: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "06 / 06",
+        "selector": "#highlights-05 > div:nth-of-type(1) > div:nth-of-type(4)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/highlights-05.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 54.8,
+          "height": 20
+        },
+        "time": 60,
+        "times": [
+          60
+        ],
+        "fontPx": 16,
+        "floorPx": 28,
+        "seconds": 10,
+        "elements": [
+          {
+            "selector": "#highlights-05 > div:nth-of-type(1) > div:nth-of-type(4)",
+            "text": "06 / 06",
+            "fontPx": 16,
+            "time": 60,
+            "seconds": 10
+          }
+        ]
+      }
+    ],
+    "enabled": true,
+    "step": 0.125,
+    "samples": 560
+  },
+  "audio": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

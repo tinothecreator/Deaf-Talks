@@ -1,0 +1,930 @@
+{
+  "version": 1,
+  "historyId": "e2db4e7b-db2f-4008-b7be-f62726496de5",
+  "currentRevision": "43ee5584-4d65-442f-abea-3746d11aaa3a",
+  "pendingChanges": false,
+  "files": {
+    "AGENTS.md": {
+      "hash": "268ff46777938da818baa92a718571785e9acf2cef2d3ffbacbb93483dcba37a",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/26/268ff46777938da818baa92a718571785e9acf2cef2d3ffbacbb93483dcba37a"
+    },
+    "assets/footage/browse.mp4": {
+      "hash": "f9355c5e9159ea17741efe0929ebda2d65ef566f8a537f23a41bd293bb71272f",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/f9/f9355c5e9159ea17741efe0929ebda2d65ef566f8a537f23a41bd293bb71272f"
+    },
+    "assets/footage/caption.mp4": {
+      "hash": "891302443edaeff0c1b6b25ea0c57783e7ecb664cf9d77e3945c5f36238caffa",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/89/891302443edaeff0c1b6b25ea0c57783e7ecb664cf9d77e3945c5f36238caffa"
+    },
+    "assets/footage/key-signs.mp4": {
+      "hash": "71e9f63213ab4b27fc22ee98fcf5eb1042528de7fd320973f8c718b4eca149bf",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/71/71e9f63213ab4b27fc22ee98fcf5eb1042528de7fd320973f8c718b4eca149bf"
+    },
+    "assets/footage/learner-account.mp4": {
+      "hash": "4593d333d655912a8c118593a24a2571d43298b11513bf6666403e955731d188",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/45/4593d333d655912a8c118593a24a2571d43298b11513bf6666403e955731d188"
+    },
+    "assets/footage/private-draft.mp4": {
+      "hash": "3a5d1803ecc84aa0d16d9621a2fdb12be6ce6928da0ef0d267e89dc7290be6cd",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/3a/3a5d1803ecc84aa0d16d9621a2fdb12be6ce6928da0ef0d267e89dc7290be6cd"
+    },
+    "assets/footage/signup.mp4": {
+      "hash": "d20db34f0306b018778e61968faea5f07f1193a062e3411960f73af457eee8e4",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/d2/d20db34f0306b018778e61968faea5f07f1193a062e3411960f73af457eee8e4"
+    },
+    "assets/footage/teacher-account.mp4": {
+      "hash": "d104e56c158ba52dc5606b5cde2519fd2ee2bf29e61a9b3860d0c84c591b5b4a",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/d1/d104e56c158ba52dc5606b5cde2519fd2ee2bf29e61a9b3860d0c84c591b5b4a"
+    },
+    "assets/footage/teacher-home.mp4": {
+      "hash": "b33a15f73ba604b1170ec55f3f6753c4e757b65e72aa79342946a8e1817ccfec",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/b3/b33a15f73ba604b1170ec55f3f6753c4e757b65e72aa79342946a8e1817ccfec"
+    },
+    "assets/footage/upload-form.mp4": {
+      "hash": "fca6805da8f7e672de7ac7db2b7c51b6c006183a577fac4ef3decfd84db4c674",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/fc/fca6805da8f7e672de7ac7db2b7c51b6c006183a577fac4ef3decfd84db4c674"
+    },
+    "assets/footage/upload-progress.mp4": {
+      "hash": "28d859c84ee42122471356b4dfcc03f3d1ffd698efb377a3a691aad9d9f1659e",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/28/28d859c84ee42122471356b4dfcc03f3d1ffd698efb377a3a691aad9d9f1659e"
+    },
+    "assets/runtime/gsap.min.js": {
+      "hash": "92bb9a96476f983d212a2bc4f54c889039c1696dd4461d40a736860938570fbb",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/92/92bb9a96476f983d212a2bc4f54c889039c1696dd4461d40a736860938570fbb"
+    },
+    "compositions/components/browser-device-stage.html": {
+      "hash": "59b20814d38bf58ec1c6c7727ed954e89e9f38a7392eddf6d266ce586bad6764",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/59/59b20814d38bf58ec1c6c7727ed954e89e9f38a7392eddf6d266ce586bad6764"
+    },
+    "compositions/highlights-00.html": {
+      "hash": "7afa6fc28f5daa5677263148a5648a03484a4860a89dd39a34e0232a1ab689e9",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/7a/7afa6fc28f5daa5677263148a5648a03484a4860a89dd39a34e0232a1ab689e9"
+    },
+    "compositions/highlights-01.html": {
+      "hash": "cb60ecce5594591dd3733d4decb919127adb3887a933b13056fdd768b60f3c37",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/cb/cb60ecce5594591dd3733d4decb919127adb3887a933b13056fdd768b60f3c37"
+    },
+    "compositions/highlights-02.html": {
+      "hash": "c9c5227e2c2605cb23f9c054931efd86c002650cb7690530705769a2cafe4308",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/c9/c9c5227e2c2605cb23f9c054931efd86c002650cb7690530705769a2cafe4308"
+    },
+    "compositions/highlights-03.html": {
+      "hash": "fc0901d5c24026836be1655415e32746a93a1c12c9724182fafb79aa741f5568",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/fc/fc0901d5c24026836be1655415e32746a93a1c12c9724182fafb79aa741f5568"
+    },
+    "compositions/highlights-04.html": {
+      "hash": "4d2c5cc89ffebafab045198d06ecc9155412cdb4dd869717b43965271276ae23",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/4d/4d2c5cc89ffebafab045198d06ecc9155412cdb4dd869717b43965271276ae23"
+    },
+    "compositions/highlights-05.html": {
+      "hash": "8b5245f992ecd1b7ab6833e4a39c25dd3fd3554e3091b6210598d83b42089cab",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/8b/8b5245f992ecd1b7ab6833e4a39c25dd3fd3554e3091b6210598d83b42089cab"
+    },
+    "compositions/highlights-captions.html": {
+      "hash": "bc89c275ecb6da48c1455c00c6dc08b4c86df3cb26e6504628a7d38158e7712f",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/bc/bc89c275ecb6da48c1455c00c6dc08b4c86df3cb26e6504628a7d38158e7712f"
+    },
+    "compositions/main-00.html": {
+      "hash": "38eaccbad1b9c135dd980ff7c1d479573882659b6830a0fbc171c86d06849105",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/38/38eaccbad1b9c135dd980ff7c1d479573882659b6830a0fbc171c86d06849105"
+    },
+    "compositions/main-01.html": {
+      "hash": "bb91fedcd1c94a2583c3f2ed1cf38333c52aecda7daff30ff6d90ae78e4ec579",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/bb/bb91fedcd1c94a2583c3f2ed1cf38333c52aecda7daff30ff6d90ae78e4ec579"
+    },
+    "compositions/main-02.html": {
+      "hash": "51faeaeef9f06c5c4422646256633153d51688c46cb013d6a644287820a73491",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/51/51faeaeef9f06c5c4422646256633153d51688c46cb013d6a644287820a73491"
+    },
+    "compositions/main-03.html": {
+      "hash": "dd6fd127b2b73565c3e158babd68cbde1806853a22abd00f76476250ae4475e2",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/dd/dd6fd127b2b73565c3e158babd68cbde1806853a22abd00f76476250ae4475e2"
+    },
+    "compositions/main-04.html": {
+      "hash": "518695d610decca19ce8181d8d8a9b975f17f50809b7c8fa48b0d47addaa97a3",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/51/518695d610decca19ce8181d8d8a9b975f17f50809b7c8fa48b0d47addaa97a3"
+    },
+    "compositions/main-05.html": {
+      "hash": "1a8b414f28f034420e26992b3dc2d5e5e16b0cfd46a1e0cf59990e30d6f46fa6",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/1a/1a8b414f28f034420e26992b3dc2d5e5e16b0cfd46a1e0cf59990e30d6f46fa6"
+    },
+    "compositions/main-06.html": {
+      "hash": "3edb2f764d354a61fb659a4faebf403f88d8097e00bc68b3b8a4675e264be76a",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/3e/3edb2f764d354a61fb659a4faebf403f88d8097e00bc68b3b8a4675e264be76a"
+    },
+    "compositions/main-07.html": {
+      "hash": "85c6e2e53f9c527932d7f7a671ea980f25819ffde0fca08e878e2c8bf2de6fa8",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/85/85c6e2e53f9c527932d7f7a671ea980f25819ffde0fca08e878e2c8bf2de6fa8"
+    },
+    "compositions/main-08.html": {
+      "hash": "fbc802b08ea97d623ff730b82676c29bdec7fe3aa9d2da3e450dd86f44720d62",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/fb/fbc802b08ea97d623ff730b82676c29bdec7fe3aa9d2da3e450dd86f44720d62"
+    },
+    "compositions/main-09.html": {
+      "hash": "4c2dd78d8ec1916612220d9ead2391ccad15d5288070c5cfc602413d0b3af904",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/4c/4c2dd78d8ec1916612220d9ead2391ccad15d5288070c5cfc602413d0b3af904"
+    },
+    "compositions/main-10.html": {
+      "hash": "2e1d6af834a87722b4621e359ef72433a5d8eefe693b9af22ef62904fdd35b2a",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/2e/2e1d6af834a87722b4621e359ef72433a5d8eefe693b9af22ef62904fdd35b2a"
+    },
+    "compositions/main-11.html": {
+      "hash": "902aeb0c182d0d9dfaae4650d41bb04a21b015344b969b60c05df18d0d692353",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/90/902aeb0c182d0d9dfaae4650d41bb04a21b015344b969b60c05df18d0d692353"
+    },
+    "compositions/main-12.html": {
+      "hash": "39841963c8d04061ab629cd46ee579c19faa4ef9b384866f9421419e930d575a",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/39/39841963c8d04061ab629cd46ee579c19faa4ef9b384866f9421419e930d575a"
+    },
+    "compositions/main-13.html": {
+      "hash": "6a8cdc56af1dcda9bd2c2689a59b2d43760d2a809903c8da10b4a17feb42eb6b",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/6a/6a8cdc56af1dcda9bd2c2689a59b2d43760d2a809903c8da10b4a17feb42eb6b"
+    },
+    "compositions/main-14.html": {
+      "hash": "4469422b277d8aea616360d920283f0e716ce89d07a6a40206c07ca8a41c8014",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/44/4469422b277d8aea616360d920283f0e716ce89d07a6a40206c07ca8a41c8014"
+    },
+    "compositions/main-15.html": {
+      "hash": "759a6d0d239c9b772f0ee378330d81fb396da0870a978a4d78af4987ac3a2dc5",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/75/759a6d0d239c9b772f0ee378330d81fb396da0870a978a4d78af4987ac3a2dc5"
+    },
+    "compositions/main-16.html": {
+      "hash": "13360b3148358435a70772ec049e479d9ef47bc4d3bc5e2fc8bfbe364055b345",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/13/13360b3148358435a70772ec049e479d9ef47bc4d3bc5e2fc8bfbe364055b345"
+    },
+    "compositions/main-17.html": {
+      "hash": "a258b089a4f00cee25a1beaf19d258514274b10432724179de74e84185d0ad6d",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/a2/a258b089a4f00cee25a1beaf19d258514274b10432724179de74e84185d0ad6d"
+    },
+    "compositions/main-18.html": {
+      "hash": "bd3d9dfcbc395b3c2a96070c8681e0b040ffe11905765bc0bd6c1fda2432897b",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/bd/bd3d9dfcbc395b3c2a96070c8681e0b040ffe11905765bc0bd6c1fda2432897b"
+    },
+    "compositions/main-19.html": {
+      "hash": "e99ab5f3f0e661333c4f71b89b0460509893479edaf404625d3542467a2c4a6c",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/e9/e99ab5f3f0e661333c4f71b89b0460509893479edaf404625d3542467a2c4a6c"
+    },
+    "compositions/main-20.html": {
+      "hash": "9e92654972e6b03702e4da7939569abef96e0c23cd54f1ce472f0c79b2887648",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/9e/9e92654972e6b03702e4da7939569abef96e0c23cd54f1ce472f0c79b2887648"
+    },
+    "compositions/main-21.html": {
+      "hash": "3883c68c424a9f4d8ac1ad2bc11a605b5ba2f202fb1daf2124d13abc7319f2b2",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/38/3883c68c424a9f4d8ac1ad2bc11a605b5ba2f202fb1daf2124d13abc7319f2b2"
+    },
+    "compositions/main-22.html": {
+      "hash": "feacda46075b636b408b0376bee62b84550d758708c7c6848082bbba90069170",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/fe/feacda46075b636b408b0376bee62b84550d758708c7c6848082bbba90069170"
+    },
+    "compositions/main-captions.html": {
+      "hash": "be2e30c9cbe69e43a8135333fce7a42dfe5ddc42cfa88067a93e34d167d5688e",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/be/be2e30c9cbe69e43a8135333fce7a42dfe5ddc42cfa88067a93e34d167d5688e"
+    },
+    "hyperframes.json": {
+      "hash": "bf64ea96633141403e3b089aa0424bedff426b8054a99dab15ecf5edf37e88b0",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/bf/bf64ea96633141403e3b089aa0424bedff426b8054a99dab15ecf5edf37e88b0"
+    },
+    "index.html": {
+      "hash": "669fa099306232ec4516e9564135947bc4f70e37cae16661af696dca186871bc",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/66/669fa099306232ec4516e9564135947bc4f70e37cae16661af696dca186871bc"
+    },
+    "meta.json": {
+      "hash": "fbf4f440626bcb1d6734a4c8f39ccad8df0f890f428056745d21bb2c55d12c86",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/fb/fbf4f440626bcb1d6734a4c8f39ccad8df0f890f428056745d21bb2c55d12c86"
+    },
+    "package.json": {
+      "hash": "ba54bc78850cd91c69fb25538a10acf103e18fba5aa55d3175be7423614bb269",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/ba/ba54bc78850cd91c69fb25538a10acf103e18fba5aa55d3175be7423614bb269"
+    },
+    "assets/footage/watch.mp4": {
+      "hash": "2d2a5ded48d0497d12f06bf7a0708590078fe72420b9953ddc6fe890115ad3aa",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/2d/2d2a5ded48d0497d12f06bf7a0708590078fe72420b9953ddc6fe890115ad3aa"
+    },
+    "assets/music/happy-beats-business-moves-vol-12-by-ende-dot-app.mp3": {
+      "hash": "5888d4bd2ba0119b87a94e502ae2cc401c08192945cc5e5c2f8e8a33aa47a0a1",
+      "content": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/58/5888d4bd2ba0119b87a94e502ae2cc401c08192945cc5e5c2f8e8a33aa47a0a1"
+    }
+  },
+  "revisions": {
+    "db312300-d5a9-401a-b2f4-0eb6a8ae4bca": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1794423881937,
+      "endedAt": 1794423883939,
+      "files": {
+        "compositions/main-17.html": {
+          "before": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/e4/e448807ae33c58da2c0a289a8a8e1c56c9b8a145421aab9edf7f75897c54de15",
+          "after": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/a2/a258b089a4f00cee25a1beaf19d258514274b10432724179de74e84185d0ad6d"
+        }
+      }
+    },
+    "43ee5584-4d65-442f-abea-3746d11aaa3a": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1794424072320,
+      "endedAt": 1794424074413,
+      "files": {
+        "assets/footage/learner-account.mp4": {
+          "before": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/13/130648ec8f1931d716c71e12734fde90187076bc3a7c0b1f40e4b0814b04abb0",
+          "after": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/45/4593d333d655912a8c118593a24a2571d43298b11513bf6666403e955731d188"
+        },
+        "assets/footage/teacher-account.mp4": {
+          "before": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/1d/1dc29fc5b28cbbef025f89633f83cdf3624663527ddba84b0207d3d0fe14acd7",
+          "after": "/home/ell/.cache/hyperframes/history/e2db4e7b-db2f-4008-b7be-f62726496de5/blobs/d1/d104e56c158ba52dc5606b5cde2519fd2ee2bf29e61a9b3860d0c84c591b5b4a"
+        }
+      }
+    }
+  },
+  "checks": {
+    "latest": {
+      "revision": "43ee5584-4d65-442f-abea-3746d11aaa3a",
+      "id": "df49d6df-b387-4568-9d6f-d63a108b0850"
+    },
+    "revisions": {
+      "db312300-d5a9-401a-b2f4-0eb6a8ae4bca": [
+        {
+          "id": "87d068ec-a6fe-4626-bedf-70397ef9fb41",
+          "scope": "scoped",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "scope": {
+              "range": [
+                225,
+                241
+              ],
+              "hiddenFindings": 0,
+              "notes": [
+                "Static lint, audio and unscoped runtime failures remain project-wide.",
+                "Whole-timeline motion assertions, frozen-sweep detection and craft warnings are skipped for range checks."
+              ]
+            },
+            "options": {
+              "samples": 9,
+              "range": [
+                225,
+                241
+              ],
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 45000,
+              "cache": true,
+              "contrast": true,
+              "craft": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto",
+              "includeUnmounted": false
+            }
+          },
+          "createdAt": 1794423928678,
+          "contentHash": "2401d93fd9e00821290bc8f886e1be00560638ab5b06edbe3f590c4507a1f9ff",
+          "revision": "db312300-d5a9-401a-b2f4-0eb6a8ae4bca",
+          "inputFingerprint": "fac1022681712f93e90d51eb46fc93d96c6e3371e6e32d112203035d95bdfe15",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "f3bc0bc7-1d79-4a49-8ca8-e110675eebb6"
+        }
+      ],
+      "43ee5584-4d65-442f-abea-3746d11aaa3a": [
+        {
+          "id": "df49d6df-b387-4568-9d6f-d63a108b0850",
+          "scope": "scoped",
+          "report": "/home/ell/projects/Deaf-Talks/brag-output/main-composition/.hyperframes/artifacts/checks/df49d6df-b387-4568-9d6f-d63a108b0850.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "scope": {
+              "range": [
+                159,
+                241
+              ],
+              "hiddenFindings": 0,
+              "notes": [
+                "Static lint, audio and unscoped runtime failures remain project-wide.",
+                "Whole-timeline motion assertions, frozen-sweep detection and craft warnings are skipped for range checks."
+              ]
+            },
+            "options": {
+              "samples": 9,
+              "range": [
+                159,
+                241
+              ],
+              "at": [
+                163,
+                219,
+                233
+              ],
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 45000,
+              "cache": true,
+              "contrast": true,
+              "craft": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto",
+              "includeUnmounted": false
+            }
+          },
+          "createdAt": 1794424101915,
+          "contentHash": "042fa11d5bc4cbc7ab2b0116a751aaefa64fa316f7b6c40eeff39f37c7b0ab4a",
+          "revision": "43ee5584-4d65-442f-abea-3746d11aaa3a",
+          "inputFingerprint": "b9c1a9d7097fd582a3dc61b86c748dd69fc708de7b29a54566e456f6809a9585",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": [
+      {
+        "id": "c4a51365-9d32-49d1-aec3-c759e8e7cac6",
+        "scope": "project",
+        "report": "/home/ell/projects/Deaf-Talks/brag-output/main-composition/.hyperframes/artifacts/checks/c4a51365-9d32-49d1-aec3-c759e8e7cac6.json",
+        "metadata": {
+          "ok": true,
+          "browserSkipped": false,
+          "options": {
+            "samples": 24,
+            "atTransitions": false,
+            "maxIssues": 80,
+            "collapseStatic": true,
+            "tolerance": 2,
+            "timeout": 45000,
+            "cache": true,
+            "contrast": true,
+            "craft": true,
+            "strict": false,
+            "snapshots": false,
+            "browserGpuMode": "auto",
+            "includeUnmounted": false
+          }
+        },
+        "createdAt": 1794423766127,
+        "contentHash": "105f762b4143179069090a67aa22d0982f141307477d08c3ade90be1236d8c53",
+        "revision": null,
+        "inputFingerprint": "f8047f55992ca1ff44c8a6a850791f9c11ce8b25e02da605c540c3d443f14ebc",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "snapshots": {
+    "latest": {
+      "revision": "43ee5584-4d65-442f-abea-3746d11aaa3a",
+      "id": "1d7f47fa-3fbf-4d73-ba5d-387bd10b6aa4-2"
+    },
+    "revisions": {
+      "db312300-d5a9-401a-b2f4-0eb6a8ae4bca": [],
+      "43ee5584-4d65-442f-abea-3746d11aaa3a": [
+        {
+          "scope": "full",
+          "id": "1d7f47fa-3fbf-4d73-ba5d-387bd10b6aa4-0",
+          "image": "/home/ell/projects/Deaf-Talks/brag-output/verification/main-final-fixes/frame-00-at-163s.png",
+          "time": 163,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794424111129,
+          "contentHash": "500a7aecbb6fa69888fa1a0264c3dfcaa4ca2b6bfd0117c05badedb3b9cb5f56",
+          "revision": "43ee5584-4d65-442f-abea-3746d11aaa3a",
+          "inputFingerprint": "b9c1a9d7097fd582a3dc61b86c748dd69fc708de7b29a54566e456f6809a9585",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "1d7f47fa-3fbf-4d73-ba5d-387bd10b6aa4-1",
+          "image": "/home/ell/projects/Deaf-Talks/brag-output/verification/main-final-fixes/frame-01-at-219s.png",
+          "time": 219,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794424111129,
+          "contentHash": "aed2aee0d78c77f2107d6d46c84c08c44b7a7dffdcc4d41bb8de93999faefe60",
+          "revision": "43ee5584-4d65-442f-abea-3746d11aaa3a",
+          "inputFingerprint": "b9c1a9d7097fd582a3dc61b86c748dd69fc708de7b29a54566e456f6809a9585",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "1d7f47fa-3fbf-4d73-ba5d-387bd10b6aa4-2",
+          "image": "/home/ell/projects/Deaf-Talks/brag-output/verification/main-final-fixes/frame-02-at-233s.png",
+          "time": 233,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794424111130,
+          "contentHash": "f54a9e18c350f5c47db32dca13eac24c1a3321ca7cf67d46a1c72098db2ddbec",
+          "revision": "43ee5584-4d65-442f-abea-3746d11aaa3a",
+          "inputFingerprint": "b9c1a9d7097fd582a3dc61b86c748dd69fc708de7b29a54566e456f6809a9585",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": [
+      {
+        "scope": "full",
+        "id": "304817b7-3e03-4675-b33d-de92f465267d-0",
+        "image": "/home/ell/projects/Deaf-Talks/brag-output/verification/main-preview/frame-00-at-5s.png",
+        "time": 5,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794423845104,
+        "contentHash": "41870a90b71f229defcb279b2d70a71ecd2d156eaf896559686e895d5c7692c8",
+        "revision": null,
+        "inputFingerprint": "f8047f55992ca1ff44c8a6a850791f9c11ce8b25e02da605c540c3d443f14ebc",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "304817b7-3e03-4675-b33d-de92f465267d-1",
+        "image": "/home/ell/projects/Deaf-Talks/brag-output/verification/main-preview/frame-01-at-22s.png",
+        "time": 22,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794423845104,
+        "contentHash": "5eb34915b31edfa4dbf2d19d240fccbd31887510ba3ed62cd3d8573e71c7829b",
+        "revision": null,
+        "inputFingerprint": "f8047f55992ca1ff44c8a6a850791f9c11ce8b25e02da605c540c3d443f14ebc",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "304817b7-3e03-4675-b33d-de92f465267d-2",
+        "image": "/home/ell/projects/Deaf-Talks/brag-output/verification/main-preview/frame-02-at-37s.png",
+        "time": 37,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794423845104,
+        "contentHash": "fa8fef732e5413dbf106a146cd6f1de9711d913816b9f87e52d11198064d0dfd",
+        "revision": null,
+        "inputFingerprint": "f8047f55992ca1ff44c8a6a850791f9c11ce8b25e02da605c540c3d443f14ebc",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "304817b7-3e03-4675-b33d-de92f465267d-3",
+        "image": "/home/ell/projects/Deaf-Talks/brag-output/verification/main-preview/frame-03-at-52s.png",
+        "time": 52,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794423845104,
+        "contentHash": "4a128aed2d87e28ea75e3a4869cac5d64a1671a76d5ae2e5ee5b73ecc5d1b7a5",
+        "revision": null,
+        "inputFingerprint": "f8047f55992ca1ff44c8a6a850791f9c11ce8b25e02da605c540c3d443f14ebc",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "304817b7-3e03-4675-b33d-de92f465267d-4",
+        "image": "/home/ell/projects/Deaf-Talks/brag-output/verification/main-preview/frame-04-at-64s.png",
+        "time": 64,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794423845104,
+        "contentHash": "a5496940a770b810780bfdcc01134b021a310b92f1e494a8676e0b7d714cc009",
+        "revision": null,
+        "inputFingerprint": "f8047f55992ca1ff44c8a6a850791f9c11ce8b25e02da605c540c3d443f14ebc",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "304817b7-3e03-4675-b33d-de92f465267d-5",
+        "image": "/home/ell/projects/Deaf-Talks/brag-output/verification/main-preview/frame-05-at-77s.png",
+        "time": 77,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794423845104,
+        "contentHash": "fb07e94941fcdf4d5547b6ad49a7362c9720c34f127bf647d1c451d8bff4ec98",
+        "revision": null,
+        "inputFingerprint": "f8047f55992ca1ff44c8a6a850791f9c11ce8b25e02da605c540c3d443f14ebc",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "304817b7-3e03-4675-b33d-de92f465267d-6",
+        "image": "/home/ell/projects/Deaf-Talks/brag-output/verification/main-preview/frame-06-at-95s.png",
+        "time": 95,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794423845104,
+        "contentHash": "3ebd61976fd6a51d8ecd8138526867f9155fb461a9e1e73c89c94cb251b2a27f",
+        "revision": null,
+        "inputFingerprint": "f8047f55992ca1ff44c8a6a850791f9c11ce8b25e02da605c540c3d443f14ebc",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "304817b7-3e03-4675-b33d-de92f465267d-7",
+        "image": "/home/ell/projects/Deaf-Talks/brag-output/verification/main-preview/frame-07-at-113s.png",
+        "time": 113,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794423845104,
+        "contentHash": "d9bf45cf9637d4c94ed3de0f363787b5cb6a4bcc882965f3e0d51c780d29aa5f",
+        "revision": null,
+        "inputFingerprint": "f8047f55992ca1ff44c8a6a850791f9c11ce8b25e02da605c540c3d443f14ebc",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "304817b7-3e03-4675-b33d-de92f465267d-8",
+        "image": "/home/ell/projects/Deaf-Talks/brag-output/verification/main-preview/frame-08-at-126s.png",
+        "time": 126,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794423845104,
+        "contentHash": "12a14ce1e1d895b33f52e3a59b3ab6450817444c2c47b87ab7d1c1bfcb204d21",
+        "revision": null,
+        "inputFingerprint": "f8047f55992ca1ff44c8a6a850791f9c11ce8b25e02da605c540c3d443f14ebc",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "304817b7-3e03-4675-b33d-de92f465267d-9",
+        "image": "/home/ell/projects/Deaf-Talks/brag-output/verification/main-preview/frame-09-at-138s.png",
+        "time": 138,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794423845104,
+        "contentHash": "c1bd7d06274cbe72616b8472151c6d3d4e43b9707d3feed6c6709be46292c518",
+        "revision": null,
+        "inputFingerprint": "f8047f55992ca1ff44c8a6a850791f9c11ce8b25e02da605c540c3d443f14ebc",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "304817b7-3e03-4675-b33d-de92f465267d-10",
+        "image": "/home/ell/projects/Deaf-Talks/brag-output/verification/main-preview/frame-10-at-152s.png",
+        "time": 152,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794423845104,
+        "contentHash": "cc4cf7ab8ca906ddb03a8b7766ca2bdc8e150e0d5c555e8cad9bfcafaf6854c3",
+        "revision": null,
+        "inputFingerprint": "f8047f55992ca1ff44c8a6a850791f9c11ce8b25e02da605c540c3d443f14ebc",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "304817b7-3e03-4675-b33d-de92f465267d-11",
+        "image": "/home/ell/projects/Deaf-Talks/brag-output/verification/main-preview/frame-11-at-163s.png",
+        "time": 163,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794423845104,
+        "contentHash": "0521e16d8ba653cebcd306b130aec4933c20a2a4b385b7428b8f1743e8908923",
+        "revision": null,
+        "inputFingerprint": "f8047f55992ca1ff44c8a6a850791f9c11ce8b25e02da605c540c3d443f14ebc",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "304817b7-3e03-4675-b33d-de92f465267d-12",
+        "image": "/home/ell/projects/Deaf-Talks/brag-output/verification/main-preview/frame-12-at-172s.png",
+        "time": 172,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794423845104,
+        "contentHash": "92ab24b1b8413edd00aa9f03700282cda84f0cd9beb1f478b87944eb578dc9d2",
+        "revision": null,
+        "inputFingerprint": "f8047f55992ca1ff44c8a6a850791f9c11ce8b25e02da605c540c3d443f14ebc",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "304817b7-3e03-4675-b33d-de92f465267d-13",
+        "image": "/home/ell/projects/Deaf-Talks/brag-output/verification/main-preview/frame-13-at-185s.png",
+        "time": 185,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794423845104,
+        "contentHash": "a5f3d0b90d4326278756b2db6dd3d7efb9bab5cbd10cfedabb50cac51115669a",
+        "revision": null,
+        "inputFingerprint": "f8047f55992ca1ff44c8a6a850791f9c11ce8b25e02da605c540c3d443f14ebc",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "304817b7-3e03-4675-b33d-de92f465267d-14",
+        "image": "/home/ell/projects/Deaf-Talks/brag-output/verification/main-preview/frame-14-at-200s.png",
+        "time": 200,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794423845104,
+        "contentHash": "20420f52ff50e7fe137365b2623eaa9233b22f07c798d1b83a80f9db9e765df9",
+        "revision": null,
+        "inputFingerprint": "f8047f55992ca1ff44c8a6a850791f9c11ce8b25e02da605c540c3d443f14ebc",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "304817b7-3e03-4675-b33d-de92f465267d-15",
+        "image": "/home/ell/projects/Deaf-Talks/brag-output/verification/main-preview/frame-15-at-208s.png",
+        "time": 208,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794423845104,
+        "contentHash": "9b29889ee0738be62c55f9df8723952cd80f05c177d62c0a07b8e37b969c8cfa",
+        "revision": null,
+        "inputFingerprint": "f8047f55992ca1ff44c8a6a850791f9c11ce8b25e02da605c540c3d443f14ebc",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "304817b7-3e03-4675-b33d-de92f465267d-16",
+        "image": "/home/ell/projects/Deaf-Talks/brag-output/verification/main-preview/frame-16-at-219s.png",
+        "time": 219,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794423845104,
+        "contentHash": "bf00882d7fad5af3d509ce8c360d2b1e0c3650002630751b42d34c639be2f391",
+        "revision": null,
+        "inputFingerprint": "f8047f55992ca1ff44c8a6a850791f9c11ce8b25e02da605c540c3d443f14ebc",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "304817b7-3e03-4675-b33d-de92f465267d-17",
+        "image": "/home/ell/projects/Deaf-Talks/brag-output/verification/main-preview/frame-17-at-233s.png",
+        "time": 233,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794423845104,
+        "contentHash": "cc7c1eeecb764302aa8625a2ceb41790e8499a6734c9a1538101fbe0faaf8b2f",
+        "revision": null,
+        "inputFingerprint": "f8047f55992ca1ff44c8a6a850791f9c11ce8b25e02da605c540c3d443f14ebc",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "304817b7-3e03-4675-b33d-de92f465267d-18",
+        "image": "/home/ell/projects/Deaf-Talks/brag-output/verification/main-preview/frame-18-at-249s.png",
+        "time": 249,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794423845105,
+        "contentHash": "07ee650348961f09d4817b6052381f38f17fcfd3b7e46389a39d4247622e8233",
+        "revision": null,
+        "inputFingerprint": "f8047f55992ca1ff44c8a6a850791f9c11ce8b25e02da605c540c3d443f14ebc",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "304817b7-3e03-4675-b33d-de92f465267d-19",
+        "image": "/home/ell/projects/Deaf-Talks/brag-output/verification/main-preview/frame-19-at-263s.png",
+        "time": 263,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794423845105,
+        "contentHash": "2ba45d770fc4915db130561867fa58e16aaaeb03c9ebf0ade0c5daa27c689291",
+        "revision": null,
+        "inputFingerprint": "f8047f55992ca1ff44c8a6a850791f9c11ce8b25e02da605c540c3d443f14ebc",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "304817b7-3e03-4675-b33d-de92f465267d-20",
+        "image": "/home/ell/projects/Deaf-Talks/brag-output/verification/main-preview/frame-20-at-275s.png",
+        "time": 275,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794423845105,
+        "contentHash": "350fb9776ebce2f5ff88ee5d83502fc3ae0709be7109a24cbd45cc704704d26e",
+        "revision": null,
+        "inputFingerprint": "f8047f55992ca1ff44c8a6a850791f9c11ce8b25e02da605c540c3d443f14ebc",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "304817b7-3e03-4675-b33d-de92f465267d-21",
+        "image": "/home/ell/projects/Deaf-Talks/brag-output/verification/main-preview/frame-21-at-283s.png",
+        "time": 283,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794423845105,
+        "contentHash": "ebe7738f79ee6c7d57efe374b2a03a04bfc69c00944b9a44601e57ae5ce71234",
+        "revision": null,
+        "inputFingerprint": "f8047f55992ca1ff44c8a6a850791f9c11ce8b25e02da605c540c3d443f14ebc",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "304817b7-3e03-4675-b33d-de92f465267d-22",
+        "image": "/home/ell/projects/Deaf-Talks/brag-output/verification/main-preview/frame-22-at-291s.png",
+        "time": 291,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794423845105,
+        "contentHash": "8e1dabd380741699a600b9dee560fd9cf0b9947b9b6590640bb8ed031ac6fbd6",
+        "revision": null,
+        "inputFingerprint": "f8047f55992ca1ff44c8a6a850791f9c11ce8b25e02da605c540c3d443f14ebc",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "renders": {
+    "latest": {
+      "id": "f3bc0bc7-1d79-4a49-8ca8-e110675eebb6",
+      "completedAt": 1794425230608,
+      "output": "/home/ell/projects/Deaf-Talks/brag-output/deaf-talks-demo.mp4",
+      "status": "completed",
+      "revision": "43ee5584-4d65-442f-abea-3746d11aaa3a"
+    },
+    "retainedRevisions": [
+      "43ee5584-4d65-442f-abea-3746d11aaa3a"
+    ]
+  },
+  "pendingArtifactCleanup": []
+}

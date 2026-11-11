@@ -1,0 +1,46 @@
+[hyperframes] check: the report is saved to /home/ell/projects/Deaf-Talks/brag-output/main-composition/.hyperframes/artifacts/checks/87d068ec-a6fe-4626-bedf-70397ef9fb41.json when the check ends, unless a warning says it could not be saved
+[hyperframes] check: 7 files in compositions/ are not mounted from index.html, so not checked; --include-unmounted adds them.
+[hyperframes] browserGpuMode probe → software (WebGL unavailable)
+[hyperframes] browserGpuMode probe → software (without WAYLAND_DISPLAY: WebGL renderer vendor="Google Inc. (Mesa)" renderer="ANGLE (Mesa, llvmpipe (LLVM 20.1.2 256 bits), OpenGL ES 3.2)")
+[hyperframes] WSL: the GPU check found no hardware GPU, so this render uses software WebGL (SwiftShader) and runs at CPU speed.
+  /dev/dri/renderD128 does not exist, so file permissions are not the cause.
+  To use the GPU, render from native Windows (project copied to a Windows drive, run from PowerShell), where Chrome uses the GPU through Direct3D.
+  Pass --no-browser-gpu to skip the GPU check and render in software.
+[INFO] [Compiler] Fetched 11 font face(s) for "Inter" from Google Fonts (cached to /home/ell/.cache/hyperframes/fonts/inter)
+[INFO] [Compiler] Injected deterministic @font-face rules for 1 requested font families
+[hyperframes] check: starting Chrome
+[hyperframes] check: loading the page
+[hyperframes] check: waiting for the page to be ready
+[hyperframes] check: checking samples
+[hyperframes] check: samples 1/9
+[hyperframes] check: samples 2/9
+[hyperframes] check: samples 3/9
+[hyperframes] check: samples 4/9
+[hyperframes] check: samples 5/9
+[hyperframes] check: samples 6/9
+[hyperframes] check: samples 7/9
+[hyperframes] check: samples 8/9
+[hyperframes] check: samples 9/9
+[hyperframes] check: running the overlap pass
+[hyperframes] check: overlap 1/16
+[hyperframes] check: overlap 2/16
+[hyperframes] check: overlap 3/16
+[hyperframes] check: overlap 4/16
+[hyperframes] check: overlap 5/16
+[hyperframes] check: overlap 6/16
+[hyperframes] check: overlap 7/16
+[hyperframes] check: overlap 8/16
+[hyperframes] check: overlap 9/16
+[hyperframes] check: overlap 10/16
+[hyperframes] check: overlap 11/16
+[hyperframes] check: overlap 12/16
+[hyperframes] check: overlap 13/16
+[hyperframes] check: overlap 14/16
+[hyperframes] check: overlap 15/16
+[hyperframes] check: overlap 16/16
+[hyperframes] check: checking samples
+[hyperframes] check: analyze 0/3
+[hyperframes] check: analyzing the samples
+[hyperframes] check: analyze 1/3
+[hyperframes] check: analyze 2/3
+[hyperframes] check: report saved to /home/ell/projects/Deaf-Talks/brag-output/main-composition/.hyperframes/artifacts/checks/87d068ec-a6fe-4626-bedf-70397ef9fb41.json

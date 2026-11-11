@@ -1,0 +1,105 @@
+1
+00:00:00,000 --> 00:00:12,000
+A home for South African Sign Language stories, shared with care.
+
+2
+00:00:12,000 --> 00:00:30,000
+The project addresses access to SASL stories and control over how they are shared.
+
+3
+00:00:30,000 --> 00:00:44,000
+Deaf-Talks · working product name: SignStories · deaf-talks.vercel.app
+
+4
+00:00:44,000 --> 00:01:00,000
+Sign-up offers Learner and Storyteller. Teacher promotion is managed by the team.
+
+5
+00:01:00,000 --> 00:01:08,000
+Real screen recording · demo account · credentials redacted
+
+6
+00:01:08,000 --> 00:01:26,000
+MP4, WebM or MOV · the upload begins privately
+Upload account: Tino · credit shown in app: Tino
+
+7
+00:01:26,000 --> 00:01:43,000
+Visible caption: “Hello, how are you. I respect you and I support you.”
+Demo upload by Tino · credit: Tino
+
+8
+00:01:43,000 --> 00:02:01,000
+The selected demo video is 25.4 MB; progress reaches 100%.
+Demo upload by Tino · credit: Tino
+
+9
+00:02:01,000 --> 00:02:11,000
+The recording confirms: “Your story is saved as a private draft. Only you can view it.”
+Demo upload by Tino · credit: Tino
+
+10
+00:02:11,000 --> 00:02:25,000
+Tagging is implemented in the repo; this step is explained because it was not recorded.
+
+11
+00:02:25,000 --> 00:02:39,000
+Publication requires consent, nonprivate usage, a caption, credit and 3–5 valid signs.
+
+12
+00:02:39,000 --> 00:02:47,000
+Login entry is omitted to keep account details private.
+
+13
+00:02:47,000 --> 00:02:57,000
+Real demo account footage · published stories at /stories
+Visible demo story: Tindo · credit: Tindo
+Other demo card: Kakashi · credit: Kakashi
+
+14
+00:02:57,000 --> 00:03:16,000
+“Hello, my name is T I N O T E N D A, I am
+learning sign language. It’s nice to meet you.”
+Story caption copied from the app; no new translation of the signing has been added.
+Storyteller: gohan · credit: Tinothecreator
+Demo story: Learning sign language
+
+15
+00:03:16,000 --> 00:03:24,000
+Recorded sign list; the final frame is held for reading. Practice is a roadmap feature.
+Storyteller: gohan · credit: Tinothecreator
+
+16
+00:03:24,000 --> 00:03:33,000
+Timestamp navigation is verified in the repo; a completed seek is not shown in this recording.
+
+17
+00:03:33,000 --> 00:03:45,000
+Teacher account view is held for reading. Review submission is excluded from this walkthrough.
+Demo teacher account: piccalo
+
+18
+00:03:45,000 --> 00:04:01,000
+Today’s walkthrough shows account access and browsing. Human feedback is listed under what’s next.
+Demo story: Tindo · credit: Tindo
+Other demo card: Kakashi · credit: Kakashi
+
+19
+00:04:01,000 --> 00:04:15,000
+Withdrawal hides the story from others and prevents new playback links.
+
+20
+00:04:15,000 --> 00:04:29,000
+An already issued link may work until expiry. No download button; playback cannot prevent copying.
+
+21
+00:04:29,000 --> 00:04:39,000
+Text-only AI belongs in the roadmap. People judge signing.
+
+22
+00:04:39,000 --> 00:04:47,000
+No AI recognition, generation, grading or translation of sign language from video.
+
+23
+00:04:47,000 --> 00:04:55,000
+OpenAI × Andela hackathon · built with Codex
