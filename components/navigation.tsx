@@ -2,16 +2,17 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BookOpen, ClipboardCheck, LibraryBig, UserRound, Video } from "lucide-react";
+import { House, BookOpen, ClipboardCheck, LibraryBig, UserRound, Video } from "lucide-react";
 
 type Role = "learner" | "storyteller" | "teacher";
+const home = { href: "/home", label: "Home", icon: House };
 const stories = { href: "/stories", label: "Stories", icon: BookOpen };
 const reviews = { href: "/reviews", label: "Reviews", icon: ClipboardCheck };
 const account = { href: "/account", label: "Account", icon: UserRound };
 const tabs = {
-  learner: [stories, { href: "/practice", label: "Practice", icon: Video }, account],
-  storyteller: [{ href: "/studio", label: "My stories", icon: LibraryBig }, reviews, account],
-  teacher: [reviews, stories, account],
+  learner: [home, stories, { href: "/practice", label: "Practice", icon: Video }, account],
+  storyteller: [home, { href: "/studio", label: "My stories", icon: LibraryBig }, reviews, account],
+  teacher: [home, reviews, stories, account],
 };
 
 export function Navigation({ role }: { role?: Role }) {

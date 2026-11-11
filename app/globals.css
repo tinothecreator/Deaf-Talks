@@ -39,6 +39,7 @@
 :root { background: var(--color-canvas); color: var(--color-ink); }
 body { margin: 0; overflow-wrap: anywhere; font-family: var(--font-sans); line-height: 1.6; }
 h1, h2, h3 { line-height: 1.2; text-wrap: balance; }
+h3.truncate { text-wrap: nowrap; }
 input, textarea, select { max-width: 100%; }
 .auth-input { width: 100%; min-height: 48px; border: 1px solid var(--color-line); border-radius: var(--radius-control); background: var(--color-surface); padding: 0.75rem 1rem; font-size: 1rem; color: var(--color-ink); }
 :focus-visible { outline: 3px solid var(--color-focus); outline-offset: 4px; box-shadow: 0 0 0 4px white; }
@@ -57,3 +58,10 @@ input, textarea, select { max-width: 100%; }
 .role-option:has(input:focus-visible) { outline: 3px solid var(--color-focus); outline-offset: 4px; }
 .skip-link { position: absolute; top: 0.5rem; left: 0.5rem; z-index: 50; transform: translateY(-200%); border-radius: var(--radius-control); background: var(--color-ink); color: white; padding: 1rem; }
 .skip-link:focus { transform: translateY(0); }
+
+.video-rail { display: grid; grid-auto-flow: column; grid-auto-columns: min(84%, 22rem); gap: 1rem; min-width: 0; max-width: 100%; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; padding: 0.5rem 0.5rem 1rem; scroll-padding-inline: 0.5rem; }
+.video-rail > li { min-width: 0; scroll-snap-align: start; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+  .video-rail { scroll-snap-type: none; }
+}

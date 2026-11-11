@@ -29,7 +29,7 @@ export default async function RootLayout({
         <a className="skip-link" href="#main-content">Skip to main content</a>
         <header className="border-b border-line/40 bg-surface">
           <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-8">
-            <Link className="inline-flex min-h-12 items-center gap-2 text-xl font-bold tracking-tight text-primary" href="/">
+            <Link className="inline-flex min-h-12 items-center gap-2 text-xl font-bold tracking-tight text-primary" href={account.user ? "/home" : "/"}>
               <BookOpen size={25} aria-hidden="true" />SignStories
             </Link>
             {account.user ? <>
@@ -44,7 +44,7 @@ export default async function RootLayout({
         <main
           id="main-content"
           tabIndex={-1}
-          className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 sm:px-8 sm:py-12"
+          className="mx-auto min-w-0 w-full max-w-6xl flex-1 px-4 py-8 sm:px-8 sm:py-12"
         >
           {children}
         </main>

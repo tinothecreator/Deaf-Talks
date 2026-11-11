@@ -1,9 +1,13 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
+import { getCurrentAccount } from "@/lib/auth/session";
 import { ArrowRight, BookOpen, MessageSquareText, Video } from "lucide-react";
 import { buttonStyles } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
-export default function Home() {
+export default async function Home() {
+  const { user } = await getCurrentAccount();
+  if (user) redirect("/home");
   return <div className="space-y-12 sm:space-y-16">
     <section className="grid items-center gap-8 lg:grid-cols-[1.4fr_1fr]">
       <div className="space-y-6 py-3 sm:py-8">
