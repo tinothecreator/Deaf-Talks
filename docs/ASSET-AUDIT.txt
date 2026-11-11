@@ -1,0 +1,762 @@
+Asset inventory before cleanup (ls -lhR)
+
+brag-output/:
+total 22M
+drwxr-xr-x 2 ell ell 4.0K Nov 11 20:45 audio-checks
+-rw-r--r-- 1 ell ell 4.1K Nov 11 21:09 brag-plan.md
+-rw-r--r-- 1 ell ell  16K Nov 11 21:30 build_composition.py
+-rw-r--r-- 1 ell ell 3.1K Nov 11 21:30 captions.srt
+-rw-r--r-- 1 ell ell 2.5K Nov 11 21:07 clip-manifest.json
+drwxr-xr-x 2 ell ell 4.0K Nov 11 20:49 clips
+drwxr-xr-x 7 ell ell 4.0K Nov 11 20:56 composition
+-rw-r--r-- 1 ell ell 2.6K Nov 11 21:07 composition-brief.md
+drwxr-xr-x 2 ell ell 4.0K Nov 11 20:58 contact-sheets
+-rw-r--r-- 1 ell ell 167K Nov 11 21:27 deaf-talks-demo.jpg
+-rw-r--r-- 1 ell ell  17M Nov 11 21:31 deaf-talks-demo.mp4
+-rw-r--r-- 1 ell ell 155K Nov 11 21:02 deaf-talks-highlights.jpg
+-rw-r--r-- 1 ell ell 4.9M Nov 11 21:03 deaf-talks-highlights.mp4
+-rw-r--r-- 1 ell ell 1.1K Nov 11 21:02 finalize_posters.py
+-rw-r--r-- 1 ell ell  817 Nov 11 21:30 highlights-captions.srt
+-rw-r--r-- 1 ell ell 2.5K Nov 11 21:04 highlights-timeline.json
+-rw-r--r-- 1 ell ell 6.3K Nov 11 20:51 initial-main-entry.html
+drwxr-xr-x 7 ell ell 4.0K Nov 11 21:04 main-composition
+-rw-r--r-- 1 ell ell 6.3K Nov 11 21:04 main-entry.html
+-rw-r--r-- 1 ell ell 9.8K Nov 11 21:04 main-timeline.json
+-rw-r--r-- 1 ell ell  11K Nov 11 21:32 notes.md
+-rw-r--r-- 1 ell ell 4.1K Nov 11 20:52 plan.md
+-rw-r--r-- 1 ell ell 2.3K Nov 11 21:05 prepare_clips.py
+-rw-r--r-- 1 ell ell 1.7K Nov 11 20:52 share-copy-variants.md
+-rw-r--r-- 1 ell ell  196 Nov 11 20:52 share-copy.txt
+drwxr-xr-x 7 ell ell 4.0K Nov 11 21:32 verification
+-rw-r--r-- 1 ell ell 2.2K Nov 11 21:00 verify_outputs.py
+
+brag-output/audio-checks:
+total 416K
+-rw-r--r-- 1 ell ell 2.1K Nov 11 20:44 Introduction-levels.txt
+-rw-r--r-- 1 ell ell 3.7K Nov 11 20:44 Introduction-probe.json
+-rw-r--r-- 1 ell ell 275K Nov 11 20:45 Introduction-sample.mp3
+-rw-r--r-- 1 ell ell 1.8K Nov 11 20:44 StorytellerSignup-levels.txt
+-rw-r--r-- 1 ell ell 3.4K Nov 11 20:44 StorytellerSignup-probe.json
+-rw-r--r-- 1 ell ell 2.9K Nov 11 20:44 learnerlogin-levels.txt
+-rw-r--r-- 1 ell ell 3.4K Nov 11 20:44 learnerlogin-probe.json
+-rw-r--r-- 1 ell ell  64K Nov 11 20:45 learnerlogin-sample.mp3
+-rw-r--r-- 1 ell ell 4.3K Nov 11 20:44 teacherbrowse-levels.txt
+-rw-r--r-- 1 ell ell 3.4K Nov 11 20:44 teacherbrowse-probe.json
+-rw-r--r-- 1 ell ell  40K Nov 11 20:45 teacherbrowse-sample.mp3
+
+brag-output/clips:
+total 5.5M
+-rw-r--r-- 1 ell ell 474K Nov 11 21:06 browse.mp4
+-rw-r--r-- 1 ell ell 415K Nov 11 21:06 caption.mp4
+-rw-r--r-- 1 ell ell 331K Nov 11 21:06 key-signs.mp4
+-rw-r--r-- 1 ell ell  89K Nov 11 21:06 learner-account.mp4
+-rw-r--r-- 1 ell ell 533K Nov 11 21:06 private-draft.mp4
+-rw-r--r-- 1 ell ell 285K Nov 11 21:05 signup.mp4
+-rw-r--r-- 1 ell ell  76K Nov 11 21:06 teacher-account.mp4
+-rw-r--r-- 1 ell ell 756K Nov 11 21:07 teacher-home.mp4
+-rw-r--r-- 1 ell ell 675K Nov 11 21:06 upload-form.mp4
+-rw-r--r-- 1 ell ell 644K Nov 11 21:06 upload-progress.mp4
+-rw-r--r-- 1 ell ell 1.3M Nov 11 21:06 watch.mp4
+
+brag-output/composition:
+total 44K
+-rw-r--r-- 1 ell ell 7.8K Nov 11 20:46 AGENTS.md
+-rw-r--r-- 1 ell ell 7.8K Nov 11 20:46 CLAUDE.md
+drwxr-xr-x 5 ell ell 4.0K Nov 11 20:47 assets
+drwxr-xr-x 3 ell ell 4.0K Nov 11 20:51 compositions
+-rw-r--r-- 1 ell ell  529 Nov 11 20:47 hyperframes.json
+-rw-r--r-- 1 ell ell  126 Nov 11 20:47 hyperframes.lock.json
+-rw-r--r-- 1 ell ell 2.6K Nov 11 21:04 index.html
+-rw-r--r-- 1 ell ell   93 Nov 11 20:46 meta.json
+-rw-r--r-- 1 ell ell  296 Nov 11 20:46 package.json
+
+brag-output/composition/assets:
+total 12K
+drwxr-xr-x 2 ell ell 4.0K Nov 11 20:49 footage
+drwxr-xr-x 2 ell ell 4.0K Nov 11 20:47 music
+drwxr-xr-x 2 ell ell 4.0K Nov 11 20:47 runtime
+
+brag-output/composition/assets/footage:
+total 5.5M
+-rw-r--r-- 1 ell ell 474K Nov 11 21:06 browse.mp4
+-rw-r--r-- 1 ell ell 415K Nov 11 21:06 caption.mp4
+-rw-r--r-- 1 ell ell 331K Nov 11 21:06 key-signs.mp4
+-rw-r--r-- 1 ell ell  89K Nov 11 21:06 learner-account.mp4
+-rw-r--r-- 1 ell ell 533K Nov 11 21:06 private-draft.mp4
+-rw-r--r-- 1 ell ell 285K Nov 11 21:05 signup.mp4
+-rw-r--r-- 1 ell ell  76K Nov 11 21:06 teacher-account.mp4
+-rw-r--r-- 1 ell ell 756K Nov 11 21:07 teacher-home.mp4
+-rw-r--r-- 1 ell ell 675K Nov 11 21:06 upload-form.mp4
+-rw-r--r-- 1 ell ell 644K Nov 11 21:06 upload-progress.mp4
+-rw-r--r-- 1 ell ell 1.3M Nov 11 21:06 watch.mp4
+
+brag-output/composition/assets/music:
+total 2.7M
+-rw-r--r-- 1 ell ell 2.7M Nov 11 20:47 happy-beats-business-moves-vol-12-by-ende-dot-app.mp3
+
+brag-output/composition/assets/runtime:
+total 72K
+-rw-r--r-- 1 ell ell 72K Nov 11 20:47 gsap.min.js
+
+brag-output/composition/compositions:
+total 132K
+drwxr-xr-x 2 ell ell 4.0K Nov 11 20:47 components
+-rw-r--r-- 1 ell ell 2.2K Nov 11 21:04 highlights-00.html
+-rw-r--r-- 1 ell ell 2.8K Nov 11 21:04 highlights-01.html
+-rw-r--r-- 1 ell ell 2.8K Nov 11 21:04 highlights-02.html
+-rw-r--r-- 1 ell ell 2.8K Nov 11 21:04 highlights-03.html
+-rw-r--r-- 1 ell ell 2.2K Nov 11 21:04 highlights-04.html
+-rw-r--r-- 1 ell ell 2.3K Nov 11 21:04 highlights-05.html
+-rw-r--r-- 1 ell ell 1.6K Nov 11 21:04 highlights-captions.html
+-rw-r--r-- 1 ell ell 2.1K Nov 11 21:04 main-00.html
+-rw-r--r-- 1 ell ell 2.2K Nov 11 21:04 main-01.html
+-rw-r--r-- 1 ell ell 2.2K Nov 11 21:04 main-02.html
+-rw-r--r-- 1 ell ell 2.2K Nov 11 21:04 main-03.html
+-rw-r--r-- 1 ell ell 2.8K Nov 11 21:04 main-04.html
+-rw-r--r-- 1 ell ell 2.8K Nov 11 21:04 main-05.html
+-rw-r--r-- 1 ell ell 2.8K Nov 11 21:04 main-06.html
+-rw-r--r-- 1 ell ell 2.8K Nov 11 21:04 main-07.html
+-rw-r--r-- 1 ell ell 2.8K Nov 11 21:04 main-08.html
+-rw-r--r-- 1 ell ell 2.3K Nov 11 21:04 main-09.html
+-rw-r--r-- 1 ell ell 2.3K Nov 11 21:04 main-10.html
+-rw-r--r-- 1 ell ell 2.8K Nov 11 21:04 main-11.html
+-rw-r--r-- 1 ell ell 2.8K Nov 11 21:04 main-12.html
+-rw-r--r-- 1 ell ell 2.9K Nov 11 21:04 main-13.html
+-rw-r--r-- 1 ell ell 2.8K Nov 11 21:04 main-14.html
+-rw-r--r-- 1 ell ell 2.3K Nov 11 21:04 main-15.html
+-rw-r--r-- 1 ell ell 2.8K Nov 11 21:04 main-16.html
+-rw-r--r-- 1 ell ell 2.8K Nov 11 21:04 main-17.html
+-rw-r--r-- 1 ell ell 2.3K Nov 11 21:04 main-18.html
+-rw-r--r-- 1 ell ell 2.3K Nov 11 21:04 main-19.html
+-rw-r--r-- 1 ell ell 2.2K Nov 11 21:04 main-20.html
+-rw-r--r-- 1 ell ell 2.3K Nov 11 21:04 main-21.html
+-rw-r--r-- 1 ell ell 2.3K Nov 11 21:04 main-22.html
+-rw-r--r-- 1 ell ell 4.7K Nov 11 21:04 main-captions.html
+
+brag-output/composition/compositions/components:
+total 28K
+-rw-r--r-- 1 ell ell 25K Nov 11 20:47 browser-device-stage.html
+
+brag-output/contact-sheets:
+total 3.4M
+-rw-r--r-- 1 ell ell 111K Nov 11 20:44 Introduction.jpg
+-rw-r--r-- 1 ell ell 105K Nov 11 20:46 StorytellerSignup-30.png
+-rw-r--r-- 1 ell ell 124K Nov 11 20:46 StorytellerSignup-46.png
+-rw-r--r-- 1 ell ell 334K Nov 11 20:44 StorytellerSignup.jpg
+-rw-r--r-- 1 ell ell 172K Nov 11 20:58 browse-4.png
+-rw-r--r-- 1 ell ell 210K Nov 11 20:58 browse-5.5.png
+-rw-r--r-- 1 ell ell 129K Nov 11 20:54 cut-learner-account.jpg
+-rw-r--r-- 1 ell ell 175K Nov 11 20:54 cut-signup.jpg
+-rw-r--r-- 1 ell ell  69K Nov 11 20:54 cut-teacher-account.jpg
+-rw-r--r-- 1 ell ell 269K Nov 11 20:54 cut-teacher-home.jpg
+-rw-r--r-- 1 ell ell 301K Nov 11 20:54 cut-watch.jpg
+-rw-r--r-- 1 ell ell 143K Nov 11 20:46 learnerlogin-48.png
+-rw-r--r-- 1 ell ell 231K Nov 11 20:48 learnerlogin-detail.jpg
+-rw-r--r-- 1 ell ell 242K Nov 11 20:44 learnerlogin.jpg
+-rw-r--r-- 1 ell ell 150K Nov 11 20:58 teacher-home-6.png
+-rw-r--r-- 1 ell ell  81K Nov 11 20:46 teacherbrowse-16.png
+-rw-r--r-- 1 ell ell 227K Nov 11 20:48 teacherbrowse-detail.jpg
+-rw-r--r-- 1 ell ell 324K Nov 11 20:44 teacherbrowse.jpg
+
+brag-output/main-composition:
+total 36K
+-rw-r--r-- 1 ell ell 7.8K Nov 11 20:46 AGENTS.md
+drwxr-xr-x 5 ell ell 4.0K Nov 11 20:47 assets
+drwxr-xr-x 3 ell ell 4.0K Nov 11 20:51 compositions
+-rw-r--r-- 1 ell ell  529 Nov 11 20:47 hyperframes.json
+-rw-r--r-- 1 ell ell 6.3K Nov 11 20:56 index.html
+-rw-r--r-- 1 ell ell   83 Nov 11 20:59 meta.json
+-rw-r--r-- 1 ell ell  296 Nov 11 20:46 package.json
+
+brag-output/main-composition/assets:
+total 12K
+drwxr-xr-x 2 ell ell 4.0K Nov 11 20:49 footage
+drwxr-xr-x 2 ell ell 4.0K Nov 11 20:47 music
+drwxr-xr-x 2 ell ell 4.0K Nov 11 20:47 runtime
+
+brag-output/main-composition/assets/footage:
+total 5.5M
+-rw-r--r-- 1 ell ell 474K Nov 11 20:55 browse.mp4
+-rw-r--r-- 1 ell ell 415K Nov 11 20:55 caption.mp4
+-rw-r--r-- 1 ell ell 331K Nov 11 20:55 key-signs.mp4
+-rw-r--r-- 1 ell ell  89K Nov 11 21:07 learner-account.mp4
+-rw-r--r-- 1 ell ell 533K Nov 11 20:55 private-draft.mp4
+-rw-r--r-- 1 ell ell 285K Nov 11 20:54 signup.mp4
+-rw-r--r-- 1 ell ell  76K Nov 11 21:07 teacher-account.mp4
+-rw-r--r-- 1 ell ell 756K Nov 11 20:55 teacher-home.mp4
+-rw-r--r-- 1 ell ell 675K Nov 11 20:54 upload-form.mp4
+-rw-r--r-- 1 ell ell 644K Nov 11 20:55 upload-progress.mp4
+-rw-r--r-- 1 ell ell 1.3M Nov 11 20:55 watch.mp4
+
+brag-output/main-composition/assets/music:
+total 2.7M
+-rw-r--r-- 1 ell ell 2.7M Nov 11 20:47 happy-beats-business-moves-vol-12-by-ende-dot-app.mp3
+
+brag-output/main-composition/assets/runtime:
+total 72K
+-rw-r--r-- 1 ell ell 72K Nov 11 20:47 gsap.min.js
+
+brag-output/main-composition/compositions:
+total 132K
+drwxr-xr-x 2 ell ell 4.0K Nov 11 20:47 components
+-rw-r--r-- 1 ell ell 2.2K Nov 11 20:56 highlights-00.html
+-rw-r--r-- 1 ell ell 2.8K Nov 11 20:56 highlights-01.html
+-rw-r--r-- 1 ell ell 2.8K Nov 11 20:56 highlights-02.html
+-rw-r--r-- 1 ell ell 2.8K Nov 11 20:56 highlights-03.html
+-rw-r--r-- 1 ell ell 2.2K Nov 11 20:56 highlights-04.html
+-rw-r--r-- 1 ell ell 2.3K Nov 11 20:56 highlights-05.html
+-rw-r--r-- 1 ell ell 1.6K Nov 11 20:56 highlights-captions.html
+-rw-r--r-- 1 ell ell 2.1K Nov 11 20:56 main-00.html
+-rw-r--r-- 1 ell ell 2.2K Nov 11 20:56 main-01.html
+-rw-r--r-- 1 ell ell 2.2K Nov 11 20:56 main-02.html
+-rw-r--r-- 1 ell ell 2.2K Nov 11 20:56 main-03.html
+-rw-r--r-- 1 ell ell 2.8K Nov 11 20:56 main-04.html
+-rw-r--r-- 1 ell ell 2.8K Nov 11 20:56 main-05.html
+-rw-r--r-- 1 ell ell 2.8K Nov 11 20:56 main-06.html
+-rw-r--r-- 1 ell ell 2.8K Nov 11 20:56 main-07.html
+-rw-r--r-- 1 ell ell 2.8K Nov 11 20:56 main-08.html
+-rw-r--r-- 1 ell ell 2.3K Nov 11 20:56 main-09.html
+-rw-r--r-- 1 ell ell 2.3K Nov 11 20:56 main-10.html
+-rw-r--r-- 1 ell ell 2.8K Nov 11 20:56 main-11.html
+-rw-r--r-- 1 ell ell 2.8K Nov 11 20:56 main-12.html
+-rw-r--r-- 1 ell ell 2.9K Nov 11 20:56 main-13.html
+-rw-r--r-- 1 ell ell 2.8K Nov 11 20:56 main-14.html
+-rw-r--r-- 1 ell ell 2.3K Nov 11 20:56 main-15.html
+-rw-r--r-- 1 ell ell 2.8K Nov 11 20:56 main-16.html
+-rw-r--r-- 1 ell ell 2.8K Nov 11 21:04 main-17.html
+-rw-r--r-- 1 ell ell 2.3K Nov 11 20:56 main-18.html
+-rw-r--r-- 1 ell ell 2.3K Nov 11 20:56 main-19.html
+-rw-r--r-- 1 ell ell 2.2K Nov 11 20:56 main-20.html
+-rw-r--r-- 1 ell ell 2.3K Nov 11 20:56 main-21.html
+-rw-r--r-- 1 ell ell 2.3K Nov 11 20:56 main-22.html
+-rw-r--r-- 1 ell ell 4.7K Nov 11 20:56 main-captions.html
+
+brag-output/main-composition/compositions/components:
+total 28K
+-rw-r--r-- 1 ell ell 25K Nov 11 20:47 browser-device-stage.html
+
+brag-output/verification:
+total 1.1M
+drwxr-xr-x 2 ell ell 4.0K Nov 11 21:31 deaf-talks-demo
+-rw-r--r-- 1 ell ell 3.6K Nov 11 21:31 deaf-talks-demo-ffprobe.json
+drwxr-xr-x 2 ell ell 4.0K Nov 11 21:02 deaf-talks-highlights
+-rw-r--r-- 1 ell ell 3.6K Nov 11 21:31 deaf-talks-highlights-ffprobe.json
+-rw-r--r-- 1 ell ell 2.8K Nov 11 20:56 highlights-check.json
+-rw-r--r-- 1 ell ell  22K Nov 11 20:56 highlights-check.log
+drwxr-xr-x 2 ell ell 4.0K Nov 11 20:55 highlights-preview
+-rw-r--r-- 1 ell ell 163K Nov 11 21:01 highlights-render.log
+-rw-r--r-- 1 ell ell  87K Nov 11 21:08 learner-account-held.png
+-rw-r--r-- 1 ell ell 3.0K Nov 11 21:02 main-check.json
+-rw-r--r-- 1 ell ell  24K Nov 11 21:02 main-check.log
+-rw-r--r-- 1 ell ell 3.1K Nov 11 21:05 main-credit-check.json
+-rw-r--r-- 1 ell ell 2.7K Nov 11 21:05 main-credit-check.log
+-rw-r--r-- 1 ell ell 3.0K Nov 11 21:08 main-final-check.json
+-rw-r--r-- 1 ell ell 2.7K Nov 11 21:08 main-final-check.log
+drwxr-xr-x 2 ell ell 4.0K Nov 11 21:08 main-final-fixes
+-rw-r--r-- 1 ell ell 1.1K Nov 11 20:59 main-lint.json
+drwxr-xr-x 2 ell ell 4.0K Nov 11 21:04 main-preview
+-rw-r--r-- 1 ell ell 612K Nov 11 21:27 main-render.log
+-rw-r--r-- 1 ell ell  193 Nov 11 21:31 posters.json
+-rw-r--r-- 1 ell ell  943 Nov 11 21:31 results.json
+-rw-r--r-- 1 ell ell  84K Nov 11 21:08 teacher-account-held.png
+-rw-r--r-- 1 ell ell 2.7K Nov 11 21:32 verification.md
+
+brag-output/verification/deaf-talks-demo:
+total 8.3M
+-rw-r--r-- 1 ell ell 2.4K Nov 11 21:31 audio-levels.log
+-rw-r--r-- 1 ell ell 323K Nov 11 21:31 contact-sheet.jpg
+-rw-r--r-- 1 ell ell 550K Nov 11 21:31 frame-00-0s.png
+-rw-r--r-- 1 ell ell 182K Nov 11 21:31 frame-01-10s.png
+-rw-r--r-- 1 ell ell 217K Nov 11 21:31 frame-02-24s.png
+-rw-r--r-- 1 ell ell 219K Nov 11 21:31 frame-03-37s.png
+-rw-r--r-- 1 ell ell 216K Nov 11 21:31 frame-04-53s.png
+-rw-r--r-- 1 ell ell 328K Nov 11 21:31 frame-05-64s.png
+-rw-r--r-- 1 ell ell 407K Nov 11 21:31 frame-06-77s.png
+-rw-r--r-- 1 ell ell 405K Nov 11 21:31 frame-07-95s.png
+-rw-r--r-- 1 ell ell 395K Nov 11 21:31 frame-08-113s.png
+-rw-r--r-- 1 ell ell 411K Nov 11 21:31 frame-09-126s.png
+-rw-r--r-- 1 ell ell 268K Nov 11 21:31 frame-10-138s.png
+-rw-r--r-- 1 ell ell 259K Nov 11 21:31 frame-11-152s.png
+-rw-r--r-- 1 ell ell 325K Nov 11 21:31 frame-12-163s.png
+-rw-r--r-- 1 ell ell 469K Nov 11 21:31 frame-13-172s.png
+-rw-r--r-- 1 ell ell 557K Nov 11 21:31 frame-14-185s.png
+-rw-r--r-- 1 ell ell 394K Nov 11 21:31 frame-15-200s.png
+-rw-r--r-- 1 ell ell 275K Nov 11 21:31 frame-16-208s.png
+-rw-r--r-- 1 ell ell 383K Nov 11 21:31 frame-17-219s.png
+-rw-r--r-- 1 ell ell 445K Nov 11 21:31 frame-18-231s.png
+-rw-r--r-- 1 ell ell 274K Nov 11 21:31 frame-19-249s.png
+-rw-r--r-- 1 ell ell 301K Nov 11 21:31 frame-20-263s.png
+-rw-r--r-- 1 ell ell 223K Nov 11 21:31 frame-21-275s.png
+-rw-r--r-- 1 ell ell 316K Nov 11 21:31 frame-22-283s.png
+-rw-r--r-- 1 ell ell 272K Nov 11 21:31 frame-23-291s.png
+
+brag-output/verification/deaf-talks-highlights:
+total 4.8M
+-rw-r--r-- 1 ell ell 2.1K Nov 11 21:31 audio-levels.log
+-rw-r--r-- 1 ell ell 179K Nov 11 21:31 contact-sheet.jpg
+-rw-r--r-- 1 ell ell 515K Nov 11 21:31 frame-00-0s.png
+-rw-r--r-- 1 ell ell 254K Nov 11 21:31 frame-01-2s.png
+-rw-r--r-- 1 ell ell 392K Nov 11 21:31 frame-02-10s.png
+-rw-r--r-- 1 ell ell 415K Nov 11 21:31 frame-03-16s.png
+-rw-r--r-- 1 ell ell 439K Nov 11 21:31 frame-04-24s.png
+-rw-r--r-- 1 ell ell 394K Nov 11 21:31 frame-05-28s.png
+-rw-r--r-- 1 ell ell 456K Nov 11 21:31 frame-06-35s.png
+-rw-r--r-- 1 ell ell 560K Nov 11 21:31 frame-07-40s.png
+-rw-r--r-- 1 ell ell 492K Nov 11 21:31 frame-08-49s.png
+-rw-r--r-- 1 ell ell 242K Nov 11 21:31 frame-09-56s.png
+-rw-r--r-- 1 ell ell 246K Nov 11 21:31 frame-10-64s.png
+-rw-r--r-- 1 ell ell 223K Nov 11 21:31 frame-11-69s.png
+
+brag-output/verification/highlights-preview:
+total 1.2M
+-rw------- 1 ell ell 151K Nov 11 20:55 contact-sheet.jpg
+-rw------- 1 ell ell  86K Nov 11 20:55 frame-00-at-2s.png
+-rw------- 1 ell ell 236K Nov 11 20:55 frame-01-at-16s.png
+-rw------- 1 ell ell 227K Nov 11 20:55 frame-02-at-28s.png
+-rw------- 1 ell ell 298K Nov 11 20:55 frame-03-at-40s.png
+-rw------- 1 ell ell  85K Nov 11 20:55 frame-04-at-56s.png
+-rw------- 1 ell ell  91K Nov 11 20:55 frame-05-at-65s.png
+
+brag-output/verification/main-final-fixes:
+total 692K
+-rw------- 1 ell ell  85K Nov 11 21:08 contact-sheet.jpg
+-rw------- 1 ell ell 165K Nov 11 21:08 frame-00-at-163s.png
+-rw------- 1 ell ell 187K Nov 11 21:08 frame-01-at-219s.png
+-rw------- 1 ell ell 247K Nov 11 21:08 frame-02-at-233s.png
+
+brag-output/verification/main-preview:
+total 4.1M
+-rw------- 1 ell ell 225K Nov 11 21:04 contact-sheet-1.jpg
+-rw------- 1 ell ell 239K Nov 11 21:04 contact-sheet-2.jpg
+-rw------- 1 ell ell 119K Nov 11 21:04 contact-sheet-3.jpg
+-rw------- 1 ell ell  74K Nov 11 21:03 frame-00-at-5s.png
+-rw------- 1 ell ell  83K Nov 11 21:03 frame-01-at-22s.png
+-rw------- 1 ell ell  85K Nov 11 21:03 frame-02-at-37s.png
+-rw------- 1 ell ell  79K Nov 11 21:03 frame-03-at-52s.png
+-rw------- 1 ell ell 174K Nov 11 21:03 frame-04-at-64s.png
+-rw------- 1 ell ell 224K Nov 11 21:03 frame-05-at-77s.png
+-rw------- 1 ell ell 220K Nov 11 21:03 frame-06-at-95s.png
+-rw------- 1 ell ell 216K Nov 11 21:03 frame-07-at-113s.png
+-rw------- 1 ell ell 260K Nov 11 21:03 frame-08-at-126s.png
+-rw------- 1 ell ell  90K Nov 11 21:03 frame-09-at-138s.png
+-rw------- 1 ell ell  92K Nov 11 21:03 frame-10-at-152s.png
+-rw------- 1 ell ell 137K Nov 11 21:04 frame-11-at-163s.png
+-rw------- 1 ell ell 244K Nov 11 21:04 frame-12-at-172s.png
+-rw------- 1 ell ell 307K Nov 11 21:04 frame-13-at-185s.png
+-rw------- 1 ell ell 241K Nov 11 21:04 frame-14-at-200s.png
+-rw------- 1 ell ell  90K Nov 11 21:04 frame-15-at-208s.png
+-rw------- 1 ell ell 160K Nov 11 21:04 frame-16-at-219s.png
+-rw------- 1 ell ell 238K Nov 11 21:04 frame-17-at-233s.png
+-rw------- 1 ell ell  99K Nov 11 21:04 frame-18-at-249s.png
+-rw------- 1 ell ell 104K Nov 11 21:04 frame-19-at-263s.png
+-rw------- 1 ell ell  83K Nov 11 21:04 frame-20-at-275s.png
+-rw------- 1 ell ell 100K Nov 11 21:04 frame-21-at-283s.png
+-rw------- 1 ell ell 101K Nov 11 21:04 frame-22-at-291s.png
+
+demo-assets/:
+total 211M
+-rw-r--r-- 1 ell ell  12M Nov 11 20:02 Introduction.mp4
+-rw-r--r-- 1 ell ell 167M Nov 11 22:14 SignStoriesDemoVid.mp4
+-rw-r--r-- 1 ell ell 9.0M Nov 11 20:03 StorytellerSignup.mp4
+-rw-r--r-- 1 ell ell  60K Nov 11 22:30 homepage.jpeg
+-rw-r--r-- 1 ell ell   26 Nov 11 22:30 homepage.jpeg:Zone.Identifier
+-rw-r--r-- 1 ell ell 6.8M Nov 11 22:09 how i build signstories.mp4
+-rw-r--r-- 1 ell ell   25 Nov 11 22:09 how i build signstories.mp4:Zone.Identifier
+-rw-r--r-- 1 ell ell  45K Nov 11 22:31 landingpage.jpeg
+-rw-r--r-- 1 ell ell   26 Nov 11 22:31 landingpage.jpeg:Zone.Identifier
+-rw-r--r-- 1 ell ell 7.7M Nov 11 20:03 learnerlogin.mp4
+-rw-r--r-- 1 ell ell  48K Nov 11 22:31 practisepage.jpeg
+-rw-r--r-- 1 ell ell   26 Nov 11 22:32 practisepage.jpeg:Zone.Identifier
+-rw-r--r-- 1 ell ell  45K Nov 11 22:31 storiespage.jpeg
+-rw-r--r-- 1 ell ell   26 Nov 11 22:31 storiespage.jpeg:Zone.Identifier
+-rw-r--r-- 1 ell ell  51K Nov 11 22:31 storiespage2.jpeg
+-rw-r--r-- 1 ell ell   26 Nov 11 22:31 storiespage2.jpeg:Zone.Identifier
+-rw-r--r-- 1 ell ell 8.9M Nov 11 20:03 teacherbrowse.mp4
+
+Tracked asset paths before cleanup (git ls-files)
+
+brag-output/audio-checks/Introduction-levels.txt
+brag-output/audio-checks/Introduction-probe.json
+brag-output/audio-checks/Introduction-sample.mp3
+brag-output/audio-checks/StorytellerSignup-levels.txt
+brag-output/audio-checks/StorytellerSignup-probe.json
+brag-output/audio-checks/learnerlogin-levels.txt
+brag-output/audio-checks/learnerlogin-probe.json
+brag-output/audio-checks/learnerlogin-sample.mp3
+brag-output/audio-checks/teacherbrowse-levels.txt
+brag-output/audio-checks/teacherbrowse-probe.json
+brag-output/audio-checks/teacherbrowse-sample.mp3
+brag-output/brag-plan.md
+brag-output/build_composition.py
+brag-output/captions.srt
+brag-output/clip-manifest.json
+brag-output/clips/browse.mp4
+brag-output/clips/caption.mp4
+brag-output/clips/key-signs.mp4
+brag-output/clips/learner-account.mp4
+brag-output/clips/private-draft.mp4
+brag-output/clips/signup.mp4
+brag-output/clips/teacher-account.mp4
+brag-output/clips/teacher-home.mp4
+brag-output/clips/upload-form.mp4
+brag-output/clips/upload-progress.mp4
+brag-output/clips/watch.mp4
+brag-output/composition-brief.md
+brag-output/composition/.hyperframes/artifacts/checks/38cd2fb5-6481-4901-a4e5-a374a84cfcde.json
+brag-output/composition/.hyperframes/artifacts/checks/b5acdd35-0063-4781-bd24-ae874a74ff7d.json
+brag-output/composition/.hyperframes/artifacts/checks/bb15c94f-24d5-4226-b795-023f132b1bfb.json
+brag-output/composition/.hyperframes/cache/check.json
+brag-output/composition/.hyperframes/history-id
+brag-output/composition/.hyperframes/preview/72efb854d5af1408c0b67a9b596d89a2.html
+brag-output/composition/.hyperframes/video-state.json
+brag-output/composition/.thumbnails/v5_5a2d3eff6b321d1f_20cc8dede5a5b684_jpeg_source_index.html_1920x1080_1920x1080_1794423366550_0.00.jpg
+brag-output/composition/.thumbnails/v5_v3_4779afe21948f15b_419e5665994cd25a_jpeg_preview_compositions_highlights-01.html_1920x1080_240x135_1794423366546_3.00.jpg
+brag-output/composition/.thumbnails/v5_v3_60414e9642c67fdb_349bda34fa24eb7a_jpeg_preview_compositions_highlights-04.html_1920x1080_240x135_1794423366550_3.00.jpg
+brag-output/composition/.thumbnails/v5_v3_6ef8ca8073b13cf0_996c2e9fb3568bbc_jpeg_preview_compositions_highlights-00.html_1920x1080_240x135_1794423366546_3.00.jpg
+brag-output/composition/.thumbnails/v5_v3_77592264083e8326_ce57092aaf05fda8_jpeg_preview_compositions_highlights-captions.html_1920x1080_240x135_1794423291623_3.00.jpg
+brag-output/composition/.thumbnails/v5_v3_7c4a74d9d17c3b57_ce57092aaf05fda8_jpeg_preview_compositions_highlights-captions.html_1920x1080_240x135_1794423366550_3.00.jpg
+brag-output/composition/.thumbnails/v5_v3_8e50ba1b511f05fb_7f87b3e946940f89_jpeg_preview_compositions_highlights-00.html_1920x1080_240x135_1794423291619_3.00.jpg
+brag-output/composition/.thumbnails/v5_v3_c3556f881c0633b4_408a85c47813559b_jpeg_preview_compositions_highlights-01.html_1920x1080_240x135_1794423291619_3.00.jpg
+brag-output/composition/.thumbnails/v5_v3_d952b4dfd5804194_f08d85a51bb0584a_jpeg_preview_compositions_components_browser-device-stage.html_1920x1080_240x135_1794422839111_3.00.jpg
+brag-output/composition/.thumbnails/v5_v3_eaf0e46ef3753f3f_3c2405c5a2541ee2_jpeg_preview_compositions_highlights-05.html_1920x1080_240x135_1794423366550_3.00.jpg
+brag-output/composition/.thumbnails/v5_v3_fcae28a3f63ce690_d10ba8662d538653_jpeg_preview_compositions_highlights-02.html_1920x1080_240x135_1794423366546_3.00.jpg
+brag-output/composition/.thumbnails/v5_v3_ff2505178340fea5_59a22c01dfebb497_jpeg_preview_compositions_highlights-03.html_1920x1080_240x135_1794423366546_3.00.jpg
+brag-output/composition/.waveform-cache/peaks-v2_assets_music_happy-beats-business-moves-vol-12-by-ende-dot-app.mp3_2817792-1794422839486.json
+brag-output/composition/.waveform-cache/v2_assets_music_happy-beats-business-moves-vol-12-by-ende-dot-app.mp3_2817792-1794422839486.json
+brag-output/composition/AGENTS.md
+brag-output/composition/CLAUDE.md
+brag-output/composition/assets/footage/browse.mp4
+brag-output/composition/assets/footage/caption.mp4
+brag-output/composition/assets/footage/key-signs.mp4
+brag-output/composition/assets/footage/learner-account.mp4
+brag-output/composition/assets/footage/private-draft.mp4
+brag-output/composition/assets/footage/signup.mp4
+brag-output/composition/assets/footage/teacher-account.mp4
+brag-output/composition/assets/footage/teacher-home.mp4
+brag-output/composition/assets/footage/upload-form.mp4
+brag-output/composition/assets/footage/upload-progress.mp4
+brag-output/composition/assets/footage/watch.mp4
+brag-output/composition/assets/music/happy-beats-business-moves-vol-12-by-ende-dot-app.mp3
+brag-output/composition/assets/runtime/gsap.min.js
+brag-output/composition/compositions/components/browser-device-stage.html
+brag-output/composition/compositions/highlights-00.html
+brag-output/composition/compositions/highlights-01.html
+brag-output/composition/compositions/highlights-02.html
+brag-output/composition/compositions/highlights-03.html
+brag-output/composition/compositions/highlights-04.html
+brag-output/composition/compositions/highlights-05.html
+brag-output/composition/compositions/highlights-captions.html
+brag-output/composition/compositions/main-00.html
+brag-output/composition/compositions/main-01.html
+brag-output/composition/compositions/main-02.html
+brag-output/composition/compositions/main-03.html
+brag-output/composition/compositions/main-04.html
+brag-output/composition/compositions/main-05.html
+brag-output/composition/compositions/main-06.html
+brag-output/composition/compositions/main-07.html
+brag-output/composition/compositions/main-08.html
+brag-output/composition/compositions/main-09.html
+brag-output/composition/compositions/main-10.html
+brag-output/composition/compositions/main-11.html
+brag-output/composition/compositions/main-12.html
+brag-output/composition/compositions/main-13.html
+brag-output/composition/compositions/main-14.html
+brag-output/composition/compositions/main-15.html
+brag-output/composition/compositions/main-16.html
+brag-output/composition/compositions/main-17.html
+brag-output/composition/compositions/main-18.html
+brag-output/composition/compositions/main-19.html
+brag-output/composition/compositions/main-20.html
+brag-output/composition/compositions/main-21.html
+brag-output/composition/compositions/main-22.html
+brag-output/composition/compositions/main-captions.html
+brag-output/composition/hyperframes.json
+brag-output/composition/hyperframes.lock.json
+brag-output/composition/index.html
+brag-output/composition/meta.json
+brag-output/composition/package.json
+brag-output/contact-sheets/Introduction.jpg
+brag-output/contact-sheets/StorytellerSignup-30.png
+brag-output/contact-sheets/StorytellerSignup-46.png
+brag-output/contact-sheets/StorytellerSignup.jpg
+brag-output/contact-sheets/browse-4.png
+brag-output/contact-sheets/browse-5.5.png
+brag-output/contact-sheets/cut-learner-account.jpg
+brag-output/contact-sheets/cut-signup.jpg
+brag-output/contact-sheets/cut-teacher-account.jpg
+brag-output/contact-sheets/cut-teacher-home.jpg
+brag-output/contact-sheets/cut-watch.jpg
+brag-output/contact-sheets/learnerlogin-48.png
+brag-output/contact-sheets/learnerlogin-detail.jpg
+brag-output/contact-sheets/learnerlogin.jpg
+brag-output/contact-sheets/teacher-home-6.png
+brag-output/contact-sheets/teacherbrowse-16.png
+brag-output/contact-sheets/teacherbrowse-detail.jpg
+brag-output/contact-sheets/teacherbrowse.jpg
+brag-output/deaf-talks-demo.jpg
+brag-output/deaf-talks-demo.mp4
+brag-output/deaf-talks-highlights.jpg
+brag-output/deaf-talks-highlights.mp4
+brag-output/finalize_posters.py
+brag-output/highlights-captions.srt
+brag-output/highlights-timeline.json
+brag-output/initial-main-entry.html
+brag-output/main-composition/.hyperframes/artifacts/checks/c4a51365-9d32-49d1-aec3-c759e8e7cac6.json
+brag-output/main-composition/.hyperframes/artifacts/checks/df49d6df-b387-4568-9d6f-d63a108b0850.json
+brag-output/main-composition/.hyperframes/cache/check.json
+brag-output/main-composition/.hyperframes/history-id
+brag-output/main-composition/.hyperframes/preview/af41ba78e871616c447de706a28aad91.html
+brag-output/main-composition/.hyperframes/video-state.json
+brag-output/main-composition/.thumbnails/v5_c92b34ad15d20ec1_906e779ea94e0f2e_jpeg_source_index.html_1920x1080_1920x1080_1794423366542_0.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_039252ef7cf18adc_4d9672e7a23d75f5_jpeg_preview_compositions_main-01.html_1920x1080_240x135_1794423366530_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_041b501f4f7e81b5_304c561beba051ad_jpeg_preview_compositions_main-18.html_1920x1080_240x135_1794423366538_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_07514b4b996f36cb_a260205b61a691c6_jpeg_preview_compositions_main-06.html_1920x1080_240x135_1794423366530_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_1361650fac4e53a7_f561ec76201abc98_jpeg_preview_compositions_main-16.html_1920x1080_240x135_1794423366538_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_1469716879f99edb_2590185d00b199ad_jpeg_preview_compositions_main-13.html_1920x1080_240x135_1794423366534_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_19bee12fede4e1ac_a19d68a760828d44_jpeg_preview_compositions_main-12.html_1920x1080_240x135_1794423366534_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_1eddf8c79832a113_a260205b61a691c6_jpeg_preview_compositions_main-06.html_1920x1080_240x135_1794423366530_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_1ff103e470b15ca1_2590185d00b199ad_jpeg_preview_compositions_main-13.html_1920x1080_240x135_1794423366534_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_2d5f0e2c3f4f3d6d_ffa1904f7ca731fc_jpeg_preview_compositions_main-00.html_1920x1080_240x135_1794423366526_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_2f89e37982495204_349bda34fa24eb7a_jpeg_preview_compositions_highlights-04.html_1920x1080_240x135_1794423366550_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_2f89e37982495204_3c2405c5a2541ee2_jpeg_preview_compositions_highlights-05.html_1920x1080_240x135_1794423366550_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_2f89e37982495204_419e5665994cd25a_jpeg_preview_compositions_highlights-01.html_1920x1080_240x135_1794423366546_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_2f89e37982495204_59a22c01dfebb497_jpeg_preview_compositions_highlights-03.html_1920x1080_240x135_1794423366546_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_2f89e37982495204_996c2e9fb3568bbc_jpeg_preview_compositions_highlights-00.html_1920x1080_240x135_1794423366546_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_2f89e37982495204_d10ba8662d538653_jpeg_preview_compositions_highlights-02.html_1920x1080_240x135_1794423366546_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_2f89e37982495204_f08d85a51bb0584a_jpeg_preview_compositions_components_browser-device-stage.html_1920x1080_240x135_1794422839111_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_2f8af5a32e35ae42_2590185d00b199ad_jpeg_preview_compositions_main-13.html_1920x1080_240x135_1794423366534_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_3017874901d64f62_f561ec76201abc98_jpeg_preview_compositions_main-16.html_1920x1080_240x135_1794423366538_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_31fdb268c7c83263_f1c7ff2b88335a0e_jpeg_preview_compositions_main-19.html_1920x1080_240x135_1794423366538_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_3adce1dec2169868_170589f2ce1df3a0_jpeg_preview_compositions_main-04.html_1920x1080_240x135_1794423366530_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_3dc68307bd160f01_66191a8d88b6504b_jpeg_preview_compositions_main-21.html_1920x1080_240x135_1794423366542_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_3e8ee61f4a626829_1d5cdee7c219e5a6_jpeg_preview_compositions_main-09.html_1920x1080_240x135_1794423366530_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_4415d057912ef303_66191a8d88b6504b_jpeg_preview_compositions_main-21.html_1920x1080_240x135_1794423366542_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_4d72ab87c09b8ad3_a7826e4efe7297a5_jpeg_preview_compositions_main-14.html_1920x1080_240x135_1794423366534_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_4fad9946830cb3d0_ee18e7b3f349b7cf_jpeg_preview_compositions_main-02.html_1920x1080_240x135_1794423366530_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_50d0dd3f3f10069f_304c561beba051ad_jpeg_preview_compositions_main-18.html_1920x1080_240x135_1794423366538_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_518dff3c7dbcec3b_ee18e7b3f349b7cf_jpeg_preview_compositions_main-02.html_1920x1080_240x135_1794423366530_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_58fd6ed9745f7e2e_f1c7ff2b88335a0e_jpeg_preview_compositions_main-19.html_1920x1080_240x135_1794423366538_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_5be8c006a6abfff5_a260205b61a691c6_jpeg_preview_compositions_main-06.html_1920x1080_240x135_1794423366530_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_5f4ef6757d50bc37_56512767ffaa7e92_jpeg_preview_compositions_main-07.html_1920x1080_240x135_1794423366530_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_6c0347d42111de9e_eafb8ad575f2d9b8_jpeg_preview_compositions_main-10.html_1920x1080_240x135_1794423366534_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_73f5813e931f7d6b_460cb3c4c3889236_jpeg_preview_compositions_main-20.html_1920x1080_240x135_1794423366542_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_75109fd78a77a24d_0db8f705996ac097_jpeg_preview_compositions_main-15.html_1920x1080_240x135_1794423366538_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_76e246fa8789d8b6_5917450bb0db4a9f_jpeg_preview_compositions_main-11.html_1920x1080_240x135_1794423366534_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_8118cf3bbc9ab29f_56512767ffaa7e92_jpeg_preview_compositions_main-07.html_1920x1080_240x135_1794423366530_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_851b4fefb2f98006_cb4053a410898313_jpeg_preview_compositions_main-captions.html_1920x1080_240x135_1794423366542_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_856ec3cb2a616cbb_0db8f705996ac097_jpeg_preview_compositions_main-15.html_1920x1080_240x135_1794423366538_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_89d40e665a8f2b6d_a7826e4efe7297a5_jpeg_preview_compositions_main-14.html_1920x1080_240x135_1794423366534_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_8b42c6eedc8a74aa_eafb8ad575f2d9b8_jpeg_preview_compositions_main-10.html_1920x1080_240x135_1794423366534_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_8b43c38e78a441cb_5917450bb0db4a9f_jpeg_preview_compositions_main-11.html_1920x1080_240x135_1794423366534_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_8f5ee6a01858f921_4d9672e7a23d75f5_jpeg_preview_compositions_main-01.html_1920x1080_240x135_1794423366530_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_98723944bad9da6c_4d9672e7a23d75f5_jpeg_preview_compositions_main-01.html_1920x1080_240x135_1794423366530_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_99f8bced8a6ec223_5917450bb0db4a9f_jpeg_preview_compositions_main-11.html_1920x1080_240x135_1794423366534_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_9ecc071357133d9e_349bda34fa24eb7a_jpeg_preview_compositions_highlights-04.html_1920x1080_240x135_1794423366550_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_9ecc071357133d9e_3c2405c5a2541ee2_jpeg_preview_compositions_highlights-05.html_1920x1080_240x135_1794423366550_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_9ecc071357133d9e_419e5665994cd25a_jpeg_preview_compositions_highlights-01.html_1920x1080_240x135_1794423366546_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_9ecc071357133d9e_59a22c01dfebb497_jpeg_preview_compositions_highlights-03.html_1920x1080_240x135_1794423366546_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_9ecc071357133d9e_996c2e9fb3568bbc_jpeg_preview_compositions_highlights-00.html_1920x1080_240x135_1794423366546_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_9ecc071357133d9e_d10ba8662d538653_jpeg_preview_compositions_highlights-02.html_1920x1080_240x135_1794423366546_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_9ecc071357133d9e_f08d85a51bb0584a_jpeg_preview_compositions_components_browser-device-stage.html_1920x1080_240x135_1794422839111_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_a0bbdf90a8ad250c_5a9a04b683770764_jpeg_preview_compositions_main-22.html_1920x1080_240x135_1794423366542_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_a26a9798125afe4c_380eadd0d14123b3_jpeg_preview_compositions_main-08.html_1920x1080_240x135_1794423366530_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_a72ac83ba7f7beb4_0db8f705996ac097_jpeg_preview_compositions_main-15.html_1920x1080_240x135_1794423366538_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_a8e3c8637527f2fc_170589f2ce1df3a0_jpeg_preview_compositions_main-04.html_1920x1080_240x135_1794423366530_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_aafb07187da59ec7_380eadd0d14123b3_jpeg_preview_compositions_main-08.html_1920x1080_240x135_1794423366530_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_ab57b1decbec133e_cb4053a410898313_jpeg_preview_compositions_main-captions.html_1920x1080_240x135_1794423366542_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_ac8b53a3272c3d5e_304c561beba051ad_jpeg_preview_compositions_main-18.html_1920x1080_240x135_1794423366538_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_ac96c13e2864116d_ee18e7b3f349b7cf_jpeg_preview_compositions_main-02.html_1920x1080_240x135_1794423366530_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_ad4fb38a318b8017_56512767ffaa7e92_jpeg_preview_compositions_main-07.html_1920x1080_240x135_1794423366530_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_b5605c2df5777041_170589f2ce1df3a0_jpeg_preview_compositions_main-04.html_1920x1080_240x135_1794423366530_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_b8c1b4cbb2e30c7a_f1c7ff2b88335a0e_jpeg_preview_compositions_main-19.html_1920x1080_240x135_1794423366538_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_ba166e40d286242b_5a9a04b683770764_jpeg_preview_compositions_main-22.html_1920x1080_240x135_1794423366542_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_ba9ec7a3abcb6b5e_ffa1904f7ca731fc_jpeg_preview_compositions_main-00.html_1920x1080_240x135_1794423366526_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_bce673aa452d7531_dbc870eb91b62577_jpeg_preview_compositions_main-05.html_1920x1080_240x135_1794423366530_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_bdfe80c732f011fd_460cb3c4c3889236_jpeg_preview_compositions_main-20.html_1920x1080_240x135_1794423366542_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_c34bc1fd47a5c2ec_eafb8ad575f2d9b8_jpeg_preview_compositions_main-10.html_1920x1080_240x135_1794423366534_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_c61c9063aec79384_f561ec76201abc98_jpeg_preview_compositions_main-16.html_1920x1080_240x135_1794423366538_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_c663addd1c926e50_66191a8d88b6504b_jpeg_preview_compositions_main-21.html_1920x1080_240x135_1794423366542_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_cc7e14f22a17f841_dbc870eb91b62577_jpeg_preview_compositions_main-05.html_1920x1080_240x135_1794423366530_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_cd8c0bd9c3ef2035_a7826e4efe7297a5_jpeg_preview_compositions_main-14.html_1920x1080_240x135_1794423366534_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_d18a83dee6012dec_a19d68a760828d44_jpeg_preview_compositions_main-12.html_1920x1080_240x135_1794423366534_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_d75943dc2c9c5a0c_2f9e49281c4456b5_jpeg_preview_compositions_main-17.html_1920x1080_240x135_1794423881804_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_dbd93cd7e923b171_460cb3c4c3889236_jpeg_preview_compositions_main-20.html_1920x1080_240x135_1794423366542_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_dd478c865e9eeb29_1d5cdee7c219e5a6_jpeg_preview_compositions_main-09.html_1920x1080_240x135_1794423366530_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_e10f48118c548422_4cfce3bd97b1b77a_jpeg_preview_compositions_main-03.html_1920x1080_240x135_1794423366530_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_e62155cd96787f83_4cfce3bd97b1b77a_jpeg_preview_compositions_main-03.html_1920x1080_240x135_1794423366530_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_e77a568185334657_4cfce3bd97b1b77a_jpeg_preview_compositions_main-03.html_1920x1080_240x135_1794423366530_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_e96ee539d826df36_dbc870eb91b62577_jpeg_preview_compositions_main-05.html_1920x1080_240x135_1794423366530_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_eefde4c8aae1ffa0_ffa1904f7ca731fc_jpeg_preview_compositions_main-00.html_1920x1080_240x135_1794423366526_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_f449edc9047a1402_a19d68a760828d44_jpeg_preview_compositions_main-12.html_1920x1080_240x135_1794423366534_3.00.jpg
+brag-output/main-composition/.thumbnails/v5_v3_fea2b1ecd0a8972e_1d5cdee7c219e5a6_jpeg_preview_compositions_main-09.html_1920x1080_240x135_1794423366530_3.00.jpg
+brag-output/main-composition/.waveform-cache/peaks-v2_assets_music_happy-beats-business-moves-vol-12-by-ende-dot-app.mp3_2817792-1794422839486.json
+brag-output/main-composition/.waveform-cache/v2_assets_music_happy-beats-business-moves-vol-12-by-ende-dot-app.mp3_2817792-1794422839486.json
+brag-output/main-composition/AGENTS.md
+brag-output/main-composition/assets/footage/browse.mp4
+brag-output/main-composition/assets/footage/caption.mp4
+brag-output/main-composition/assets/footage/key-signs.mp4
+brag-output/main-composition/assets/footage/learner-account.mp4
+brag-output/main-composition/assets/footage/private-draft.mp4
+brag-output/main-composition/assets/footage/signup.mp4
+brag-output/main-composition/assets/footage/teacher-account.mp4
+brag-output/main-composition/assets/footage/teacher-home.mp4
+brag-output/main-composition/assets/footage/upload-form.mp4
+brag-output/main-composition/assets/footage/upload-progress.mp4
+brag-output/main-composition/assets/footage/watch.mp4
+brag-output/main-composition/assets/music/happy-beats-business-moves-vol-12-by-ende-dot-app.mp3
+brag-output/main-composition/assets/runtime/gsap.min.js
+brag-output/main-composition/compositions/components/browser-device-stage.html
+brag-output/main-composition/compositions/highlights-00.html
+brag-output/main-composition/compositions/highlights-01.html
+brag-output/main-composition/compositions/highlights-02.html
+brag-output/main-composition/compositions/highlights-03.html
+brag-output/main-composition/compositions/highlights-04.html
+brag-output/main-composition/compositions/highlights-05.html
+brag-output/main-composition/compositions/highlights-captions.html
+brag-output/main-composition/compositions/main-00.html
+brag-output/main-composition/compositions/main-01.html
+brag-output/main-composition/compositions/main-02.html
+brag-output/main-composition/compositions/main-03.html
+brag-output/main-composition/compositions/main-04.html
+brag-output/main-composition/compositions/main-05.html
+brag-output/main-composition/compositions/main-06.html
+brag-output/main-composition/compositions/main-07.html
+brag-output/main-composition/compositions/main-08.html
+brag-output/main-composition/compositions/main-09.html
+brag-output/main-composition/compositions/main-10.html
+brag-output/main-composition/compositions/main-11.html
+brag-output/main-composition/compositions/main-12.html
+brag-output/main-composition/compositions/main-13.html
+brag-output/main-composition/compositions/main-14.html
+brag-output/main-composition/compositions/main-15.html
+brag-output/main-composition/compositions/main-16.html
+brag-output/main-composition/compositions/main-17.html
+brag-output/main-composition/compositions/main-18.html
+brag-output/main-composition/compositions/main-19.html
+brag-output/main-composition/compositions/main-20.html
+brag-output/main-composition/compositions/main-21.html
+brag-output/main-composition/compositions/main-22.html
+brag-output/main-composition/compositions/main-captions.html
+brag-output/main-composition/hyperframes.json
+brag-output/main-composition/index.html
+brag-output/main-composition/meta.json
+brag-output/main-composition/package.json
+brag-output/main-entry.html
+brag-output/main-timeline.json
+brag-output/notes.md
+brag-output/plan.md
+brag-output/prepare_clips.py
+brag-output/share-copy-variants.md
+brag-output/share-copy.txt
+brag-output/verification/deaf-talks-demo-ffprobe.json
+brag-output/verification/deaf-talks-demo/audio-levels.log
+brag-output/verification/deaf-talks-demo/contact-sheet.jpg
+brag-output/verification/deaf-talks-demo/frame-00-0s.png
+brag-output/verification/deaf-talks-demo/frame-01-10s.png
+brag-output/verification/deaf-talks-demo/frame-02-24s.png
+brag-output/verification/deaf-talks-demo/frame-03-37s.png
+brag-output/verification/deaf-talks-demo/frame-04-53s.png
+brag-output/verification/deaf-talks-demo/frame-05-64s.png
+brag-output/verification/deaf-talks-demo/frame-06-77s.png
+brag-output/verification/deaf-talks-demo/frame-07-95s.png
+brag-output/verification/deaf-talks-demo/frame-08-113s.png
+brag-output/verification/deaf-talks-demo/frame-09-126s.png
+brag-output/verification/deaf-talks-demo/frame-10-138s.png
+brag-output/verification/deaf-talks-demo/frame-11-152s.png
+brag-output/verification/deaf-talks-demo/frame-12-163s.png
+brag-output/verification/deaf-talks-demo/frame-13-172s.png
+brag-output/verification/deaf-talks-demo/frame-14-185s.png
+brag-output/verification/deaf-talks-demo/frame-15-200s.png
+brag-output/verification/deaf-talks-demo/frame-16-208s.png
+brag-output/verification/deaf-talks-demo/frame-17-219s.png
+brag-output/verification/deaf-talks-demo/frame-18-231s.png
+brag-output/verification/deaf-talks-demo/frame-19-249s.png
+brag-output/verification/deaf-talks-demo/frame-20-263s.png
+brag-output/verification/deaf-talks-demo/frame-21-275s.png
+brag-output/verification/deaf-talks-demo/frame-22-283s.png
+brag-output/verification/deaf-talks-demo/frame-23-291s.png
+brag-output/verification/deaf-talks-highlights-ffprobe.json
+brag-output/verification/deaf-talks-highlights/audio-levels.log
+brag-output/verification/deaf-talks-highlights/contact-sheet.jpg
+brag-output/verification/deaf-talks-highlights/frame-00-0s.png
+brag-output/verification/deaf-talks-highlights/frame-01-2s.png
+brag-output/verification/deaf-talks-highlights/frame-02-10s.png
+brag-output/verification/deaf-talks-highlights/frame-03-16s.png
+brag-output/verification/deaf-talks-highlights/frame-04-24s.png
+brag-output/verification/deaf-talks-highlights/frame-05-28s.png
+brag-output/verification/deaf-talks-highlights/frame-06-35s.png
+brag-output/verification/deaf-talks-highlights/frame-07-40s.png
+brag-output/verification/deaf-talks-highlights/frame-08-49s.png
+brag-output/verification/deaf-talks-highlights/frame-09-56s.png
+brag-output/verification/deaf-talks-highlights/frame-10-64s.png
+brag-output/verification/deaf-talks-highlights/frame-11-69s.png
+brag-output/verification/highlights-check.json
+brag-output/verification/highlights-check.log
+brag-output/verification/highlights-preview/contact-sheet.jpg
+brag-output/verification/highlights-preview/frame-00-at-2s.png
+brag-output/verification/highlights-preview/frame-01-at-16s.png
+brag-output/verification/highlights-preview/frame-02-at-28s.png
+brag-output/verification/highlights-preview/frame-03-at-40s.png
+brag-output/verification/highlights-preview/frame-04-at-56s.png
+brag-output/verification/highlights-preview/frame-05-at-65s.png
+brag-output/verification/highlights-render.log
+brag-output/verification/learner-account-held.png
+brag-output/verification/main-check.json
+brag-output/verification/main-check.log
+brag-output/verification/main-credit-check.json
+brag-output/verification/main-credit-check.log
+brag-output/verification/main-final-check.json
+brag-output/verification/main-final-check.log
+brag-output/verification/main-final-fixes/contact-sheet.jpg
+brag-output/verification/main-final-fixes/frame-00-at-163s.png
+brag-output/verification/main-final-fixes/frame-01-at-219s.png
+brag-output/verification/main-final-fixes/frame-02-at-233s.png
+brag-output/verification/main-lint.json
+brag-output/verification/main-preview/contact-sheet-1.jpg
+brag-output/verification/main-preview/contact-sheet-2.jpg
+brag-output/verification/main-preview/contact-sheet-3.jpg
+brag-output/verification/main-preview/frame-00-at-5s.png
+brag-output/verification/main-preview/frame-01-at-22s.png
+brag-output/verification/main-preview/frame-02-at-37s.png
+brag-output/verification/main-preview/frame-03-at-52s.png
+brag-output/verification/main-preview/frame-04-at-64s.png
+brag-output/verification/main-preview/frame-05-at-77s.png
+brag-output/verification/main-preview/frame-06-at-95s.png
+brag-output/verification/main-preview/frame-07-at-113s.png
+brag-output/verification/main-preview/frame-08-at-126s.png
+brag-output/verification/main-preview/frame-09-at-138s.png
+brag-output/verification/main-preview/frame-10-at-152s.png
+brag-output/verification/main-preview/frame-11-at-163s.png
+brag-output/verification/main-preview/frame-12-at-172s.png
+brag-output/verification/main-preview/frame-13-at-185s.png
+brag-output/verification/main-preview/frame-14-at-200s.png
+brag-output/verification/main-preview/frame-15-at-208s.png
+brag-output/verification/main-preview/frame-16-at-219s.png
+brag-output/verification/main-preview/frame-17-at-233s.png
+brag-output/verification/main-preview/frame-18-at-249s.png
+brag-output/verification/main-preview/frame-19-at-263s.png
+brag-output/verification/main-preview/frame-20-at-275s.png
+brag-output/verification/main-preview/frame-21-at-283s.png
+brag-output/verification/main-preview/frame-22-at-291s.png
+brag-output/verification/main-render.log
+brag-output/verification/posters.json
+brag-output/verification/results.json
+brag-output/verification/teacher-account-held.png
+brag-output/verification/verification.md
+brag-output/verify_outputs.py
+demo-assets/Introduction.mp4
+demo-assets/StorytellerSignup.mp4
+demo-assets/homepage.jpeg
+demo-assets/homepage.jpeg:Zone.Identifier
+demo-assets/how i build signstories.mp4
+demo-assets/how i build signstories.mp4:Zone.Identifier
+demo-assets/landingpage.jpeg
+demo-assets/landingpage.jpeg:Zone.Identifier
+demo-assets/learnerlogin.mp4
+demo-assets/practisepage.jpeg
+demo-assets/practisepage.jpeg:Zone.Identifier
+demo-assets/storiespage.jpeg
+demo-assets/storiespage.jpeg:Zone.Identifier
+demo-assets/storiespage2.jpeg
+demo-assets/storiespage2.jpeg:Zone.Identifier
+demo-assets/teacherbrowse.mp4
