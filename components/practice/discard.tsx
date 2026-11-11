@@ -1,4 +1,5 @@
 "use client";
+import { buttonStyles } from "@/components/ui/button";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { discardPracticeUpload } from "@/app/actions/practice";
@@ -16,5 +17,5 @@ export function DiscardAttempt({ attemptId }: { attemptId: string }) {
     } catch (cause) { setError(cause instanceof Error ? cause.message : "Could not discard. Please retry."); }
     finally { setBusy(false); }
   }
-  return <div><button type="button" disabled={busy} className="border border-slate-700" onClick={() => void discard()}>{busy ? "Discarding…" : "Discard incomplete upload"}</button>{error && <p role="alert">{error}</p>}</div>;
+  return <div><button type="button" disabled={busy} className={buttonStyles("secondary")} onClick={() => void discard()}>{busy ? "Discarding…" : "Discard incomplete upload"}</button>{error && <p role="alert">{error}</p>}</div>;
 }

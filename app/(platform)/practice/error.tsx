@@ -1,9 +1,10 @@
 "use client";
 
+import { Notice } from "@/components/ui/notice";
 export default function PracticeError({ reset }: { reset: () => void }) {
   return <div className="max-w-xl space-y-5">
-    <h1 className="text-3xl font-bold">Practice unavailable</h1>
-    <p role="alert">We could not load your practice attempts. Please try again.</p>
-    <button className="bg-slate-900 font-bold text-white hover:bg-slate-700" onClick={reset}>Try again</button>
+    <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Practice unavailable</h1>
+    <Notice tone="error">We could not load your practice attempts. Please try again.</Notice>
+    <button className="ui-button ui-button-primary" onClick={reset}>Try again</button>
   </div>;
 }

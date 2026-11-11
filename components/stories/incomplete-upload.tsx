@@ -1,4 +1,5 @@
 "use client";
+import { buttonStyles } from "@/components/ui/button";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { cancelStoryUpload } from "@/app/actions/stories";
@@ -17,7 +18,7 @@ export function IncompleteUpload({ storyId }: { storyId: string }) {
     finally { setBusy(false); }
   }
   return <div><p>Upload incomplete. This story cannot play yet.</p>
-    <button disabled={busy} onClick={discard} className="border border-slate-700">{busy ? "Discarding…" : "Discard incomplete upload"}</button>
+    <button disabled={busy} onClick={discard} className={buttonStyles("secondary")}>{busy ? "Discarding…" : "Discard incomplete upload"}</button>
     {error && <p role="alert">{error}</p>}
   </div>;
 }

@@ -1,5 +1,8 @@
 "use client";
 
+import { FormField } from "@/components/ui/form-field";
+import { Notice } from "@/components/ui/notice";
+import { buttonStyles } from "@/components/ui/button";
 import Link from "next/link";
 import { useState } from "react";
 import { cancelStoryUpload, finishStoryUpload, startStoryUpload } from "@/app/actions/stories";
@@ -75,24 +78,24 @@ export function UploadForm() {
   return <div className="space-y-5">
     {!savedId && <form onSubmit={submit} className="space-y-5">
       <fieldset disabled={busy || !!pending} className="min-w-0 space-y-5 disabled:opacity-70">
-        <div><label htmlFor="title" className="block font-bold">Title</label><input id="title" name="title" className="auth-input" required maxLength={160} /></div>
-        <div><label htmlFor="caption" className="block font-bold">English caption</label><p id="caption-help">Write the story in English. The caption is always shown with your video.</p>
-          <textarea id="caption" name="caption" required maxLength={10000} rows={6} className="auth-input" aria-describedby="caption-help" /></div>
+        <FormField id="title" label="Title"><input id="title" name="title" className="auth-input" required maxLength={160} /></FormField>
+        <FormField id="caption" label="English caption" hint="Write the story in English. The caption is always shown with your video.">
+          <textarea id="caption" name="caption" required maxLength={10000} rows={6} className="auth-input" aria-describedby="caption-help" /></FormField>
         <div><label htmlFor="video" className="block font-bold">Choose video</label>
           <input id="video" name="video" type="file" required accept="video/mp4,video/webm,video/quicktime,.mp4,.webm,.mov" aria-describedby="video-help file-size"
-            className="w-full min-w-0 rounded border border-slate-600 p-2 file:mr-3 file:min-h-12 file:rounded file:border-0 file:bg-slate-900 file:px-4 file:font-bold file:text-white"
+            className="auth-input min-w-0 file:mr-3 file:min-h-12 file:rounded-control file:border-0 file:bg-primary file:px-4 file:font-semibold file:text-white"
             onChange={(event) => { const file = event.target.files?.[0]; setFileSize(file ? `${file.name}: ${(file.size / 1024 / 1024).toFixed(1)} MB${file.size > MAX_VIDEO_BYTES ? ' — too large' : ''}` : ''); }} />
           <p id="video-help">MP4, MOV or WebM. Up to 60 seconds and 50 MB (52,428,800 bytes).</p><p id="file-size">{fileSize}</p></div>
-        <button type="submit" className="w-full bg-slate-900 font-bold text-white">Upload private draft</button>
+        <button type="submit" className="ui-button ui-button-primary w-full">Upload private draft</button>
       </fieldset>
     </form>}
-    <div role="status" aria-live="polite"><p>{message}</p>{busy && <><label htmlFor="upload-progress">Upload progress: {progress}%</label><progress id="upload-progress" className="w-full" max={100} value={progress} /></>}</div>
-    {error && <p role="alert" className="rounded border border-red-800 bg-red-50 p-4 text-red-950">{error}</p>}
+    <div role="status" aria-live="polite">{message && <Notice tone={savedId ? "success" : "info"}>{message}</Notice>}{busy && <><label htmlFor="upload-progress">Upload progress: {progress}%</label><progress id="upload-progress" className="h-3 w-full accent-primary" max={100} value={progress} /></>}</div>
+    {error && <Notice tone="error">{error}</Notice>}
     {pending && !busy && <div className="flex flex-wrap gap-3">
-      <button onClick={() => retryOrDiscard(false)} className="border border-slate-700">Retry confirmation</button>
-      <button onClick={() => retryOrDiscard(true)} className="border border-slate-700">Discard incomplete upload</button>
+      <button onClick={() => retryOrDiscard(false)} className={buttonStyles("secondary")}>Retry confirmation</button>
+      <button onClick={() => retryOrDiscard(true)} className={buttonStyles("secondary")}>Discard incomplete upload</button>
     </div>}
-    {savedId && <Link className="tap-link border border-teal-800 font-bold underline" href={`/studio/${savedId}`}>Play your story</Link>}
-    <Link className="tap-link underline" href="/studio">My stories</Link>
+    {savedId && <Link className={buttonStyles()} href={`/studio/${savedId}`}>Play your story</Link>}
+    <Link className={buttonStyles("quiet")} href="/studio">My stories</Link>
   </div>;
 }

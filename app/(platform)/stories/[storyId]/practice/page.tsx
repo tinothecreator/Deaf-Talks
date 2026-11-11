@@ -1,3 +1,5 @@
+import { PageHeader } from "@/components/ui/page-header";
+import { buttonStyles } from "@/components/ui/button";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { requireAccount } from "@/lib/auth/session";
@@ -18,14 +20,14 @@ export default async function PracticeSign({ params, searchParams }: {
   const { story, signedUrl } = playback;
   const sign = story.signs.find(value => value.id === parsed.data.sign);
   if (!sign) notFound();
-  return <article className="max-w-2xl space-y-6">
-    <Link href={`/stories/${story.id}`} className="tap-link underline">Back to story</Link>
-    <h1 className="text-3xl font-bold">Practise: {story.title}</h1>
+  return <article className="mx-auto max-w-3xl space-y-6">
+    <Link href={`/stories/${story.id}`} className={buttonStyles("quiet")}>Back to story</Link>
+    <PageHeader title={`Practise: ${story.title}`} />
     <CreditAndTerms storyteller={story.storyteller.display_name} credit={story.ownership_settings.credit_line} usage={story.ownership_settings.usage} />
     <StoryPlayer title={story.title} signedUrl={signedUrl} signs={[sign]}>
-      <section id="english-caption" className="rounded border border-slate-500 bg-white p-4"><h2 className="text-xl font-bold">English caption</h2><p className="whitespace-pre-wrap">{story.caption_en}</p></section>
+      <section id="english-caption" className="rounded-card border border-line/40 bg-surface p-5 sm:p-6"><h2 className="text-xl font-semibold">English caption</h2><p className="whitespace-pre-wrap">{story.caption_en}</p></section>
     </StoryPlayer>
-    {profile.role === "learner" ? <section className="space-y-4"><h2 className="text-2xl font-bold">Your practice attempt: {sign.label}</h2>
+    {profile.role === "learner" ? <section className="space-y-4"><h2 className="text-2xl font-semibold">Your practice attempt: {sign.label}</h2>
       <p>Your video and caption are private to you, this story’s storyteller, and teachers.</p>
       <PracticeForm storyId={story.id} signId={sign.id} /></section>
       : <p>Only Learner accounts can submit practice attempts. You can watch the sign above.</p>}

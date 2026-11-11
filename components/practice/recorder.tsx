@@ -1,5 +1,7 @@
 "use client";
 
+import { Card } from "@/components/ui/card";
+import { Video, Circle } from "lucide-react";
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { MAX_VIDEO_SECONDS } from "@/lib/media/limits";
 
@@ -74,11 +76,13 @@ export function PracticeRecorder({ disabled, onFile, onRecordingChange }: { disa
     } finally { if (mounted.current) setOpening(false); }
   }
 
-  return <div className="space-y-3 rounded border border-slate-500 p-4">
+  return <Card className="space-y-4">
+    <h3 className="flex items-center gap-2 text-lg font-semibold"><Video size={22} aria-hidden="true" />Record a video</h3>
+    <p className="flex items-center gap-2 font-semibold text-primary"><Circle size={18} aria-hidden="true" />{opening ? "Opening camera…" : recording ? `Recording: ${seconds} seconds` : "Ready to record"}</p>
     <p role="status">{!supported && "Recording here is unavailable. Use Choose video below to record with your phone camera or select a file. "}{message} {recording && `${seconds} / ${MAX_VIDEO_SECONDS} seconds`}</p>
-    <video ref={live} autoPlay muted playsInline aria-label="Live camera preview" className={recording || opening ? "w-full rounded bg-black" : "hidden"} />
-    {supported && <button type="button" disabled={disabled || opening} className="border border-slate-700 disabled:opacity-60"
+    <video ref={live} autoPlay muted playsInline aria-label="Live camera preview" className={recording || opening ? "w-full rounded-card bg-black" : "hidden"} />
+    {supported && <button type="button" disabled={disabled || opening} className="ui-button ui-button-secondary disabled:opacity-60"
       onClick={() => recording ? recorder.current?.stop() : void start()}>{opening ? "Opening camera…" : recording ? "Stop recording" : "Record / record again"}</button>}
     {recording && <p>Stop recording before uploading or choosing another video.</p>}
-  </div>;
+  </Card>;
 }

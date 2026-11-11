@@ -1,5 +1,9 @@
 "use client";
 
+import { Card } from "@/components/ui/card";
+import { Notice } from "@/components/ui/notice";
+import { Upload, Video } from "lucide-react";
+import { buttonStyles } from "@/components/ui/button";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { discardPracticeUpload, finishPracticeUpload, startPracticeUpload, failPracticeUpload } from "@/app/actions/practice";
@@ -69,7 +73,7 @@ export function PracticeForm({ storyId, signId }: { storyId: string; signId: str
   }
 
   if (saved) return <div role="status" className="space-y-3"><p>Your practice attempt is saved with its caption.</p>
-    <Link className="tap-link underline" href={`/practice/${saved}`}>Play your attempt</Link><Link className="tap-link underline" href="/practice">My practice</Link></div>;
+    <Link className={buttonStyles("quiet")} href={`/practice/${saved}`}>Play your attempt</Link><Link className={buttonStyles("quiet")} href="/practice">My practice</Link></div>;
   return <form onSubmit={submit} className="space-y-5">
     <fieldset disabled={busy} className="min-w-0 space-y-5 disabled:opacity-70">
       <div><label htmlFor="attempt-caption" className="block font-bold">Caption: describe your practice attempt</label>
@@ -77,20 +81,20 @@ export function PracticeForm({ storyId, signId }: { storyId: string; signId: str
         <textarea id="attempt-caption" required maxLength={2000} rows={4} value={caption} onChange={event => setCaption(event.target.value)}
           className="auth-input" aria-describedby="attempt-caption-help" /></div>
       <PracticeRecorder disabled={busy || !!pending} onFile={chooseFile} onRecordingChange={setRecording} />
-      <div><label htmlFor="practice-video" className="block font-bold">Choose video or use your phone camera</label>
+      <Card className="space-y-3"><label htmlFor="practice-video" className="flex min-h-12 items-center gap-2 text-lg font-semibold"><Upload size={22} aria-hidden="true" />Choose video or use your phone camera</label>
         <input id="practice-video" type="file" capture="user" accept="video/mp4,video/webm,video/quicktime,.mp4,.webm,.mov"
-          disabled={!!pending || recording} className="w-full min-w-0 rounded border border-slate-600 p-2 file:min-h-12 file:bg-slate-900 file:p-3 file:text-white"
+          disabled={!!pending || recording} className="auth-input min-w-0 file:mr-3 file:min-h-12 file:rounded-control file:border-0 file:bg-primary file:p-3 file:text-white"
           aria-describedby="practice-video-help" onChange={event => { const value = event.target.files?.[0]; if (value) chooseFile(value); }} />
         <p id="practice-video-help">MP4, MOV or WebM. Keep your video to 60 seconds or less and no larger than 50 MiB (52,428,800 bytes). Trim it or export at a lower resolution if it is too large.</p>
         {file && <p>{file.name}: {(file.size / 1024 / 1024).toFixed(1)} MiB {file.size > MAX_VIDEO_BYTES && "— too large"}</p>}
-      </div>
-      {file && <div className="space-y-2"><video ref={preview} controls playsInline aria-label="Your practice preview" aria-describedby="preview-caption"
-        className="max-h-96 w-full rounded bg-black" onError={() => setError("We could not preview this video. Try choosing an MP4 video.")} />
-        <p id="preview-caption" className="whitespace-pre-wrap">{caption.trim() || "Add a caption describing your attempt before uploading."}</p></div>}
-      <button className="w-full bg-slate-900 font-bold text-white" type="submit" disabled={recording}>{pending ? "Retry upload" : "Upload practice attempt"}</button>
+      </Card>
+      {file && <Card className="space-y-3"><h3 className="flex items-center gap-2 font-semibold"><Video size={20} aria-hidden="true" />Preview your video</h3><video ref={preview} controls playsInline aria-label="Your practice preview" aria-describedby="preview-caption"
+        className="max-h-96 w-full rounded-card bg-black" onError={() => setError("We could not preview this video. Try choosing an MP4 video.")} />
+        <p id="preview-caption" className="whitespace-pre-wrap">{caption.trim() || "Add a caption describing your attempt before uploading."}</p></Card>}
+      <button className="ui-button ui-button-primary w-full" type="submit" disabled={recording}>{pending ? "Retry upload" : "Upload practice attempt"}</button>
     </fieldset>
-    <div role="status" aria-live="polite">{message}{busy && <><label htmlFor="practice-progress" className="block">Upload progress: {progress}%</label><progress id="practice-progress" className="w-full" max={100} value={progress} /></>}</div>
-    {error && <p role="alert" className="rounded border border-red-800 bg-red-50 p-4 text-red-950">{error}</p>}
-    {pending && <button type="button" disabled={busy} className="border border-slate-700" onClick={() => void discard()}>Discard incomplete upload</button>}
+    <div role="status" aria-live="polite">{message}{busy && <><label htmlFor="practice-progress" className="block">Upload progress: {progress}%</label><progress id="practice-progress" className="h-3 w-full accent-primary" max={100} value={progress} /></>}</div>
+    {error && <Notice tone="error">{error}</Notice>}
+    {pending && <button type="button" disabled={busy} className={buttonStyles("secondary")} onClick={() => void discard()}>Discard incomplete upload</button>}
   </form>;
 }

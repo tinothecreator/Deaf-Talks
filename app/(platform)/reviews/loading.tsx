@@ -1,3 +1,5 @@
-export default function LoadingReviews() {
-  return <p role="status">Loading reviews…</p>;
+import { Notice } from "@/components/ui/notice";
+
+export default function Loading() {
+  return <div className="mx-auto max-w-3xl"><Notice>Loading reviews…</Notice></div>;
 }
