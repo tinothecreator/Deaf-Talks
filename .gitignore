@@ -17,3 +17,7 @@ next-env.d.ts
 .DS_Store
 *.pem
 npm-debug.log*
+
+# large videos (hosted on YouTube)
+demo-assets/SignStoriesDemoVid.mp4
+brag-output/*.mp4
