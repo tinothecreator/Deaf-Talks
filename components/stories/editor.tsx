@@ -1,5 +1,7 @@
 "use client";
 
+import { TranslationsEditor } from "@/components/stories/translations-editor";
+import type { Translation } from "@/lib/translations/validation";
 import { Card } from "@/components/ui/card";
 import { Notice } from "@/components/ui/notice";
 import { StatusChip } from "@/components/ui/status-chip";
@@ -10,7 +12,7 @@ import { useRouter } from "next/navigation";
 import { saveStoryEditor, changeStoryPublication } from "@/app/actions/story-editor";
 import type { EditorInput, EditorResult } from "@/lib/stories/validation";
 
-type Props = { initial: EditorInput; videoUrl: string | null; duration: number; status: "draft" | "published"; revision: string };
+type Props = { translations: Translation[]; translationsError: boolean; aiAvailable: boolean; initial: EditorInput; videoUrl: string | null; duration: number; status: "draft" | "published"; revision: string };
 const button = buttonStyles("secondary");
 
 export function StoryEditor(props: Props) {
@@ -32,11 +34,11 @@ export function StoryEditor(props: Props) {
   return <div className="space-y-6" aria-busy={pending}>
     <Notice>Who can see this story: {visible ? "Signed-in users can see this published story." : "Only you can see this draft."}</Notice>
     <StatusChip tone={props.status === "published" ? "success" : "info"}>{props.status === "published" ? "Published" : "Draft"}</StatusChip>
-    <ol aria-label="Story editing steps" className="grid grid-cols-2 gap-3 sm:grid-cols-4">{["Caption", "Tag signs", "Credit and consent", "Publish"].map((step, index) => <li key={step} className="flex items-start gap-2 rounded-control border border-line/40 bg-surface p-3 text-sm font-semibold"><span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-soft text-primary">{index + 1}</span>{step}</li>)}</ol>
+    <ol aria-label="Story editing steps" className="grid grid-cols-2 gap-3 sm:grid-cols-5">{["Caption", "Translations", "Tag signs", "Credit and consent", "Publish"].map((step, index) => <li key={step} className="flex items-start gap-2 rounded-control border border-line/40 bg-surface p-3 text-sm font-semibold"><span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-soft text-primary">{index + 1}</span>{step}</li>)}</ol>
     <p>Saving edits returns this story to Draft and hides it from others. Review your changes, then publish again.</p>
     <EditorFields key={props.revision} {...props} pending={pending} onDirty={() => setDirty(true)} onSave={value => run(() => saveStoryEditor(value))} />
     <Card aria-label="Publishing" className="space-y-4">
-      <h2 className="text-xl font-semibold">4. Publish</h2>
+      <h2 className="text-xl font-semibold">5. Publish</h2>
       <p className="text-sm text-muted">Publish checklist for the saved story. Save changes to update this checklist. The database checks whether publishing is allowed.</p>
       <ul className="space-y-2">{[
         { label: "Caption added", complete: !!props.initial.caption.trim() },
@@ -61,7 +63,7 @@ export function StoryEditor(props: Props) {
   </div>;
 }
 
-function EditorFields({ initial, videoUrl, duration, pending, onDirty, onSave }: Props & {
+function EditorFields({ initial, videoUrl, duration, pending, onDirty, onSave, translations, translationsError, aiAvailable }: Props & {
   pending: boolean; onDirty: () => void; onSave: (value: EditorInput) => void;
 }) {
   const video = useRef<HTMLVideoElement>(null);
@@ -88,9 +90,11 @@ function EditorFields({ initial, videoUrl, duration, pending, onDirty, onSave }:
       <p>Video duration: {duration} seconds. Playback links last five minutes. Reload if playback expires.</p>
       <label className="block">Title<input className="auth-input mt-2" name="title" required maxLength={160} defaultValue={initial.title} /></label>
       <label className="block">English caption<textarea className="auth-input mt-2" name="caption" rows={5} maxLength={10000} value={caption} onChange={event => setCaption(event.target.value)} /></label>
+      {caption !== initial.caption && <Notice>Saving a changed English caption resets approval on all translations. Check and approve them again.</Notice>}
       </Card>
+      <TranslationsEditor storyId={initial.storyId} rows={translations} available={aiAvailable} loadError={translationsError} captionChanged={caption !== initial.caption} />
       <Card className="space-y-5">
-      <h2 className="text-xl font-semibold">2. Tag signs</h2>
+      <h2 className="text-xl font-semibold">3. Tag signs</h2>
       <p>Add 3 to 5 signs before publishing. Times must be between 0 and {duration} seconds.</p>
       {signs.map((sign, index) => <fieldset key={sign.id ?? `new-${index}`} className="min-w-0 space-y-4 rounded-control border border-line p-4">
         <legend className="px-2 font-bold">Sign {index + 1}</legend>
@@ -106,7 +110,7 @@ function EditorFields({ initial, videoUrl, duration, pending, onDirty, onSave }:
       </Card>
     </fieldset>
     <Card><fieldset disabled={pending} className="min-w-0 space-y-5">
-      <legend className="mb-4 text-xl font-semibold">3. Credit and consent</legend>
+      <legend className="mb-4 text-xl font-semibold">4. Credit and consent</legend>
       <p className="font-semibold">Ownership and consent</p>
       <label className="flex items-start gap-3 py-3"><input name="consent" type="checkbox" defaultChecked={initial.consent} className="mt-1 size-6 shrink-0" /><span>I own this video or have permission to share it. I agree to show it to signed-in users under the usage terms I choose.</span></label>
       <label className="block">Usage<select name="usage" className="auth-input mt-2" defaultValue={initial.usage}>

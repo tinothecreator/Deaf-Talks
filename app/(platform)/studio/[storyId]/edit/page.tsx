@@ -1,3 +1,4 @@
+import { loadTranslations } from "@/lib/translations/data";
 import { PageHeader } from "@/components/ui/page-header";
 import { buttonStyles } from "@/components/ui/button";
 import Link from "next/link";
@@ -27,11 +28,12 @@ export default async function EditStory({ params }: { params: Promise<{ storyId:
     <CreditAndTerms storyteller={profile.display_name} credit={ownership?.credit_line ?? profile.display_name} usage={usage} />
     <Link className={buttonStyles("quiet")} href="/studio">My stories</Link>
   </div>;
+  const translations = await loadTranslations(storyId);
   const playback = story.video_path.startsWith(`${user.id}/${storyId}/`)
     ? await supabase.storage.from(STORY_BUCKET).createSignedUrl(story.video_path, PLAYBACK_URL_SECONDS) : null;
   return <article className="mx-auto max-w-3xl space-y-6">
     <PageHeader title="Edit story" />
-    <StoryEditor revision={story.updated_at} status={story.status as "draft" | "published"} duration={story.duration_seconds} videoUrl={playback?.data?.signedUrl ?? null} initial={{
+    <StoryEditor translations={translations.rows} translationsError={!!translations.error} aiAvailable={!!process.env.OPENAI_API_KEY && !!process.env.OPENAI_MODEL} revision={story.updated_at} status={story.status as "draft" | "published"} duration={story.duration_seconds} videoUrl={playback?.data?.signedUrl ?? null} initial={{
       storyId, title: story.title, caption: story.caption_en ?? "", credit: ownership?.credit_line ?? profile.display_name,
       usage, consent: ownership?.consent_confirmed ?? false,
       signs: story.signs.map(sign => ({ ...sign, start_seconds: Number(sign.start_seconds) })),
