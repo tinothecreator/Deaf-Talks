@@ -1,3 +1,6 @@
+import { ArrowLeft } from "lucide-react";
+import { buttonStyles } from "@/components/ui/button";
+import { PageHeader } from "@/components/ui/page-header";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { z } from "zod";
@@ -13,15 +16,15 @@ export default async function WatchStory({ params }: { params: Promise<{ storyId
   const playback = await loadStoryPlayback(parsed.data.storyId);
   if (!playback) notFound();
   const { story, signedUrl } = playback;
-  return <article className="max-w-2xl space-y-6">
-    <Link className="tap-link underline" href="/stories">Back to stories</Link>
-    <h1 className="text-3xl font-bold">{story.title}</h1>
-    <CreditAndTerms storyteller={story.storyteller.display_name} credit={story.ownership_settings.credit_line} usage={story.ownership_settings.usage} />
+  return <article className="mx-auto max-w-3xl space-y-6">
+    <Link className={buttonStyles("quiet")} href="/stories"><ArrowLeft size={18} aria-hidden="true" />Back to stories</Link>
+    <PageHeader title={story.title} />
     <StoryPlayer practiceStoryId={story.id} title={story.title} signedUrl={signedUrl} signs={story.signs}>
-      <section id="english-caption" className="rounded border border-slate-500 bg-white p-5">
-        <h2 className="text-xl font-bold">English caption</h2>
-        <p className="mt-3 whitespace-pre-wrap">{story.caption_en}</p>
+      <section id="english-caption" className="rounded-card border border-line/40 bg-surface p-5 sm:p-6">
+        <h2 className="text-xl font-semibold">English caption</h2>
+        <p className="mt-3 whitespace-pre-wrap leading-relaxed">{story.caption_en}</p>
       </section>
     </StoryPlayer>
+    <CreditAndTerms storyteller={story.storyteller.display_name} credit={story.ownership_settings.credit_line} usage={story.ownership_settings.usage} />
   </article>;
 }

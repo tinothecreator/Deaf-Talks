@@ -1,6 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import { ArrowRight, Play } from "lucide-react";
+import { buttonStyles } from "@/components/ui/button";
+import { Notice } from "@/components/ui/notice";
+import { StatusChip } from "@/components/ui/status-chip";
 import { useRef, useState } from "react";
 import { formatTime } from "@/lib/media/time";
 
@@ -28,26 +32,26 @@ export function StoryPlayer({ title, signedUrl, signs, children, practiceStoryId
     {signedUrl ? <>
       <video ref={video} controls playsInline controlsList="nodownload" preload="metadata"
         src={signedUrl} aria-label={title} aria-describedby="english-caption"
-        className="max-h-[70dvh] w-full rounded bg-black"
+        className="max-h-[70dvh] min-h-48 w-full rounded-card bg-black"
         onLoadedMetadata={() => setLoading(false)}
         onWaiting={() => setLoading(true)} onCanPlay={() => setLoading(false)}
         onError={() => { setLoading(false); setError("We could not load the video. Reload this page to renew playback access and try again."); }} />
-      {loading && <p role="status">Loading video…</p>}
-      <p>Playback access lasts five minutes. Reload this page if it expires.</p>
-    </> : <p role="alert">We could not load the video. Reload this page to try again.</p>}
-    {error && <p role="alert">{error}</p>}
+    </> : <Notice tone="error">We could not load the video. Reload this page to try again.</Notice>}
     {children}
+    {loading && <Notice>Loading video…</Notice>}
+    {signedUrl && <p className="text-sm text-muted">Playback access lasts five minutes. Reload this page if it expires.</p>}
+    {error && <Notice tone="error">{error}</Notice>}
     <section aria-labelledby="key-signs-heading" className="space-y-3">
-      <h2 id="key-signs-heading" className="text-2xl font-bold">Key signs</h2>
+      <h2 id="key-signs-heading" className="text-2xl font-semibold">Key signs</h2>
       <p>Choose a sign to play the video from its start time.</p>
       {!signs.length ? <p>No key signs are listed.</p> : <ul className="space-y-3">
-        {signs.map(sign => <li key={sign.id}>
+        {signs.map(sign => <li key={sign.id} className="space-y-2 rounded-card border border-line/40 bg-surface p-3 sm:p-4">
           <button type="button" disabled={!signedUrl} onClick={() => void jumpTo(sign)}
-            className="w-full flex-col items-start gap-2 border border-slate-500 bg-white text-left hover:bg-slate-100 disabled:opacity-60">
-            <span className="font-bold">Play sign: {sign.label} · {formatTime(sign.start_seconds)}</span>
+            className="w-full flex-col items-start gap-3 bg-highlight/50 text-left hover:bg-highlight disabled:opacity-60">
+            <span className="flex w-full flex-wrap items-center justify-between gap-3"><span className="inline-flex items-center gap-2 text-lg font-semibold"><Play size={18} aria-hidden="true" className="shrink-0" />Play sign: {sign.label}</span><StatusChip tone="time">{formatTime(sign.start_seconds)}</StatusChip></span>
             <span>{sign.meaning}</span>
           </button>
-          {practiceStoryId && <Link className="tap-link underline" href={`/stories/${practiceStoryId}/practice?sign=${sign.id}`}>Practise this sign: {sign.label}</Link>}
+          {practiceStoryId && <Link className={buttonStyles("primary", "w-full")} href={`/stories/${practiceStoryId}/practice?sign=${sign.id}`}>Practise this sign: {sign.label}<ArrowRight size={18} aria-hidden="true" className="shrink-0" /></Link>}
         </li>)}
       </ul>}
     </section>

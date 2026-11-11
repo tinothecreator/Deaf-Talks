@@ -1,3 +1,6 @@
+import { Notice } from "@/components/ui/notice";
+import { Card } from "@/components/ui/card";
+import { PageHeader } from "@/components/ui/page-header";
 import { AuthForm } from "@/components/auth-form";
 
 const notices: Record<string, string> = {
@@ -10,10 +13,10 @@ export default async function SignIn({ searchParams }: { searchParams: Promise<{
   const { notice } = await searchParams;
   const message = notice && Object.hasOwn(notices, notice) ? notices[notice] : null;
   return (
-    <div className="mx-auto max-w-md space-y-6">
-      <h1 className="text-3xl font-bold">Sign in</h1>
-      {message && <p role={notice?.endsWith("error") ? "alert" : "status"} className="rounded border-2 border-slate-600 bg-white p-4">{message}</p>}
+    <Card className="mx-auto max-w-md space-y-6">
+      <PageHeader title="Sign in" />
+      {message && <Notice tone={notice?.endsWith("error") ? "error" : "info"}>{message}</Notice>}
       <AuthForm mode="sign-in" />
-    </div>
+    </Card>
   );
 }

@@ -1,9 +1,13 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import { Notice } from "@/components/ui/notice";
+import { PageHeader } from "@/components/ui/page-header";
+
 export default function StoriesError({ reset }: { reset: () => void }) {
   return <div className="max-w-xl space-y-5">
-    <h1 className="text-3xl font-bold">Stories unavailable</h1>
-    <p role="alert">We could not load the stories. Please try again.</p>
-    <button className="bg-slate-900 font-bold text-white hover:bg-slate-700" onClick={reset}>Try again</button>
+    <PageHeader title="Stories unavailable" />
+    <Notice tone="error">We could not load the stories. Please try again.</Notice>
+    <Button onClick={reset}>Try again</Button>
   </div>;
 }

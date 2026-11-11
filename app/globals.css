@@ -1,58 +1,59 @@
 @import "tailwindcss";
 
-:root {
-  background: #f8fafc;
-  color: #0f172a;
-  font-family: Arial, Helvetica, sans-serif;
+/* One palette for Tailwind utilities and shared controls. AA pairings are
+   checked below. Text: ink/canvas 12.25, muted/canvas 5.91,
+   primary/white 7.61, primary/soft 6.68, amber 7.21, error 6.91,
+   success 6.37. Controls: line/canvas 3.11. Focus/canvas 8.25. Amber is reserved for signs and timestamps. */
+@theme inline {
+  --font-sans: var(--font-inter), Arial, Helvetica, sans-serif;
+  --color-canvas: #f7f7f2;
+  --color-surface: #ffffff;
+  --color-ink: #203430;
+  --color-muted: #52635e;
+  --color-line: #81908a;
+  --color-primary: #155e54;
+  --color-primary-hover: #10483f;
+  --color-soft: #eaf2ee;
+  --color-highlight: #fff0c2;
+  --color-highlight-ink: #704600;
+  --color-error: #9c2929;
+  --color-error-soft: #fff1f0;
+  --color-success: #246447;
+  --color-success-soft: #edf6ef;
+  --color-focus: #243ead;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  --spacing: 0.25rem;
+  --radius-control: 0.75rem;
+  --radius-card: 1.25rem;
 }
 
-body {
-  margin: 0;
-  overflow-wrap: anywhere;
-}
-
-.auth-input {
-  width: 100%;
-  min-height: 48px;
-  border: 1px solid #475569;
-  border-radius: 4px;
-  background: white;
-  padding: 0.75rem;
-  font-size: 1rem;
-}
-
-:focus-visible {
-  outline: 3px solid #0f766e;
-  outline-offset: 4px;
-}
-
-.tap-link,
-button {
-  display: inline-flex;
-  min-height: 48px;
-  min-width: 48px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  padding: 0.75rem;
-}
-
-.tap-link:hover {
-  background: #e2e8f0;
-}
-
-.skip-link {
-  position: absolute;
-  top: 0.5rem;
-  left: 0.5rem;
-  z-index: 50;
-  transform: translateY(-200%);
-  border-radius: 4px;
-  background: #0f172a;
-  color: white;
-  padding: 1rem;
-}
-
-.skip-link:focus {
-  transform: translateY(0);
-}
+:root { background: var(--color-canvas); color: var(--color-ink); }
+body { margin: 0; overflow-wrap: anywhere; font-family: var(--font-sans); line-height: 1.6; }
+h1, h2, h3 { line-height: 1.2; text-wrap: balance; }
+input, textarea, select { max-width: 100%; }
+.auth-input { width: 100%; min-height: 48px; border: 1px solid var(--color-line); border-radius: var(--radius-control); background: var(--color-surface); padding: 0.75rem 1rem; font-size: 1rem; color: var(--color-ink); }
+:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 4px; box-shadow: 0 0 0 4px white; }
+.tap-link, button { display: inline-flex; min-height: 48px; min-width: 48px; align-items: center; justify-content: center; border-radius: var(--radius-control); padding: 0.75rem; }
+.tap-link:hover { background: var(--color-soft); }
+.ui-button { display: inline-flex; min-height: 48px; min-width: 48px; align-items: center; justify-content: center; gap: 0.5rem; border: 1px solid transparent; border-radius: var(--radius-control); padding: 0.75rem 1.25rem; font-weight: 600; line-height: 1.5; text-align: center; transition: background-color 120ms; }
+.ui-button-primary { background: var(--color-primary); color: white; }
+.ui-button-primary:hover { background: var(--color-primary-hover); }
+.ui-button-secondary { border-color: var(--color-line); background: white; color: var(--color-primary); }
+.ui-button-secondary:hover, .ui-button-quiet:hover { background: var(--color-soft); }
+.ui-button-quiet { color: var(--color-primary); }
+.ui-button-danger { background: var(--color-error); color: white; }
+.ui-button-danger:hover { background: #7f2020; }
+.ui-button:disabled { cursor: wait; opacity: 0.7; }
+.role-option:has(input:checked) { border-color: var(--color-primary); background: var(--color-soft); box-shadow: inset 0 0 0 1px var(--color-primary); }
+.role-option:has(input:focus-visible) { outline: 3px solid var(--color-focus); outline-offset: 4px; }
+.skip-link { position: absolute; top: 0.5rem; left: 0.5rem; z-index: 50; transform: translateY(-200%); border-radius: var(--radius-control); background: var(--color-ink); color: white; padding: 1rem; }
+.skip-link:focus { transform: translateY(0); }

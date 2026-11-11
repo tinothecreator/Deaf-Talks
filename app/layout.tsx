@@ -2,8 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getCurrentAccount } from "@/lib/auth/session";
 import { roleLabels } from "@/lib/auth/validation";
-import { signOut } from "@/app/actions/auth";
+import { Inter } from "next/font/google";
+import { BookOpen } from "lucide-react";
+import { Navigation } from "@/components/navigation";
+import { buttonStyles } from "@/components/ui/button";
 import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter", fallback: ["Arial", "Helvetica", "sans-serif"] });
 
 // The header and protected pages depend on request cookies, never build-time auth.
 export const dynamic = "force-dynamic";
@@ -20,42 +25,30 @@ export default async function RootLayout({
   const account = await getCurrentAccount();
   return (
     <html lang="en">
-      <body className="flex min-h-dvh flex-col">
-        <a className="skip-link" href="#main-content">
-          Skip to main content
-        </a>
-        <header className="border-b border-slate-300 bg-white">
-          <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-3 px-5 py-4 sm:px-8">
-            <Link className="tap-link text-xl font-bold" href="/">
-              SignStories
+      <body className={`${inter.variable} flex min-h-dvh flex-col ${account.user ? "pb-24 md:pb-0" : ""}`}>
+        <a className="skip-link" href="#main-content">Skip to main content</a>
+        <header className="border-b border-line/40 bg-surface">
+          <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-8">
+            <Link className="inline-flex min-h-12 items-center gap-2 text-xl font-bold tracking-tight text-primary" href="/">
+              <BookOpen size={25} aria-hidden="true" />SignStories
             </Link>
-            <nav aria-label="Main navigation" className="flex flex-wrap items-center gap-2">
-              <Link className="tap-link underline underline-offset-4" href="/">
-                Home
-              </Link>
-              {account.user ? <>
-                {account.profile ? <span className="px-3">{account.profile.display_name} · {roleLabels[account.profile.role]}</span> : <span role="status">Profile unavailable</span>}
-                <Link className="tap-link underline underline-offset-4" href="/account">Account</Link>
-                <Link className="tap-link underline underline-offset-4" href="/stories">Stories</Link>
-                {account.profile?.role === "learner" && <Link className="tap-link underline" href="/practice">My practice</Link>}
-                {account.profile?.role === "storyteller" && <Link className="tap-link underline" href="/studio">My stories</Link>}
-                {(account.profile?.role === "storyteller" || account.profile?.role === "teacher") && <Link className="tap-link underline" href="/reviews">Reviews</Link>}
-                <form action={signOut}><button className="border border-slate-700 font-bold hover:bg-slate-100" type="submit">Sign out</button></form>
-              </> : <>
-                <Link className="tap-link underline underline-offset-4" href="/sign-in">Sign in</Link>
-                <Link className="tap-link underline underline-offset-4" href="/sign-up">Sign up</Link>
-              </>}
-            </nav>
+            {account.user ? <>
+              {account.profile ? <span className="hidden text-sm text-muted lg:block">{account.profile.display_name} · {roleLabels[account.profile.role]}</span> : <span role="status">Profile unavailable</span>}
+              <Navigation role={account.profile?.role} />
+            </> : <nav aria-label="Main navigation" className="flex items-center gap-1 sm:gap-2">
+              <Link className={buttonStyles("quiet", "px-3")} href="/sign-in">Sign in</Link>
+              <Link className={buttonStyles("primary", "px-3")} href="/sign-up">Sign up</Link>
+            </nav>}
           </div>
         </header>
         <main
           id="main-content"
           tabIndex={-1}
-          className="mx-auto w-full max-w-5xl flex-1 px-5 py-12 sm:px-8 sm:py-20"
+          className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 sm:px-8 sm:py-12"
         >
           {children}
         </main>
-        <footer className="border-t border-slate-300 px-5 py-6 text-center text-sm text-slate-700">
+        <footer className="border-t border-line/40 px-5 py-6 text-center text-sm text-muted">
           SignStories · South African Sign Language
         </footer>
       </body>

@@ -1,11 +1,13 @@
+import { Card } from "@/components/ui/card";
+import { PageHeader } from "@/components/ui/page-header";
 import { AuthForm } from "@/components/auth-form";
 
 export default function SignUp() {
   return (
-    <div className="mx-auto max-w-md space-y-6">
-      <h1 className="text-3xl font-bold">Create your account</h1>
+    <Card className="mx-auto max-w-md space-y-6">
+      <PageHeader title="Create your account" />
       <p>Choose how you want to take part in SignStories.</p>
       <AuthForm mode="sign-up" />
-    </div>
+    </Card>
   );
 }
