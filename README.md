@@ -12,9 +12,17 @@ Deaf storytellers share South African Sign Language (SASL) stories; learners lea
 
 ## Try it now
 
-Open **[deaf-talks.vercel.app](https://deaf-talks.vercel.app)**. Email confirmation is on: use a real email and confirm it before signing in, or use a supplied demo account.
+Open **[deaf-talks.vercel.app](https://deaf-talks.vercel.app)**. Email confirmation is on: use a real email and confirm it before signing in, or use the demo accounts below.
 
-**Demo accounts: [ADD DEMO ACCOUNTS HERE]**
+**Demo accounts** (already confirmed, so no email needed; sign in at [deaf-talks.vercel.app](https://deaf-talks.vercel.app)):
+
+| Role | Email | Password |
+| --- | --- | --- |
+| Learner | `learner@demo.com` | `learn123` |
+| Storyteller | `storyteller@demo.com` | `story123` |
+| Teacher | `person@example.com` | `greenbeast` |
+
+These are shared, throwaway accounts for judging only. Please don't upload anything personal.
 
 | Role | How to explore |
 | --- | --- |
